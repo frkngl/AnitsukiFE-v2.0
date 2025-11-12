@@ -37,10 +37,13 @@
     color: var(--text-color);
     font-size: 1.2rem;
     line-height: 1;
-    display: flex;
+    display: block;
     align-items: center;
-    overflow-wrap: break-word;
+    width: 100%;
     font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .watchtogetherdetail .watchanduser .user .title svg {
@@ -59,6 +62,10 @@
     font-size: 1rem;
     margin-right: var(--spacing-xs);
     font-weight: 600;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    min-width: 0;
 }
 
 .watchtogetherdetail .watchanduser .user .others .episode {
@@ -66,6 +73,10 @@
     margin-left: var(--spacing-xs);
     color: var(--secondary-text-color);
     font-weight: 600;
+    white-space: nowrap;
+    /* Kesinlikle alt satıra geçmesin */
+    flex-shrink: 0;
+    /* Episode asla daralmasın */
 }
 
 .watchtogetherdetail .watchanduser .animedetail {

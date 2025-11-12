@@ -389,24 +389,48 @@
      object-fit: cover;
 }
 .contentwatch .liveboxs a .box .othertext .text {
-  width: calc(100% - 50px);
+  width: 100%;
   height: 50px;
-  line-height: 1.5;
+  line-height: 1.3;
   color: #ffffff;
 }
 .contentwatch .liveboxs a .box .othertext .text .title {
+  width: 185px;
+  min-width: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 0.9rem;
   color: #ff7f00;
 }
+@media only screen and (max-width: 520px) {
+  .contentwatch .liveboxs a .box .othertext .text .title {
+    width: 150px;
+  }
+}
+@media only screen and (max-width: 460px) {
+  .contentwatch .liveboxs a .box .othertext .text .title {
+    width: 260px;
+  }
+}
 .contentwatch .liveboxs a .box .othertext .text .title2 {
+  width: 185px;
+  min-width: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 0.9rem;
   font-weight: 600;
+}
+@media only screen and (max-width: 520px) {
+  .contentwatch .liveboxs a .box .othertext .text .title2 {
+    width: 150px;
+  }
+}
+@media only screen and (max-width: 460px) {
+  .contentwatch .liveboxs a .box .othertext .text .title2 {
+    width: 260px;
+  }
 }
 .contentwatch .liveboxs a .box .othertext .text .nameanddate {
   display: flex;

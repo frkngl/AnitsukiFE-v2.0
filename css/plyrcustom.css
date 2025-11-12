@@ -118,7 +118,7 @@ html {
 
 .anime-title {
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     width: 100%;
     white-space: nowrap;
     overflow: hidden;
@@ -130,7 +130,52 @@ html {
     display: flex;
     font-size: 14px;
     color: #ffffff;
-    width: 220px;
+    z-index: 99999 !important;
+}
+
+.subs button {
+    border: none;
+    background-color: transparent;
+    font-size: 14px;
+    color: #ffffff;
+    cursor: pointer;
+    z-index: 99999 !important;
+    pointer-events: auto;
+}
+
+.modal.show .modal-dialog {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.modal .modal-dialog {
+    transition: transform 0.3s ease-out, opacity 0.3s ease;
+    top: 20%;
+    transform: translateY(-50%);
+    opacity: 0;
+}
+
+.modal .animeler {
+    max-height: 445px;
+    width: 100%;
+    color: #ffffff;
+    margin: 10px 0px;
+}
+
+.modal .animeler .name .title {
+    color: #ff7f00;
+}
+
+.modal .animeler .translate {
+    margin: 10px 0px;
+}
+
+.modal .animeler .translate .title {
+    color: #ff7f00;
+}
+
+.modal .animeler .address .title {
+    color: #ff7f00;
 }
 
 #player {
@@ -339,7 +384,7 @@ html {
 }
 
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width:600px) {
     .episodes-toggle-btn {
         display: none;
     }
