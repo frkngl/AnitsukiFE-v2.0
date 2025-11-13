@@ -65,7 +65,6 @@ html {
     transform: translateY(-50%);
     left: 0px;
     width: 100%;
-    z-index: 9999;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -113,7 +112,7 @@ html {
     flex-direction: column;
     gap: 4px;
     width: 65%;
-    line-height: 1;
+    line-height: 1.2;
 }
 
 .anime-title {
@@ -131,6 +130,7 @@ html {
     font-size: 14px;
     color: #ffffff;
     z-index: 99999 !important;
+    line-height: 1;
 }
 
 .subs button {
@@ -141,6 +141,11 @@ html {
     cursor: pointer;
     z-index: 99999 !important;
     pointer-events: auto;
+    transition: all 0.3s ease-in-out;
+}
+
+.subs button:hover {
+    color: #ff7f00;
 }
 
 .modal.show .modal-dialog {
@@ -150,7 +155,7 @@ html {
 
 .modal .modal-dialog {
     transition: transform 0.3s ease-out, opacity 0.3s ease;
-    top: 20%;
+    top: 25%;
     transform: translateY(-50%);
     opacity: 0;
 }
@@ -175,6 +180,17 @@ html {
 }
 
 .modal .animeler .address .title {
+    color: #ff7f00;
+}
+
+.modal .animeler .address a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    margin: 0px 5px;
+}
+
+.modal .animeler .address a:hover {
     color: #ff7f00;
 }
 
@@ -263,7 +279,6 @@ html {
     top: 50%;
     transform: translateY(-50%);
     right: 16px;
-    z-index: 10000;
     background-color: transparent;
     border-radius: 10px;
     border: none;
