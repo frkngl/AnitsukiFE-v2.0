@@ -29,10 +29,10 @@
     color: #000000;
 }
 
-body,
-html {
+html,
+body {
     height: 100%;
-    background-color: #000000;
+    background-color: #000000 !important;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
