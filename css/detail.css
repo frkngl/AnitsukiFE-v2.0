@@ -655,12 +655,6 @@
     cursor: pointer;
   }
 }
-@media only screen and (max-width: 720px) {
-  .detail .seasonandedipsode .episode a {
-    flex: 1 1 220px;
-    max-width: 350px;
-  }
-}
 @media only screen and (max-width: 760px) {
   .detail .banner .box {
     width: 250px;
@@ -677,6 +671,30 @@
   .detail .banner .box .videoimg .videocontainer .video {
     width: 250px;
     height: 375px;
+  }
+}
+@media only screen and (max-width: 720px) {
+  .detail .seasonandedipsode .episode a {
+    flex: 1 1 220px;
+    max-width: 350px;
+  }
+}
+@media only screen and (max-height: 720px) {
+  .detail .banner .box {
+    width: 230px;
+    height: 355px;
+  }
+  .detail .banner .box .videoimg .box2 .posterbtn {
+    width: 230px;
+    height: 355px;
+  }
+  .detail .banner .box .videoimg .videocontainer {
+    width: 230px;
+    height: 355px;
+  }
+  .detail .banner .box .videoimg .videocontainer .video {
+    width: 230px;
+    height: 355px;
   }
 }
 @media only screen and (max-height: 570px) {
