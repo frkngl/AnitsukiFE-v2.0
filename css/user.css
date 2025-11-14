@@ -1017,12 +1017,13 @@
   .activity .detail a .box img {
     width: 100% !important;
     filter: brightness(0.5);
-    border-radius: 10px 0px 0px 10px;
+    border-radius: 10px !important;
   }
   .activity .detail a .text {
     width: 100%;
     position: absolute !important;
     bottom: 30px !important;
+    padding: 5px !important;
   }
   .activity .detail a .text .title {
     top: 5px;
