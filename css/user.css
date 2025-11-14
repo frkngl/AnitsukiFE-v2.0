@@ -51,7 +51,7 @@
 .globalcontent .usercontent .userr {
   padding: 10px;
   border-radius: 10px;
-  height: 150vh;
+  height: auto;
   transition: all 0.3s ease-in-out;
 }
 .globalcontent .usercontent .userr.hide {
@@ -817,6 +817,118 @@
   color: #ccc;
   line-height: 1;
 }
+.globalcontent .usercontent .userr .activity {
+  width: 100%;
+  margin-top: 50px;
+}
+.globalcontent .usercontent .userr .activity .head {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 8px;
+  margin-bottom: 10px;
+}
+.globalcontent .usercontent .userr .activity .head .title {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+}
+.globalcontent .usercontent .userr .activity .head .title svg {
+  margin-right: 3px;
+}
+.globalcontent .usercontent .userr .activity .detail {
+  width: 100%;
+  height: auto;
+}
+.globalcontent .usercontent .userr .activity .detail a {
+  text-decoration: none;
+  color: #ffffff;
+  transition: background-color 0.3s ease-in-out;
+  display: flex;
+  border-radius: 10px;
+  margin: 16px 0px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.globalcontent .usercontent .userr .activity .detail a:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.globalcontent .usercontent .userr .activity .detail a .box {
+  margin-right: 10px;
+}
+.globalcontent .usercontent .userr .activity .detail a .box img {
+  width: 250px;
+  height: auto;
+  border-radius: 10px 0px 0px 10px;
+}
+.globalcontent .usercontent .userr .activity .detail a .text {
+  width: 100%;
+  position: relative;
+}
+.globalcontent .usercontent .userr .activity .detail a .text .title {
+  position: absolute;
+  top: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ff7f00;
+  font-style: normal;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.globalcontent .usercontent .userr .activity .detail a .text .othername {
+  position: absolute;
+  top: 30px;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+.globalcontent .usercontent .userr .activity .detail a .text .othername .bi-braces-asterisk {
+  margin-top: -3px;
+}
+.globalcontent .usercontent .userr .activity .detail a .text .date {
+  margin-top: 52px;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+.globalcontent .usercontent .userr .activity .detail a .text .date .bi-clock {
+  margin-top: -3px;
+}
+.globalcontent .usercontent .userr .activity .detail a .text .regular {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+.globalcontent .usercontent .userr .activity .detail a .text .regular .bi-play-circle {
+  margin-top: -3px;
+}
+.globalcontent .usercontent .userr .activity .detail a .text .imdbandmal {
+  position: absolute;
+  bottom: 5px;
+  left: 0px;
+  display: flex;
+}
+.globalcontent .usercontent .userr .activity .detail a .text .imdbandmal .mal {
+  color: #ffffff;
+  background-color: #2e51a2;
+  padding: 3px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 0px 5px 5px 0px;
+}
+.globalcontent .usercontent .userr .activity .detail a .text .imdbandmal .imdb {
+  color: #000000;
+  background-color: #F5C518;
+  padding: 3px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 5px 0px 0px 5px;
+}
 
 @media only screen and (max-width: 1500px) {
   .globalcontent .usercontent {
@@ -853,5 +965,109 @@
   }
   .globalcontent .usercontent .userr .userdetail .image .addfriend {
     left: 55%;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .activity {
+    width: 100%;
+    margin-top: 50px;
+  }
+  .activity .head {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 8px;
+    margin-bottom: 10px;
+  }
+  .activity .head .title {
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+  }
+  .activity .head .title svg {
+    margin-right: 3px;
+  }
+  .activity .detail {
+    width: 100%;
+    height: auto;
+  }
+  .activity .detail a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: background-color 0.3s ease-in-out;
+    display: flex;
+    border-radius: 10px;
+    margin: 16px 0px;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: relative !important;
+  }
+}
+@media only screen and (max-width: 450px) and (hover: hover) and (pointer: fine) {
+  .activity .detail a:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+@media only screen and (max-width: 450px) {
+  .activity .detail a .box {
+    margin-right: 0px !important;
+  }
+  .activity .detail a .box img {
+    width: 100% !important;
+    filter: brightness(0.5);
+    border-radius: 10px 0px 0px 10px;
+  }
+  .activity .detail a .text {
+    width: 100%;
+    position: absolute !important;
+    bottom: 30px !important;
+  }
+  .activity .detail a .text .title {
+    top: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ff7f00 !important;
+    font-style: normal;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .activity .detail a .text .othername {
+    position: absolute;
+    top: 30px;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    color: #ffffff !important;
+  }
+  .activity .detail a .text .othername .bi-braces-asterisk {
+    margin-top: -3px;
+  }
+  .activity .detail a .text .date {
+    margin-top: 52px;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    color: #ffffff !important;
+  }
+  .activity .detail a .text .date .bi-clock {
+    margin-top: -3px;
+  }
+  .activity .detail a .text .regular {
+    position: absolute;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    color: #ffffff !important;
+  }
+  .activity .detail a .text .regular .bi-play-circle {
+    margin-top: -3px;
+  }
+  .activity .detail a .text .imdbandmal {
+    display: none !important;
   }
 }/*# sourceMappingURL=user.css.map */

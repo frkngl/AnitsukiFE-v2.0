@@ -56,7 +56,7 @@
         .userr {
             padding: 10px;
             border-radius: 10px;
-            height: 150vh;
+            height: auto;
             transition: all 0.3s ease-in-out;
 
             &.hide {
@@ -998,6 +998,139 @@
                     }
                 }
             }
+
+            .activity {
+                width: 100%;
+                margin-top: 50px;
+
+                .head {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 0px 8px;
+                    margin-bottom: 10px;
+
+                    .title {
+                        color: #ffffff;
+                        display: flex;
+                        align-items: center;
+                        font-size: 1rem;
+                        font-style: normal;
+                        font-weight: 500;
+
+                        svg {
+                            margin-right: 3px;
+                        }
+                    }
+                }
+
+                .detail {
+                    width: 100%;
+                    height: auto;
+
+                    a {
+                        text-decoration: none;
+                        color: #ffffff;
+                        transition: background-color 0.3s ease-in-out;
+                        display: flex;
+                        border-radius: 10px;
+                        margin: 16px 0px;
+                        background-color: rgba(0, 0, 0, 0.3);
+
+                        &:hover {
+                            background-color: rgba(0, 0, 0, 0.5);
+                        }
+
+                        .box {
+                            margin-right: 10px;
+
+                            img {
+                                width: 250px;
+                                height: auto;
+                                border-radius: 10px 0px 0px 10px;
+                            }
+                        }
+
+                        .text {
+                            width: 100%;
+                            position: relative;
+
+                            .title {
+                                position: absolute;
+                                top: 5px;
+                                font-size: 1rem;
+                                font-weight: 500;
+                                color: #ff7f00;
+                                font-style: normal;
+                                width: 100%;
+                                white-space: nowrap;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+
+                            }
+
+                            .othername {
+                                position: absolute;
+                                top: 30px;
+                                width: 100%;
+                                white-space: nowrap;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                font-size: 0.9rem;
+                                color: #ccc;
+
+                                .bi-braces-asterisk {
+                                    margin-top: -3px;
+                                }
+                            }
+
+                            .date {
+                                margin-top: 52px;
+                                font-size: 0.9rem;
+                                color: #ccc;
+
+                                .bi-clock {
+                                    margin-top: -3px;
+                                }
+                            }
+
+                            .regular {
+                                font-size: 0.9rem;
+                                color: #ccc;
+
+                                .bi-play-circle {
+                                    margin-top: -3px;
+                                }
+                            }
+
+                            .imdbandmal {
+                                position: absolute;
+                                bottom: 5px;
+                                left: 0px;
+                                display: flex;
+
+                                .mal {
+                                    color: #ffffff;
+                                    background-color: #2e51a2;
+                                    padding: 3px;
+                                    font-size: 1rem;
+                                    font-weight: 600;
+                                    border-radius: 0px 5px 5px 0px;
+                                }
+
+                                .imdb {
+                                    color: #000000;
+                                    background-color: #F5C518;
+                                    padding: 3px;
+                                    font-size: 1rem;
+                                    font-weight: 600;
+                                    border-radius: 5px 0px 0px 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
@@ -1068,5 +1201,125 @@
             }
         }
     }
+}
 
+@media only screen and (max-width:450px) {
+    .activity {
+        width: 100%;
+        margin-top: 50px;
+
+        .head {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0px 8px;
+            margin-bottom: 10px;
+
+            .title {
+                color: #ffffff;
+                display: flex;
+                align-items: center;
+                font-size: 1rem;
+                font-style: normal;
+                font-weight: 500;
+
+                svg {
+                    margin-right: 3px;
+                }
+            }
+        }
+
+        .detail {
+            width: 100%;
+            height: auto;
+
+            a {
+                text-decoration: none;
+                color: #ffffff;
+                transition: background-color 0.3s ease-in-out;
+                display: flex;
+                border-radius: 10px;
+                margin: 16px 0px;
+                background-color: rgba(0, 0, 0, 0.3);
+                position: relative !important;
+
+                @media (hover: hover) and (pointer: fine) {
+                    &:hover {
+                        background-color: rgba(0, 0, 0, 0.5);
+                    }
+                }
+
+                .box {
+                    margin-right: 0px !important;
+
+                    img {
+                        width: 100% !important;
+                        filter: brightness(0.5);
+                        border-radius: 10px 0px 0px 10px;
+                    }
+                }
+
+                .text {
+                    width: 100%;
+                    position: absolute !important;
+                    bottom: 30px !important;
+
+                    .title {
+                        top: 5px;
+                        font-size: 1rem;
+                        font-weight: 500;
+                        color: #ff7f00 !important;
+                        font-style: normal;
+                        width: 100%;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+
+                    }
+
+                    .othername {
+                        position: absolute;
+                        top: 30px;
+                        width: 100%;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        font-size: 1rem !important;
+                        font-weight: 500 !important;
+                        color: #ffffff !important;
+
+                        .bi-braces-asterisk {
+                            margin-top: -3px;
+                        }
+                    }
+
+                    .date {
+                        margin-top: 52px;
+                        font-size: 1rem !important;
+                        font-weight: 500 !important;
+                        color: #ffffff !important;
+
+                        .bi-clock {
+                            margin-top: -3px;
+                        }
+                    }
+
+                    .regular {
+                        position: absolute;
+                        font-size: 1rem !important;
+                        font-weight: 500 !important;
+                        color: #ffffff !important;
+
+                        .bi-play-circle {
+                            margin-top: -3px;
+                        }
+                    }
+
+                    .imdbandmal {
+                        display: none !important;
+                    }
+                }
+            }
+        }
+    }
 }
