@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .progress-container {
   position: absolute;
   bottom: 28%;
@@ -26,6 +27,8 @@
 .progress-circle .progress-bar {
   stroke: #fff;
   stroke-linecap: round;
+  /* PERFORMANS: Sadece stroke-dashoffset değişiyor, GPU'ya bildiriyoruz */
+  will-change: stroke-dashoffset;
   transition: stroke-dashoffset 0.1s linear;
 }
 
@@ -33,12 +36,14 @@
   position: absolute;
   font-size: 1rem;
   font-weight: 500;
-  color: white;
+  color: #fff;
   text-align: center;
 }
 
 .carousel-fade .carousel-item {
   opacity: 0;
+  /* PERFORMANS: Opaklık değişimi için GPU hızlandırma */
+  will-change: opacity;
   transition: opacity 0.6s ease-in-out;
 }
 
@@ -68,6 +73,7 @@
   border: none;
   margin: 0 5px;
   padding: 0;
+  /* PERFORMANS: Sadece arka plan rengi */
   transition: background-color 0.3s ease;
 }
 
@@ -146,13 +152,14 @@
 .btn-detail,
 .btn-watch {
   background-color: #ff7f00;
-  color: #000000;
+  color: #000;
   border: none;
   padding: 6px;
   border-radius: 5px;
   font-size: 1rem;
   font-weight: 500;
-  transition: background-color 0.3s;
+  /* PERFORMANS: Renk ve arka plan geçişi */
+  transition: background-color 0.3s, color 0.3s;
   text-decoration: none;
 }
 
@@ -190,7 +197,8 @@
   z-index: 99;
 }
 .splide .splide__list {
-  transition: all 0.3s ease-out;
+  /* PERFORMANS: Sadece transform özelliği */
+  transition: transform 0.3s ease-out;
 }
 .splide .splide__list .splide__slide {
   display: flex;
@@ -214,7 +222,9 @@
   height: auto;
   filter: brightness(0.7);
   border-radius: 10px;
-  transition: all 0.3s ease-out;
+  /* PERFORMANS: Filter değişimi için GPU */
+  will-change: filter;
+  transition: filter 0.3s ease-out;
 }
 .splide .splide__list .splide__slide .anime .text {
   position: absolute;
@@ -263,7 +273,7 @@
   z-index: 99;
 }
 .splide1 .splide__list {
-  transition: all 0.3s ease-out;
+  transition: transform 0.3s ease-out;
 }
 .splide1 .splide__list .splide__slide {
   display: flex;
@@ -287,7 +297,9 @@
   height: auto;
   filter: brightness(0.7);
   border-radius: 10px;
-  transition: all 0.3s ease-out;
+  /* PERFORMANS: Filter değişimi için GPU */
+  will-change: filter;
+  transition: filter 0.3s ease-out;
 }
 .splide1 .splide__list .splide__slide .anime .text {
   position: absolute;
@@ -318,6 +330,7 @@
   text-overflow: ellipsis;
 }
 
+/* MEDIA QUERIES */
 @media only screen and (max-width: 1500px) {
   .progress-container {
     bottom: 20%;
@@ -378,7 +391,7 @@
   .carousel-item .carousel-caption .btn-detail,
   .carousel-item .carousel-caption .btn-watch {
     background-color: #ff7f00;
-    color: #000000;
+    color: #000;
     border: none;
     padding: 6px;
     border-radius: 5px;

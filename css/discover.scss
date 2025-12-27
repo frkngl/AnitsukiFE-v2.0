@@ -1,3 +1,13 @@
+// Değişkenler (Tutarlılık ve Performans için)
+$primary-color: #ff7f00;
+$white: #ffffff;
+$black: #000000;
+$dark-grey: #252525;
+$overlay-bg: #313131dd;
+$text-muted: #ccc;
+$mal-color: #2e51a2;
+$imdb-color: #F5C518;
+
 .content-anime {
     width: 100%;
     height: auto;
@@ -17,7 +27,7 @@
                 font-size: 1.5rem;
                 font-weight: 500;
                 font-style: normal;
-                color: #ffffff;
+                color: $white;
             }
 
             .dropdowns {
@@ -30,30 +40,31 @@
                     justify-content: center;
 
                     .dropdown-toggle {
-                        color: #ccc;
+                        color: $text-muted;
                         font-size: 1rem;
                         font-weight: 600;
                         background-color: transparent;
                         border: none;
-                        transition: all 0.1s ease-out;
+                        /* PERFORMANS: Sadece renk değişimi */
+                        transition: color 0.1s ease-out;
 
                         &:hover {
-                            color: #ff7f00;
+                            color: $primary-color;
                         }
                     }
 
                     .dropdown-menu {
-                        background-color: #252525;
+                        background-color: $dark-grey;
                         z-index: 99 !important;
 
                         .dropdown-item {
-                            color: #ffffff;
-                            transition: all 0.2s ease-out;
+                            color: $white;
+                            /* PERFORMANS: Sadece renk değişimi */
+                            transition: color 0.2s ease-out;
 
                             &:hover {
-                                color: #252525;
+                                color: $dark-grey;
                             }
-
                         }
                     }
                 }
@@ -74,28 +85,32 @@
                 margin: 0;
                 height: 35px;
                 overflow-x: auto;
+                /* Kaydırma deneyimini iyileştirir */
+                -webkit-overflow-scrolling: touch; 
 
                 .letter-item {
-                    color: #ccc;
+                    color: $text-muted;
                     font-size: 1rem;
                     font-weight: 600;
                     font-style: normal;
                     width: 28px;
                     height: 20px;
-                    transition: all 0.1s ease-in-out; // Yumuşak animasyon
+                    /* PERFORMANS: Sadece değişen özellikler */
+                    transition: color 0.1s ease-in-out, font-size 0.1s ease-in-out;
                     margin: 0px 2px;
                     padding: 0px 5px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    cursor: pointer;
 
                     &:hover {
-                        color: #ffffff;
+                        color: $white;
                         font-size: 1.1rem;
                     }
 
                     &.active {
-                        color: #ff7f00;
+                        color: $primary-color;
                         font-size: 1.1rem;
                     }
                 }
@@ -112,18 +127,22 @@
         margin-bottom: 20px;
 
         .anime {
-            width: 250px; // Yeni genişlik
-            height: 375px; // 2:3 oranına uygun yükseklik
+            width: 250px; 
+            height: 375px; 
             position: relative;
             text-decoration: none;
             border-radius: 10px;
             margin: 8px;
+            /* Tıklama gecikmesini önler */
+            -webkit-tap-highlight-color: transparent;
 
             img {
-                width: 250px; // Yeni genişlik
-                height: 375px; // 2:3 oranına uygun yükseklik
+                width: 250px;
+                height: 375px;
                 object-fit: cover;
                 border-radius: 10px;
+                /* PERFORMANS: Resim decode işlemi */
+                content-visibility: auto; 
             }
 
             .text {
@@ -138,17 +157,20 @@
                 position: absolute;
                 top: 0;
                 left: 0;
-                background-color: #313131dd;
+                background-color: $overlay-bg;
                 width: 100%;
                 height: 100%;
                 border-radius: 10px;
                 padding: 5px 8px;
                 opacity: 0;
                 overflow: auto;
-                transition: all 0.3s ease-out;
+                
+                /* PERFORMANS: GPU Hızlandırma */
+                will-change: opacity;
+                transition: opacity 0.3s ease-out;
 
                 .title {
-                    color: #ff7f00;
+                    color: $primary-color;
                     font-size: 1.1rem;
                     font-weight: 500;
                     font-style: normal;
@@ -159,27 +181,27 @@
                 .morename {
                     font-size: 1rem;
                     font-weight: 500;
-                    color: #fff;
+                    color: $white;
                     line-height: 1;
                 }
 
                 .sezon {
                     font-size: 1rem;
                     font-weight: 500;
-                    color: #fff;
+                    color: $white;
                 }
 
                 .bolum,
                 .date {
                     font-size: 1rem;
                     font-weight: 500;
-                    color: #fff;
+                    color: $white;
                 }
 
                 .kategori {
                     font-size: 1rem;
                     font-weight: 500;
-                    color: #fff;
+                    color: $white;
                     margin-bottom: 10px;
                 }
 
@@ -188,8 +210,8 @@
                     margin-bottom: 10px;
 
                     .mal {
-                        background-color: #2e51a2;
-                        color: #ffffff;
+                        background-color: $mal-color;
+                        color: $white;
                         font-size: 0.9rem;
                         font-weight: 600;
                         font-style: normal;
@@ -199,8 +221,8 @@
                     }
 
                     .imdb {
-                        background-color: #F5C518;
-                        color: #000000;
+                        background-color: $imdb-color;
+                        color: $black;
                         font-size: 0.9rem;
                         font-weight: 600;
                         font-style: normal;
@@ -210,7 +232,7 @@
                 }
 
                 .des {
-                    color: #fff;
+                    color: $white;
                     font-style: normal;
                     font-weight: 500;
                     font-size: 1rem;
@@ -218,6 +240,7 @@
                 }
             }
 
+            /* Hover Efekti */
             &:hover .detail {
                 opacity: 1;
             }
@@ -226,25 +249,21 @@
 }
 
 
+/* MEDIA QUERIES */
+
 @media only screen and (max-width: 1400px) {
     .content-anime {
-
         .animeler {
             padding: 0px 16px;
 
-
             .anime {
-                width: 150px; // Yeni genişlik
-                height: 250px; // 2:3 oranına uygun yükseklik
-                position: relative;
-                text-decoration: none;
-                border-radius: 10px;
+                width: 150px;
+                height: 250px;
                 margin: 0px;
 
                 img {
-                    width: 150px; // Yeni genişlik
-                    height: 225px; // 2:3 oranına uygun yükseklik
-                    object-fit: cover;
+                    width: 150px;
+                    height: 225px;
                     border-radius: 10px;
                 }
 
@@ -256,7 +275,7 @@
                     align-items: center;
 
                     .title {
-                        color: #ffffff;
+                        color: $white;
                         font-size: 0.9rem;
                         font-weight: 500;
                         font-style: normal;
@@ -268,7 +287,7 @@
                     }
 
                     .year {
-                        color: #ffffff;
+                        color: $white;
                         font-size: 0.9rem;
                         font-weight: 500;
                         font-style: normal;
@@ -284,8 +303,8 @@
                     display: block;
 
                     .mal {
-                        background-color: #2e51a2;
-                        color: #ffffff;
+                        background-color: $mal-color;
+                        color: $white;
                         font-size: 0.9rem;
                         font-weight: 500;
                         font-style: normal;
@@ -294,8 +313,8 @@
                     }
 
                     .imdb {
-                        background-color: #F5C518;
-                        color: #000000;
+                        background-color: $imdb-color;
+                        color: $black;
                         font-size: 0.9rem;
                         font-weight: 500;
                         font-style: normal;
@@ -311,28 +330,13 @@
     }
 }
 
-@media only screen and (max-width: 380px) {
-    .content-anime {
-
-        .animeler {
-            padding: 0px;
-            gap: 0px;
-
-            .anime{
-                margin: 5px;
-            }
-        }
-    }
-}
-
-
-@media only screen and (max-width:1080px) {
+@media only screen and (max-width: 1080px) {
     .filtre {
         padding: 0px 18px 0px 25px;
     }
 }
 
-@media only screen and (max-width:910px) {
+@media only screen and (max-width: 910px) {
     .filtre {
         width: 100%;
         height: 120px !important;
@@ -349,7 +353,7 @@
     }
 }
 
-@media only screen and (max-width:750px) {
+@media only screen and (max-width: 750px) {
     .filtre {
         height: 100px !important;
 
@@ -365,13 +369,24 @@
     }
 }
 
-@media only screen and (max-width:550px) {
+@media only screen and (max-width: 550px) {
     .filtre {
-
         .letter {
-
             .letter-list {
                 width: 300px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    .content-anime {
+        .animeler {
+            padding: 0px;
+            gap: 0px;
+
+            .anime {
+                margin: 5px;
             }
         }
     }

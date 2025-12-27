@@ -4,103 +4,132 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Keşfet</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/global.css" type="text/css" />
-  <link rel="stylesheet" href="css/discover.css" type="text/css" />
+  <title>Anitsuki | Keşfet</title>
+
+  <meta name="description" content="Sitenin kısa ve etkileyici açıklaması buraya gelecek.">
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+  <link rel="icon" href="webimg/aylogo.ico" type="image/x-icon">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="..."
+    crossorigin="anonymous">
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/discover.css">
 </head>
 
 <body>
-  <header class="d-flex justify-content-between">
+  <div class="loader"></div>
+  <header class="d-flex justify-content-between align-items-center">
     <div class="logo">
       <a href="index.html">
         <picture>
-          <source media="(max-width: 576px)" srcset="webimg/aylogo.png">
-          <img src="webimg/logo.png" width="150" height="60" loading="lazy">
+          <source media="(max-width: 576px)" srcset="webimg/aylogo.avif" type="image/avif">
+          <img src="webimg/logo.avif" width="150" height="60" alt="Anitsuki Logo" fetchpriority="high"
+            type="image/avif">
         </picture>
       </a>
     </div>
-    <input style="display: none;" type="checkbox" id="check" />
-    <label for="check" class="hamburger-btn">
+
+    <input style="display: none;" type="checkbox" id="check" aria-hidden="true" />
+    <label for="check" class="hamburger-btn" aria-label="Menüyü Aç">
       <span></span>
     </label>
+
     <nav>
-      <a href="index.html" class="home-link"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-          fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+      <a href="index.html" class="home-link">
+        <svg width="20" height="20" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
           <path
             d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5" />
         </svg>
-        Anasayfa</a>
-      <a href="kesfet.html" class="kesfet-link"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-          fill="currentColor" class="bi bi-compass" viewBox="0 0 16 16">
+        Anasayfa
+      </a>
+      <a href="kesfet.html" class="kesfet-link">
+        <svg width="20" height="20" fill="currentColor" class="bi bi-compass" viewBox="0 0 16 16">
           <path
             d="M8 16.016a7.5 7.5 0 0 0 1.962-14.74A1 1 0 0 0 9 0H7a1 1 0 0 0-.962 1.276A7.5 7.5 0 0 0 8 16.016m6.5-7.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0" />
           <path d="m6.94 7.44 4.95-2.83-2.83 4.95-4.949 2.83 2.828-4.95z" />
         </svg>
-        Keşfet</a>
-      <a href="watchtogether.html" class="watch-link"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
-          fill="currentColor" class="bi bi-broadcast" viewBox="0 0 16 16">
+        Keşfet
+      </a>
+      <a href="watchtogether.html" class="watch-link">
+        <svg width="22" height="22" fill="currentColor" class="bi bi-broadcast" viewBox="0 0 16 16">
           <path
             d="M3.05 3.05a7 7 0 0 0 0 9.9.5.5 0 0 1-.707.707 8 8 0 0 1 0-11.314.5.5 0 0 1 .707.707m2.122 2.122a4 4 0 0 0 0 5.656.5.5 0 1 1-.708.708 5 5 0 0 1 0-7.072.5.5 0 0 1 .708.708m5.656-.708a.5.5 0 0 1 .708 0 5 5 0 0 1 0 7.072.5.5 0 1 1-.708-.708 4 4 0 0 0 0-5.656.5.5 0 0 1 0-.708m2.122-2.12a.5.5 0 0 1 .707 0 8 8 0 0 1 0 11.313.5.5 0 0 1-.707-.707 7 7 0 0 0 0-9.9.5.5 0 0 1 0-.707zM10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0" />
         </svg>
-        Watch Together</a>
-      <a href="#" class="discord-link"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-          fill="currentColor" class="bi bi-discord" viewBox="0 0 16 16">
+        Watch Together
+      </a>
+      <a href="https://discord.gg/XDTdS5fAPa" target="_blank" class="discord-link">
+        <svg width="20" height="20" fill="currentColor" class="bi bi-discord" viewBox="0 0 16 16">
           <path
             d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612" />
         </svg>
-        Discord</a>
+        Discord
+      </a>
     </nav>
+
     <div class="others d-flex align-items-center">
-      <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-search"
-          viewBox="0 0 16 16">
+      <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" aria-label="Arama Yap">
+        <svg width="23" height="23" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
           <path
             d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
         </svg>
       </button>
-      <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" class="bi bi-people"
-          viewBox="0 0 16 16">
+
+      <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal1" aria-label="Arkadaşların">
+        <svg width="27" height="27" fill="currentColor" class="bi bi-people" viewBox="0 0 16 16">
           <path
             d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4" />
-        </svg></button>
-      <button type="button" class="position-relative" data-bs-toggle="modal" data-bs-target="#exampleModal2">
-        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-bell"
-          viewBox="0 0 16 16">
+        </svg>
+      </button>
+
+      <button type="button" class="position-relative" data-bs-toggle="modal" data-bs-target="#exampleModal2"
+        aria-label="Bildirimler">
+        <svg width="23" height="23" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
           <path
             d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6" />
         </svg>
         <span class="position-absolute top-0 start-100 translate-middle bg-danger p-1 rounded-circle">
-          <span class="visually-hidden">New alerts</span>
+          <span class="visually-hidden">Yeni Bildirimler</span>
         </span>
       </button>
+
       <div class="dropdown">
-        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <img src="webimg/sukunavsgojo.gif">
+        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+          aria-label="Profil Menüsü">
+          <img src="webimg/sukunavsgojo.avif" alt="Profil Resmi" width="40" height="40"
+            style="object-fit: cover; border-radius: 50%;" type="image/avif" />
         </button>
         <ul class="dropdown-menu dropdown-menu-end" style="width: 100px;">
-          <li><a class="dropdown-item" href="user.html"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+          <li>
+            <a class="dropdown-item" href="user.html">
+              <svg width="20" height="20" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                 <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-              </svg>Profil</a></li>
-          <li><a class="dropdown-item" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+              </svg> Profil
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">
+              <svg width="20" height="20" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
                 <path fill-rule="evenodd"
                   d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z" />
                 <path fill-rule="evenodd"
                   d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z" />
-              </svg>Çıkış</a></li>
+              </svg> Çıkış
+            </a>
+          </li>
         </ul>
       </div>
     </div>
   </header>
-  <div class="modal" style="backdrop-filter: blur(3px);" id="exampleModal" tabindex="-1"
-    aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal" style="-webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);" id="exampleModal"
+    tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div style="margin-top: 80px" class="modal-dialog">
       <div style="background-color: #151515;" class="modal-content">
         <div style="width: 100%;" class="modal-body">
+
           <div style="height: 25px; width: 100%;" class="d-flex justify-content-between">
             <div style="color: #ffffff; font-size: 1.1rem; font-weight: 500; font-style: normal;">
               Anime Ara
@@ -110,6 +139,7 @@
                 aria-label="Close"></button>
             </div>
           </div>
+
           <div style="width: 100%;">
             <div class="search">
               <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-search"
@@ -117,11 +147,14 @@
                 <path
                   d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
               </svg>
-              <input type="text" placeholder="Anime ara..." />
+              <input type="search" placeholder="Anime ara..." autocomplete="off" aria-label="Anime arama kutusu" />
             </div>
-            <div class="animeler overflow-auto">
+
+            <div class="animeler overflow-auto" style="max-height: 500px;">
+
               <a class="anime d-flex" href="#">
-                <img src="webimg/sololevelingposter.jpg" />
+                <img src="webimg/sololevelingposter.avif" width="70" height="100" loading="lazy"
+                  alt="Solo Leveling Poster" style="object-fit: cover;" type="image/avif" />
                 <div class="text">
                   <div class="title text-break">
                     Solo Leveling
@@ -135,8 +168,10 @@
                   </div>
                 </div>
               </a>
+
               <a class="anime d-flex" href="#">
-                <img src="webimg/sololevelingposter.jpg" />
+                <img src="webimg/sololevelingposter.avif" width="70" height="100" loading="lazy"
+                  alt="Guild Anime Poster" style="object-fit: cover;" type="image/avif" />
                 <div class="text">
                   <div class="title text-break">
                     Solo Leveling
@@ -146,31 +181,18 @@
                       class="bi bi-braces-asterisk" viewBox="0 0 16 16">
                       <path fill-rule="evenodd"
                         d="M1.114 8.063V7.9c1.005-.102 1.497-.615 1.497-1.6V4.503c0-1.094.39-1.538 1.354-1.538h.273V2h-.376C2.25 2 1.49 2.759 1.49 4.352v1.524c0 1.094-.376 1.456-1.49 1.456v1.299c1.114 0 1.49.362 1.49 1.456v1.524c0 1.593.759 2.352 2.372 2.352h.376v-.964h-.273c-.964 0-1.354-.444-1.354-1.538V9.663c0-.984-.492-1.497-1.497-1.6M14.886 7.9v.164c-1.005.103-1.497.616-1.497 1.6v1.798c0 1.094-.39 1.538-1.354 1.538h-.273v.964h.376c1.613 0 2.372-.759 2.372-2.352v-1.524c0-1.094.376-1.456 1.49-1.456v-1.3c-1.114 0-1.49-.362-1.49-1.456V4.352C14.51 2.759 13.75 2 12.138 2h-.376v.964h.273c.964 0 1.354.444 1.354 1.538V6.3c0 .984.492 1.497 1.497 1.6M7.5 11.5V9.207l-1.621 1.621-.707-.707L6.792 8.5H4.5v-1h2.293L5.172 5.879l.707-.707L7.5 6.792V4.5h1v2.293l1.621-1.621.707.707L9.208 7.5H11.5v1H9.207l1.621 1.621-.707.707L8.5 9.208V11.5z" />
-                    </svg> Diğer Ad: Ore dake Level Up na Ken
+                    </svg> Diğer Ad: I May Be a Guild Receptionist, but I'll Solo Any Boss to Clock
+                    Out on Time
                   </div>
                 </div>
               </a>
+
               <a class="anime d-flex" href="#">
-                <img src="webimg/sololevelingposter.jpg" />
+                <img src="webimg/sololevelingposter.avif" width="70" height="100" loading="lazy"
+                  alt="Guild Anime Poster" style="object-fit: cover;" type="image/avif" />
                 <div class="text">
                   <div class="title text-break">
                     Solo Leveling
-                  </div>
-                  <div class="des text-break">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-                      class="bi bi-braces-asterisk" viewBox="0 0 16 16">
-                      <path fill-rule="evenodd"
-                        d="M1.114 8.063V7.9c1.005-.102 1.497-.615 1.497-1.6V4.503c0-1.094.39-1.538 1.354-1.538h.273V2h-.376C2.25 2 1.49 2.759 1.49 4.352v1.524c0 1.094-.376 1.456-1.49 1.456v1.299c1.114 0 1.49.362 1.49 1.456v1.524c0 1.593.759 2.352 2.372 2.352h.376v-.964h-.273c-.964 0-1.354-.444-1.354-1.538V9.663c0-.984-.492-1.497-1.497-1.6M14.886 7.9v.164c-1.005.103-1.497.616-1.497 1.6v1.798c0 1.094-.39 1.538-1.354 1.538h-.273v.964h.376c1.613 0 2.372-.759 2.372-2.352v-1.524c0-1.094.376-1.456 1.49-1.456v-1.3c-1.114 0-1.49-.362-1.49-1.456V4.352C14.51 2.759 13.75 2 12.138 2h-.376v.964h.273c.964 0 1.354.444 1.354 1.538V6.3c0 .984.492 1.497 1.497 1.6M7.5 11.5V9.207l-1.621 1.621-.707-.707L6.792 8.5H4.5v-1h2.293L5.172 5.879l.707-.707L7.5 6.792V4.5h1v2.293l1.621-1.621.707.707L9.208 7.5H11.5v1H9.207l1.621 1.621-.707.707L8.5 9.208V11.5z" />
-                    </svg> Diğer Ad: Ore dake Level Up na Ken
-                  </div>
-                </div>
-              </a>
-              <a class="anime d-flex" href="#">
-                <img src="webimg/sololevelingposter.jpg" />
-                <div class="text">
-                  <div class="title text-break">
-                    Guild no Uketsukejou desu ga, Zangyou wa Iya nanode Boss wo Solo Toubatsu Shiyou
-                    to Omoimasu
                   </div>
                   <div class="des text-break">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
@@ -188,11 +210,12 @@
       </div>
     </div>
   </div>
-  <div class="modal user-modal" style="backdrop-filter: blur(3px);" id="exampleModal1" tabindex="-1"
-    aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal user-modal" style="-webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);"
+    id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div style="margin-top: 80px" class="modal-dialog">
       <div style="background-color: #151515;" class="modal-content">
         <div style="width: 100%;" class="modal-body">
+
           <div style="height: 25px; width: 100%;" class="d-flex justify-content-between">
             <div style="color: #ffffff; font-size: 1.1rem; font-weight: 500; font-style: normal;">
               Kullanıcı Ara
@@ -202,18 +225,23 @@
                 aria-label="Close"></button>
             </div>
           </div>
+
           <div style="width: 100%;">
+
             <div class="search">
               <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-search"
                 viewBox="0 0 16 16">
                 <path
                   d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
               </svg>
-              <input type="text" placeholder="Kullanıcı ara..." />
+              <input type="search" placeholder="Kullanıcı ara..." autocomplete="off" aria-label="Kullanıcı Arama" />
             </div>
-            <div class="users overflow-auto">
+
+            <div class="users overflow-auto" style="max-height: 500px;">
+
               <a class="user d-flex" href="#">
-                <img src="webimg/sukunavsgojo.gif" />
+                <img src="webimg/sukunavsgojo.avif" width="50" height="50" loading="lazy" alt="Kullanıcı Resmi"
+                  style="object-fit: cover;" type="image/avif" />
                 <div class="text">
                   <div class="title text-break">
                     SukunanınHakkıYenenamaGojoyuGttenSkenLanetlerKralı
@@ -232,8 +260,10 @@
                   </svg>
                 </div>
               </a>
+
               <a class="user d-flex" href="#">
-                <img src="webimg/sukunavsgojo.gif" />
+                <img src="webimg/sukunavsgojo.avif" width="50" height="50" loading="lazy" alt="Kullanıcı Resmi"
+                  style="object-fit: cover;" type="image/avif" />
                 <div class="text">
                   <div class="title text-break">
                     Sukuna
@@ -252,8 +282,10 @@
                   </svg>
                 </div>
               </a>
+
               <a class="user d-flex" href="#">
-                <img src="webimg/sukunavsgojo.gif" />
+                <img src="webimg/sukunavsgojo.avif" width="50" height="50" loading="lazy" alt="Kullanıcı Resmi"
+                  style="object-fit: cover;" type="image/avif" />
                 <div class="text">
                   <div class="title text-break">
                     SukunanınHakkıYenenamaGojoyuGttenSkenLanetlerKralı
@@ -272,8 +304,10 @@
                   </svg>
                 </div>
               </a>
+
               <a class="user d-flex" href="#">
-                <img src="webimg/sukunavsgojo.gif" />
+                <img src="webimg/sukunavsgojo.avif" width="50" height="50" loading="lazy" alt="Kullanıcı Resmi"
+                  style="object-fit: cover;" type="image/avif" />
                 <div class="text">
                   <div class="title text-break">
                     Sukuna
@@ -292,30 +326,36 @@
                   </svg>
                 </div>
               </a>
+
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="modal notication-modal" style="backdrop-filter: blur(3px);" id="exampleModal2" tabindex="-1"
-    aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal notication-modal" style="-webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);"
+    id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div style="margin-top: 80px" class="modal-dialog">
       <div style="background-color: #151515;" class="modal-content">
         <div style="width: 100%;" class="modal-body">
+
           <div style="height: 25px; width: 100%;" class="d-flex justify-content-between">
             <div style="color: #ffffff; font-size: 1.1rem; font-weight: 500; font-style: normal;">
               Bildirimler
             </div>
             <div>
               <button style="filter: invert(100%);" type="button" class="btn-close" data-bs-dismiss="modal"
-                aria-label="Close"></button>
+                aria-label="Kapat"></button>
             </div>
           </div>
+
           <div style="width: 100%;">
-            <div class="users overflow-auto">
+
+            <div class="users overflow-auto" style="max-height: 500px;">
+
               <a class="user d-flex align-items-center position-relative" href="#">
-                <img src="webimg/sukunavsgojo.gif" />
+                <img src="webimg/sukunavsgojo.avif" width="50" height="50" loading="lazy" alt="Kullanıcı Avatarı"
+                  style="object-fit: cover;" type="image/avif" />
                 <div class="text">
                   <div class="title text-break">
                     Sukuna
@@ -328,11 +368,13 @@
                   </div>
                 </div>
                 <span class="position-absolute top-0 end-0 p-1 bg-danger rounded-circle">
-                  <span class="visually-hidden">New alerts</span>
+                  <span class="visually-hidden">Yeni bildirim</span>
                 </span>
               </a>
+
               <a class="user d-flex align-items-center position-relative" href="#">
-                <img src="webimg/sukunavsgojo.gif" />
+                <img src="webimg/sukunavsgojo.avif" width="50" height="50" loading="lazy" alt="Kullanıcı Avatarı"
+                  style="object-fit: cover;" type="image/avif" />
                 <div class="text">
                   <div class="title text-break">
                     Sukuna
@@ -345,11 +387,13 @@
                   </div>
                 </div>
                 <span class="position-absolute top-0 end-0 p-1 bg-danger rounded-circle">
-                  <span class="visually-hidden">New alerts</span>
+                  <span class="visually-hidden">Yeni bildirim</span>
                 </span>
               </a>
+
               <a class="user d-flex align-items-center position-relative" href="#">
-                <img src="webimg/sukunavsgojo.gif" />
+                <img src="webimg/sukunavsgojo.avif" width="50" height="50" loading="lazy" alt="Kullanıcı Avatarı"
+                  style="object-fit: cover;" type="image/avif" />
                 <div class="text">
                   <div class="title text-break">
                     Sukuna
@@ -362,11 +406,13 @@
                   </div>
                 </div>
                 <span class="position-absolute top-0 end-0 p-1 bg-danger rounded-circle">
-                  <span class="visually-hidden">New alerts</span>
+                  <span class="visually-hidden">Yeni bildirim</span>
                 </span>
               </a>
+
               <a class="user d-flex align-items-center position-relative" href="#">
-                <img src="webimg/sukunavsgojo.gif" />
+                <img src="webimg/sukunavsgojo.avif" width="50" height="50" loading="lazy" alt="Kullanıcı Avatarı"
+                  style="object-fit: cover;" type="image/avif" />
                 <div class="text">
                   <div class="title text-break">
                     Sukuna
@@ -379,11 +425,13 @@
                   </div>
                 </div>
                 <span class="position-absolute top-0 end-0 p-1 bg-danger rounded-circle">
-                  <span class="visually-hidden">New alerts</span>
+                  <span class="visually-hidden">Yeni bildirim</span>
                 </span>
               </a>
+
               <a class="user d-flex align-items-center position-relative" href="#">
-                <img src="webimg/sukunavsgojo.gif" />
+                <img src="webimg/sukunavsgojo.avif" width="50" height="50" loading="lazy" alt="Kullanıcı Avatarı"
+                  style="object-fit: cover;" type="image/avif" />
                 <div class="text">
                   <div class="title text-break">
                     Sukuna
@@ -396,10 +444,12 @@
                   </div>
                 </div>
                 <span class="position-absolute top-0 end-0 p-1 bg-danger rounded-circle">
-                  <span class="visually-hidden">New alerts</span>
+                  <span class="visually-hidden">Yeni bildirim</span>
                 </span>
               </a>
+
             </div>
+
             <button class="clear w-100">
               Bildirimleri Temizle
             </button>
@@ -483,8 +533,9 @@
       </div>
     </div>
     <div class="animeler">
-      <a href="detail.html" class="anime">
-        <img src="webimg/sololevelingposter.jpg">
+      <a href="detail.html" class="anime" aria-label="Guild no Uketsukejou desu ga - Detaylar">
+        <img src="webimg/sololevelingposter.avif" alt="Guild no Uketsukejou desu ga Anime Posteri" width="200" height="300"
+          fetchpriority="high" decoding="async" style="object-fit: cover;">
         <div class="score">
           <div class="mal">
             MAL 9.9
@@ -494,27 +545,27 @@
           </div>
         </div>
         <div class="text">
-          <div class="title">
+          <h3 class="title" style="font-size: inherit; font-weight: inherit; margin: 0;">
             Guild no Uketsukejou desu ga, Zangyou wa Iya nanode Boss wo Solo Toubatsu Shiyou to Omoimasu
-          </div>
-          <div class="year">
+          </h3>
+          <time class="year" datetime="2024">
             2024
-          </div>
+          </time>
         </div>
         <div class="detail text-break">
-          <div class="title">
+          <h3 class="title" style="font-weight: bold;">
             Guild no Uketsukejou desu ga, Zangyou wa Iya nanode Boss wo Solo Toubatsu Shiyou to Omoimasu
-          </div>
+          </h3>
           <div class="morename">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-              class="bi bi-braces-asterisk" viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-braces-asterisk"
+              viewBox="0 0 16 16" aria-hidden="true">
               <path fill-rule="evenodd"
                 d="M1.114 8.063V7.9c1.005-.102 1.497-.615 1.497-1.6V4.503c0-1.094.39-1.538 1.354-1.538h.273V2h-.376C2.25 2 1.49 2.759 1.49 4.352v1.524c0 1.094-.376 1.456-1.49 1.456v1.299c1.114 0 1.49.362 1.49 1.456v1.524c0 1.593.759 2.352 2.372 2.352h.376v-.964h-.273c-.964 0-1.354-.444-1.354-1.538V9.663c0-.984-.492-1.497-1.497-1.6M14.886 7.9v.164c-1.005.103-1.497.616-1.497 1.6v1.798c0 1.094-.39 1.538-1.354 1.538h-.273v.964h.376c1.613 0 2.372-.759 2.372-2.352v-1.524c0-1.094.376-1.456 1.49-1.456v-1.3c-1.114 0-1.49-.362-1.49-1.456V4.352C14.51 2.759 13.75 2 12.138 2h-.376v.964h.273c.964 0 1.354.444 1.354 1.538V6.3c0 .984.492 1.497 1.497 1.6M7.5 11.5V9.207l-1.621 1.621-.707-.707L6.792 8.5H4.5v-1h2.293L5.172 5.879l.707-.707L7.5 6.792V4.5h1v2.293l1.621-1.621.707.707L9.208 7.5H11.5v1H9.207l1.621 1.621-.707.707L8.5 9.208V11.5z" />
             </svg> Diğer Ad: Ore dake Level Up na Ken
           </div>
           <div class="sezon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-              class="bi bi-collection-play" viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-collection-play"
+              viewBox="0 0 16 16" aria-hidden="true">
               <path
                 d="M2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3m2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1m2.765 5.576A.5.5 0 0 0 6 7v5a.5.5 0 0 0 .765.424l4-2.5a.5.5 0 0 0 0-.848z" />
               <path
@@ -523,7 +574,7 @@
           </div>
           <div class="bolum">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle"
-              viewBox="0 0 16 16">
+              viewBox="0 0 16 16" aria-hidden="true">
               <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
               <path
                 d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445" />
@@ -531,16 +582,16 @@
           </div>
           <div class="date">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar"
-              viewBox="0 0 16 16">
+              viewBox="0 0 16 16" aria-hidden="true">
               <path
                 d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
-            </svg> Yayın Yılı: 2024
+            </svg> Yayın Yılı: <time datetime="2024">2024</time>
           </div>
           <div class="kategori">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-ticket"
-              viewBox="0 0 16 16">
+              viewBox="0 0 16 16" aria-hidden="true">
               <path
-                d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6zM1.5 4a.5.5 0 0 0-.5.5v1.05a2.5 2.5 0 0 1 0 4.9v1.05a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-1.05a2.5 2.5 0 0 1 0-4.9V4.5a.5.5 0 0 0-.5-.5z" />
+                d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6zM1.5 4a.5.5 0 0 0-.5.5v1.05a2.5 2.5 0 0 1 0 4.9v1.05a.5.5 0 0 0 .5-.5h13a.5.5 0 0 0 .5-.5v-1.05a2.5 2.5 0 0 1 0-4.9V4.5a.5.5 0 0 0-.5-.5z" />
             </svg> Tür: Shounen, Demantia, Aksiyon
           </div>
           <div class="malandimdb">
@@ -551,15 +602,15 @@
               IMDb 9.9
             </div>
           </div>
-
-          <div class="des">
+          <p class="des" style="margin: 0;">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque molestias harum natus eius consequatur.
             Quia commodi magnam ut libero fugiat!
-          </div>
+          </p>
         </div>
       </a>
-      <a href="detail.html" class="anime">
-        <img src="webimg/sololevelingposter.jpg">
+      <a href="detail.html" class="anime" aria-label="Guild no Uketsukejou desu ga - Detaylar">
+        <img src="webimg/sololevelingposter.avif" alt="Guild no Uketsukejou desu ga Anime Posteri" width="200" height="300"
+          fetchpriority="high" decoding="async" style="object-fit: cover;">
         <div class="score">
           <div class="mal">
             MAL 9.9
@@ -569,27 +620,27 @@
           </div>
         </div>
         <div class="text">
-          <div class="title">
-            Solo Leveling
-          </div>
-          <div class="year">
+          <h3 class="title" style="font-size: inherit; font-weight: inherit; margin: 0;">
+            Guild no Uketsukejou desu ga, Zangyou wa Iya nanode Boss wo Solo Toubatsu Shiyou to Omoimasu
+          </h3>
+          <time class="year" datetime="2024">
             2024
-          </div>
+          </time>
         </div>
         <div class="detail text-break">
-          <div class="title">
-            Solo Leveling
-          </div>
+          <h3 class="title" style="font-weight: bold;">
+            Guild no Uketsukejou desu ga
+          </h3>
           <div class="morename">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-              class="bi bi-braces-asterisk" viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-braces-asterisk"
+              viewBox="0 0 16 16" aria-hidden="true">
               <path fill-rule="evenodd"
                 d="M1.114 8.063V7.9c1.005-.102 1.497-.615 1.497-1.6V4.503c0-1.094.39-1.538 1.354-1.538h.273V2h-.376C2.25 2 1.49 2.759 1.49 4.352v1.524c0 1.094-.376 1.456-1.49 1.456v1.299c1.114 0 1.49.362 1.49 1.456v1.524c0 1.593.759 2.352 2.372 2.352h.376v-.964h-.273c-.964 0-1.354-.444-1.354-1.538V9.663c0-.984-.492-1.497-1.497-1.6M14.886 7.9v.164c-1.005.103-1.497.616-1.497 1.6v1.798c0 1.094-.39 1.538-1.354 1.538h-.273v.964h.376c1.613 0 2.372-.759 2.372-2.352v-1.524c0-1.094.376-1.456 1.49-1.456v-1.3c-1.114 0-1.49-.362-1.49-1.456V4.352C14.51 2.759 13.75 2 12.138 2h-.376v.964h.273c.964 0 1.354.444 1.354 1.538V6.3c0 .984.492 1.497 1.497 1.6M7.5 11.5V9.207l-1.621 1.621-.707-.707L6.792 8.5H4.5v-1h2.293L5.172 5.879l.707-.707L7.5 6.792V4.5h1v2.293l1.621-1.621.707.707L9.208 7.5H11.5v1H9.207l1.621 1.621-.707.707L8.5 9.208V11.5z" />
             </svg> Diğer Ad: Ore dake Level Up na Ken
           </div>
           <div class="sezon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-              class="bi bi-collection-play" viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-collection-play"
+              viewBox="0 0 16 16" aria-hidden="true">
               <path
                 d="M2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3m2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1m2.765 5.576A.5.5 0 0 0 6 7v5a.5.5 0 0 0 .765.424l4-2.5a.5.5 0 0 0 0-.848z" />
               <path
@@ -598,7 +649,7 @@
           </div>
           <div class="bolum">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle"
-              viewBox="0 0 16 16">
+              viewBox="0 0 16 16" aria-hidden="true">
               <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
               <path
                 d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445" />
@@ -606,16 +657,16 @@
           </div>
           <div class="date">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar"
-              viewBox="0 0 16 16">
+              viewBox="0 0 16 16" aria-hidden="true">
               <path
                 d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
-            </svg> Yayın Yılı: 2024
+            </svg> Yayın Yılı: <time datetime="2024">2024</time>
           </div>
           <div class="kategori">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-ticket"
-              viewBox="0 0 16 16">
+              viewBox="0 0 16 16" aria-hidden="true">
               <path
-                d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6zM1.5 4a.5.5 0 0 0-.5.5v1.05a2.5 2.5 0 0 1 0 4.9v1.05a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-1.05a2.5 2.5 0 0 1 0-4.9V4.5a.5.5 0 0 0-.5-.5z" />
+                d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6zM1.5 4a.5.5 0 0 0-.5.5v1.05a2.5 2.5 0 0 1 0 4.9v1.05a.5.5 0 0 0 .5-.5h13a.5.5 0 0 0 .5-.5v-1.05a2.5 2.5 0 0 1 0-4.9V4.5a.5.5 0 0 0-.5-.5z" />
             </svg> Tür: Shounen, Demantia, Aksiyon
           </div>
           <div class="malandimdb">
@@ -626,15 +677,15 @@
               IMDb 9.9
             </div>
           </div>
-
-          <div class="des">
+          <p class="des" style="margin: 0;">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque molestias harum natus eius consequatur.
             Quia commodi magnam ut libero fugiat!
-          </div>
+          </p>
         </div>
       </a>
-      <a href="detail.html" class="anime">
-        <img src="webimg/sololevelingposter.jpg">
+      <a href="detail.html" class="anime" aria-label="Guild no Uketsukejou desu ga - Detaylar">
+        <img src="webimg/sololevelingposter.avif" alt="Guild no Uketsukejou desu ga Anime Posteri" width="200" height="300"
+          fetchpriority="high" decoding="async" style="object-fit: cover;">
         <div class="score">
           <div class="mal">
             MAL 9.9
@@ -644,27 +695,27 @@
           </div>
         </div>
         <div class="text">
-          <div class="title">
-            Solo Leveling
-          </div>
-          <div class="year">
+          <h3 class="title" style="font-size: inherit; font-weight: inherit; margin: 0;">
+            Guild no Uketsukejou desu ga, Zangyou wa Iya nanode Boss wo Solo Toubatsu Shiyou to Omoimasu
+          </h3>
+          <time class="year" datetime="2024">
             2024
-          </div>
+          </time>
         </div>
         <div class="detail text-break">
-          <div class="title">
-            Solo Leveling
-          </div>
+          <h3 class="title" style="font-weight: bold;">
+            Guild no Uketsukejou desu ga
+          </h3>
           <div class="morename">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-              class="bi bi-braces-asterisk" viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-braces-asterisk"
+              viewBox="0 0 16 16" aria-hidden="true">
               <path fill-rule="evenodd"
                 d="M1.114 8.063V7.9c1.005-.102 1.497-.615 1.497-1.6V4.503c0-1.094.39-1.538 1.354-1.538h.273V2h-.376C2.25 2 1.49 2.759 1.49 4.352v1.524c0 1.094-.376 1.456-1.49 1.456v1.299c1.114 0 1.49.362 1.49 1.456v1.524c0 1.593.759 2.352 2.372 2.352h.376v-.964h-.273c-.964 0-1.354-.444-1.354-1.538V9.663c0-.984-.492-1.497-1.497-1.6M14.886 7.9v.164c-1.005.103-1.497.616-1.497 1.6v1.798c0 1.094-.39 1.538-1.354 1.538h-.273v.964h.376c1.613 0 2.372-.759 2.372-2.352v-1.524c0-1.094.376-1.456 1.49-1.456v-1.3c-1.114 0-1.49-.362-1.49-1.456V4.352C14.51 2.759 13.75 2 12.138 2h-.376v.964h.273c.964 0 1.354.444 1.354 1.538V6.3c0 .984.492 1.497 1.497 1.6M7.5 11.5V9.207l-1.621 1.621-.707-.707L6.792 8.5H4.5v-1h2.293L5.172 5.879l.707-.707L7.5 6.792V4.5h1v2.293l1.621-1.621.707.707L9.208 7.5H11.5v1H9.207l1.621 1.621-.707.707L8.5 9.208V11.5z" />
             </svg> Diğer Ad: Ore dake Level Up na Ken
           </div>
           <div class="sezon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-              class="bi bi-collection-play" viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-collection-play"
+              viewBox="0 0 16 16" aria-hidden="true">
               <path
                 d="M2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3m2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1m2.765 5.576A.5.5 0 0 0 6 7v5a.5.5 0 0 0 .765.424l4-2.5a.5.5 0 0 0 0-.848z" />
               <path
@@ -673,7 +724,7 @@
           </div>
           <div class="bolum">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle"
-              viewBox="0 0 16 16">
+              viewBox="0 0 16 16" aria-hidden="true">
               <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
               <path
                 d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445" />
@@ -681,16 +732,16 @@
           </div>
           <div class="date">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar"
-              viewBox="0 0 16 16">
+              viewBox="0 0 16 16" aria-hidden="true">
               <path
                 d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
-            </svg> Yayın Yılı: 2024
+            </svg> Yayın Yılı: <time datetime="2024">2024</time>
           </div>
           <div class="kategori">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-ticket"
-              viewBox="0 0 16 16">
+              viewBox="0 0 16 16" aria-hidden="true">
               <path
-                d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6zM1.5 4a.5.5 0 0 0-.5.5v1.05a2.5 2.5 0 0 1 0 4.9v1.05a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-1.05a2.5 2.5 0 0 1 0-4.9V4.5a.5.5 0 0 0-.5-.5z" />
+                d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6zM1.5 4a.5.5 0 0 0-.5.5v1.05a2.5 2.5 0 0 1 0 4.9v1.05a.5.5 0 0 0 .5-.5h13a.5.5 0 0 0 .5-.5v-1.05a2.5 2.5 0 0 1 0-4.9V4.5a.5.5 0 0 0-.5-.5z" />
             </svg> Tür: Shounen, Demantia, Aksiyon
           </div>
           <div class="malandimdb">
@@ -701,15 +752,15 @@
               IMDb 9.9
             </div>
           </div>
-
-          <div class="des">
+          <p class="des" style="margin: 0;">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque molestias harum natus eius consequatur.
             Quia commodi magnam ut libero fugiat!
-          </div>
+          </p>
         </div>
       </a>
-      <a href="detail.html" class="anime">
-        <img src="webimg/sololevelingposter.jpg">
+      <a href="detail.html" class="anime" aria-label="Guild no Uketsukejou desu ga - Detaylar">
+        <img src="webimg/sololevelingposter.avif" alt="Guild no Uketsukejou desu ga Anime Posteri" width="200" height="300"
+          fetchpriority="high" decoding="async" style="object-fit: cover;">
         <div class="score">
           <div class="mal">
             MAL 9.9
@@ -719,27 +770,27 @@
           </div>
         </div>
         <div class="text">
-          <div class="title">
-            Solo Leveling
-          </div>
-          <div class="year">
+          <h3 class="title" style="font-size: inherit; font-weight: inherit; margin: 0;">
+            Guild no Uketsukejou desu ga, Zangyou wa Iya nanode Boss wo Solo Toubatsu Shiyou to Omoimasu
+          </h3>
+          <time class="year" datetime="2024">
             2024
-          </div>
+          </time>
         </div>
         <div class="detail text-break">
-          <div class="title">
-            Solo Leveling
-          </div>
+          <h3 class="title" style="font-weight: bold;">
+            Guild no Uketsukejou desu ga
+          </h3>
           <div class="morename">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-              class="bi bi-braces-asterisk" viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-braces-asterisk"
+              viewBox="0 0 16 16" aria-hidden="true">
               <path fill-rule="evenodd"
                 d="M1.114 8.063V7.9c1.005-.102 1.497-.615 1.497-1.6V4.503c0-1.094.39-1.538 1.354-1.538h.273V2h-.376C2.25 2 1.49 2.759 1.49 4.352v1.524c0 1.094-.376 1.456-1.49 1.456v1.299c1.114 0 1.49.362 1.49 1.456v1.524c0 1.593.759 2.352 2.372 2.352h.376v-.964h-.273c-.964 0-1.354-.444-1.354-1.538V9.663c0-.984-.492-1.497-1.497-1.6M14.886 7.9v.164c-1.005.103-1.497.616-1.497 1.6v1.798c0 1.094-.39 1.538-1.354 1.538h-.273v.964h.376c1.613 0 2.372-.759 2.372-2.352v-1.524c0-1.094.376-1.456 1.49-1.456v-1.3c-1.114 0-1.49-.362-1.49-1.456V4.352C14.51 2.759 13.75 2 12.138 2h-.376v.964h.273c.964 0 1.354.444 1.354 1.538V6.3c0 .984.492 1.497 1.497 1.6M7.5 11.5V9.207l-1.621 1.621-.707-.707L6.792 8.5H4.5v-1h2.293L5.172 5.879l.707-.707L7.5 6.792V4.5h1v2.293l1.621-1.621.707.707L9.208 7.5H11.5v1H9.207l1.621 1.621-.707.707L8.5 9.208V11.5z" />
             </svg> Diğer Ad: Ore dake Level Up na Ken
           </div>
           <div class="sezon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-              class="bi bi-collection-play" viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-collection-play"
+              viewBox="0 0 16 16" aria-hidden="true">
               <path
                 d="M2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3m2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1m2.765 5.576A.5.5 0 0 0 6 7v5a.5.5 0 0 0 .765.424l4-2.5a.5.5 0 0 0 0-.848z" />
               <path
@@ -748,7 +799,7 @@
           </div>
           <div class="bolum">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle"
-              viewBox="0 0 16 16">
+              viewBox="0 0 16 16" aria-hidden="true">
               <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
               <path
                 d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445" />
@@ -756,16 +807,16 @@
           </div>
           <div class="date">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar"
-              viewBox="0 0 16 16">
+              viewBox="0 0 16 16" aria-hidden="true">
               <path
                 d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
-            </svg> Yayın Yılı: 2024
+            </svg> Yayın Yılı: <time datetime="2024">2024</time>
           </div>
           <div class="kategori">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-ticket"
-              viewBox="0 0 16 16">
+              viewBox="0 0 16 16" aria-hidden="true">
               <path
-                d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6zM1.5 4a.5.5 0 0 0-.5.5v1.05a2.5 2.5 0 0 1 0 4.9v1.05a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-1.05a2.5 2.5 0 0 1 0-4.9V4.5a.5.5 0 0 0-.5-.5z" />
+                d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6zM1.5 4a.5.5 0 0 0-.5.5v1.05a2.5 2.5 0 0 1 0 4.9v1.05a.5.5 0 0 0 .5-.5h13a.5.5 0 0 0 .5-.5v-1.05a2.5 2.5 0 0 1 0-4.9V4.5a.5.5 0 0 0-.5-.5z" />
             </svg> Tür: Shounen, Demantia, Aksiyon
           </div>
           <div class="malandimdb">
@@ -776,14 +827,15 @@
               IMDb 9.9
             </div>
           </div>
-          <div class="des">
+          <p class="des" style="margin: 0;">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque molestias harum natus eius consequatur.
             Quia commodi magnam ut libero fugiat!
-          </div>
+          </p>
         </div>
       </a>
-      <a href="detail.html" class="anime">
-        <img src="webimg/sololevelingposter.jpg">
+      <a href="detail.html" class="anime" aria-label="Guild no Uketsukejou desu ga - Detaylar">
+        <img src="webimg/sololevelingposter.avif" alt="Guild no Uketsukejou desu ga Anime Posteri" width="200" height="300"
+          fetchpriority="high" decoding="async" style="object-fit: cover;">
         <div class="score">
           <div class="mal">
             MAL 9.9
@@ -793,27 +845,27 @@
           </div>
         </div>
         <div class="text">
-          <div class="title">
-            Solo Leveling
-          </div>
-          <div class="year">
+          <h3 class="title" style="font-size: inherit; font-weight: inherit; margin: 0;">
+            Guild no Uketsukejou desu ga, Zangyou wa Iya nanode Boss wo Solo Toubatsu Shiyou to Omoimasu
+          </h3>
+          <time class="year" datetime="2024">
             2024
-          </div>
+          </time>
         </div>
         <div class="detail text-break">
-          <div class="title">
-            Solo Leveling
-          </div>
+          <h3 class="title" style="font-weight: bold;">
+            Guild no Uketsukejou desu ga
+          </h3>
           <div class="morename">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-              class="bi bi-braces-asterisk" viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-braces-asterisk"
+              viewBox="0 0 16 16" aria-hidden="true">
               <path fill-rule="evenodd"
                 d="M1.114 8.063V7.9c1.005-.102 1.497-.615 1.497-1.6V4.503c0-1.094.39-1.538 1.354-1.538h.273V2h-.376C2.25 2 1.49 2.759 1.49 4.352v1.524c0 1.094-.376 1.456-1.49 1.456v1.299c1.114 0 1.49.362 1.49 1.456v1.524c0 1.593.759 2.352 2.372 2.352h.376v-.964h-.273c-.964 0-1.354-.444-1.354-1.538V9.663c0-.984-.492-1.497-1.497-1.6M14.886 7.9v.164c-1.005.103-1.497.616-1.497 1.6v1.798c0 1.094-.39 1.538-1.354 1.538h-.273v.964h.376c1.613 0 2.372-.759 2.372-2.352v-1.524c0-1.094.376-1.456 1.49-1.456v-1.3c-1.114 0-1.49-.362-1.49-1.456V4.352C14.51 2.759 13.75 2 12.138 2h-.376v.964h.273c.964 0 1.354.444 1.354 1.538V6.3c0 .984.492 1.497 1.497 1.6M7.5 11.5V9.207l-1.621 1.621-.707-.707L6.792 8.5H4.5v-1h2.293L5.172 5.879l.707-.707L7.5 6.792V4.5h1v2.293l1.621-1.621.707.707L9.208 7.5H11.5v1H9.207l1.621 1.621-.707.707L8.5 9.208V11.5z" />
             </svg> Diğer Ad: Ore dake Level Up na Ken
           </div>
           <div class="sezon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-              class="bi bi-collection-play" viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-collection-play"
+              viewBox="0 0 16 16" aria-hidden="true">
               <path
                 d="M2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3m2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1m2.765 5.576A.5.5 0 0 0 6 7v5a.5.5 0 0 0 .765.424l4-2.5a.5.5 0 0 0 0-.848z" />
               <path
@@ -822,7 +874,7 @@
           </div>
           <div class="bolum">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle"
-              viewBox="0 0 16 16">
+              viewBox="0 0 16 16" aria-hidden="true">
               <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
               <path
                 d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445" />
@@ -830,16 +882,16 @@
           </div>
           <div class="date">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar"
-              viewBox="0 0 16 16">
+              viewBox="0 0 16 16" aria-hidden="true">
               <path
                 d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
-            </svg> Yayın Yılı: 2024
+            </svg> Yayın Yılı: <time datetime="2024">2024</time>
           </div>
           <div class="kategori">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-ticket"
-              viewBox="0 0 16 16">
+              viewBox="0 0 16 16" aria-hidden="true">
               <path
-                d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6zM1.5 4a.5.5 0 0 0-.5.5v1.05a2.5 2.5 0 0 1 0 4.9v1.05a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-1.05a2.5 2.5 0 0 1 0-4.9V4.5a.5.5 0 0 0-.5-.5z" />
+                d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6zM1.5 4a.5.5 0 0 0-.5.5v1.05a2.5 2.5 0 0 1 0 4.9v1.05a.5.5 0 0 0 .5-.5h13a.5.5 0 0 0 .5-.5v-1.05a2.5 2.5 0 0 1 0-4.9V4.5a.5.5 0 0 0-.5-.5z" />
             </svg> Tür: Shounen, Demantia, Aksiyon
           </div>
           <div class="malandimdb">
@@ -850,15 +902,15 @@
               IMDb 9.9
             </div>
           </div>
-
-          <div class="des">
+          <p class="des" style="margin: 0;">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque molestias harum natus eius consequatur.
             Quia commodi magnam ut libero fugiat!
-          </div>
+          </p>
         </div>
       </a>
-      <a href="detail.html" class="anime">
-        <img src="webimg/sololevelingposter.jpg">
+      <a href="detail.html" class="anime" aria-label="Guild no Uketsukejou desu ga - Detaylar">
+        <img src="webimg/sololevelingposter.avif" alt="Guild no Uketsukejou desu ga Anime Posteri" width="200" height="300"
+          fetchpriority="high" decoding="async" style="object-fit: cover;">
         <div class="score">
           <div class="mal">
             MAL 9.9
@@ -868,27 +920,27 @@
           </div>
         </div>
         <div class="text">
-          <div class="title">
-            Solo Leveling
-          </div>
-          <div class="year">
+          <h3 class="title" style="font-size: inherit; font-weight: inherit; margin: 0;">
+            Guild no Uketsukejou desu ga
+          </h3>
+          <time class="year" datetime="2024">
             2024
-          </div>
+          </time>
         </div>
         <div class="detail text-break">
-          <div class="title">
-            Solo Leveling
-          </div>
+          <h3 class="title" style="font-weight: bold;">
+            Guild no Uketsukejou desu ga, Zangyou wa Iya nanode Boss wo Solo Toubatsu Shiyou to Omoimasu
+          </h3>
           <div class="morename">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-              class="bi bi-braces-asterisk" viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-braces-asterisk"
+              viewBox="0 0 16 16" aria-hidden="true">
               <path fill-rule="evenodd"
                 d="M1.114 8.063V7.9c1.005-.102 1.497-.615 1.497-1.6V4.503c0-1.094.39-1.538 1.354-1.538h.273V2h-.376C2.25 2 1.49 2.759 1.49 4.352v1.524c0 1.094-.376 1.456-1.49 1.456v1.299c1.114 0 1.49.362 1.49 1.456v1.524c0 1.593.759 2.352 2.372 2.352h.376v-.964h-.273c-.964 0-1.354-.444-1.354-1.538V9.663c0-.984-.492-1.497-1.497-1.6M14.886 7.9v.164c-1.005.103-1.497.616-1.497 1.6v1.798c0 1.094-.39 1.538-1.354 1.538h-.273v.964h.376c1.613 0 2.372-.759 2.372-2.352v-1.524c0-1.094.376-1.456 1.49-1.456v-1.3c-1.114 0-1.49-.362-1.49-1.456V4.352C14.51 2.759 13.75 2 12.138 2h-.376v.964h.273c.964 0 1.354.444 1.354 1.538V6.3c0 .984.492 1.497 1.497 1.6M7.5 11.5V9.207l-1.621 1.621-.707-.707L6.792 8.5H4.5v-1h2.293L5.172 5.879l.707-.707L7.5 6.792V4.5h1v2.293l1.621-1.621.707.707L9.208 7.5H11.5v1H9.207l1.621 1.621-.707.707L8.5 9.208V11.5z" />
             </svg> Diğer Ad: Ore dake Level Up na Ken
           </div>
           <div class="sezon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-              class="bi bi-collection-play" viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-collection-play"
+              viewBox="0 0 16 16" aria-hidden="true">
               <path
                 d="M2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3m2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1m2.765 5.576A.5.5 0 0 0 6 7v5a.5.5 0 0 0 .765.424l4-2.5a.5.5 0 0 0 0-.848z" />
               <path
@@ -897,7 +949,7 @@
           </div>
           <div class="bolum">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle"
-              viewBox="0 0 16 16">
+              viewBox="0 0 16 16" aria-hidden="true">
               <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
               <path
                 d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445" />
@@ -905,16 +957,16 @@
           </div>
           <div class="date">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar"
-              viewBox="0 0 16 16">
+              viewBox="0 0 16 16" aria-hidden="true">
               <path
                 d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
-            </svg> Yayın Yılı: 2024
+            </svg> Yayın Yılı: <time datetime="2024">2024</time>
           </div>
           <div class="kategori">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-ticket"
-              viewBox="0 0 16 16">
+              viewBox="0 0 16 16" aria-hidden="true">
               <path
-                d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6zM1.5 4a.5.5 0 0 0-.5.5v1.05a2.5 2.5 0 0 1 0 4.9v1.05a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-1.05a2.5 2.5 0 0 1 0-4.9V4.5a.5.5 0 0 0-.5-.5z" />
+                d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6zM1.5 4a.5.5 0 0 0-.5.5v1.05a2.5 2.5 0 0 1 0 4.9v1.05a.5.5 0 0 0 .5-.5h13a.5.5 0 0 0 .5-.5v-1.05a2.5 2.5 0 0 1 0-4.9V4.5a.5.5 0 0 0-.5-.5z" />
             </svg> Tür: Shounen, Demantia, Aksiyon
           </div>
           <div class="malandimdb">
@@ -925,15 +977,15 @@
               IMDb 9.9
             </div>
           </div>
-
-          <div class="des">
+          <p class="des" style="margin: 0;">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque molestias harum natus eius consequatur.
             Quia commodi magnam ut libero fugiat!
-          </div>
+          </p>
         </div>
       </a>
-      <a href="detail.html" class="anime">
-        <img src="webimg/sololevelingposter.jpg">
+      <a href="detail.html" class="anime" aria-label="Guild no Uketsukejou desu ga - Detaylar">
+        <img src="webimg/sololevelingposter.avif" alt="Guild no Uketsukejou desu ga Anime Posteri" width="200" height="300"
+          fetchpriority="high" decoding="async" style="object-fit: cover;">
         <div class="score">
           <div class="mal">
             MAL 9.9
@@ -943,27 +995,27 @@
           </div>
         </div>
         <div class="text">
-          <div class="title">
-            Solo Leveling
-          </div>
-          <div class="year">
+          <h3 class="title" style="font-size: inherit; font-weight: inherit; margin: 0;">
+            Guild no Uketsukejou desu ga
+          </h3>
+          <time class="year" datetime="2024">
             2024
-          </div>
+          </time>
         </div>
         <div class="detail text-break">
-          <div class="title">
-            Solo Leveling
-          </div>
+          <h3 class="title" style="font-weight: bold;">
+            Guild no Uketsukejou desu ga, Zangyou wa Iya nanode Boss wo Solo Toubatsu Shiyou to Omoimasu
+          </h3>
           <div class="morename">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-              class="bi bi-braces-asterisk" viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-braces-asterisk"
+              viewBox="0 0 16 16" aria-hidden="true">
               <path fill-rule="evenodd"
                 d="M1.114 8.063V7.9c1.005-.102 1.497-.615 1.497-1.6V4.503c0-1.094.39-1.538 1.354-1.538h.273V2h-.376C2.25 2 1.49 2.759 1.49 4.352v1.524c0 1.094-.376 1.456-1.49 1.456v1.299c1.114 0 1.49.362 1.49 1.456v1.524c0 1.593.759 2.352 2.372 2.352h.376v-.964h-.273c-.964 0-1.354-.444-1.354-1.538V9.663c0-.984-.492-1.497-1.497-1.6M14.886 7.9v.164c-1.005.103-1.497.616-1.497 1.6v1.798c0 1.094-.39 1.538-1.354 1.538h-.273v.964h.376c1.613 0 2.372-.759 2.372-2.352v-1.524c0-1.094.376-1.456 1.49-1.456v-1.3c-1.114 0-1.49-.362-1.49-1.456V4.352C14.51 2.759 13.75 2 12.138 2h-.376v.964h.273c.964 0 1.354.444 1.354 1.538V6.3c0 .984.492 1.497 1.497 1.6M7.5 11.5V9.207l-1.621 1.621-.707-.707L6.792 8.5H4.5v-1h2.293L5.172 5.879l.707-.707L7.5 6.792V4.5h1v2.293l1.621-1.621.707.707L9.208 7.5H11.5v1H9.207l1.621 1.621-.707.707L8.5 9.208V11.5z" />
             </svg> Diğer Ad: Ore dake Level Up na Ken
           </div>
           <div class="sezon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-              class="bi bi-collection-play" viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-collection-play"
+              viewBox="0 0 16 16" aria-hidden="true">
               <path
                 d="M2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3m2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1m2.765 5.576A.5.5 0 0 0 6 7v5a.5.5 0 0 0 .765.424l4-2.5a.5.5 0 0 0 0-.848z" />
               <path
@@ -972,7 +1024,7 @@
           </div>
           <div class="bolum">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle"
-              viewBox="0 0 16 16">
+              viewBox="0 0 16 16" aria-hidden="true">
               <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
               <path
                 d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445" />
@@ -980,16 +1032,16 @@
           </div>
           <div class="date">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar"
-              viewBox="0 0 16 16">
+              viewBox="0 0 16 16" aria-hidden="true">
               <path
                 d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
-            </svg> Yayın Yılı: 2024
+            </svg> Yayın Yılı: <time datetime="2024">2024</time>
           </div>
           <div class="kategori">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-ticket"
-              viewBox="0 0 16 16">
+              viewBox="0 0 16 16" aria-hidden="true">
               <path
-                d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6zM1.5 4a.5.5 0 0 0-.5.5v1.05a2.5 2.5 0 0 1 0 4.9v1.05a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-1.05a2.5 2.5 0 0 1 0-4.9V4.5a.5.5 0 0 0-.5-.5z" />
+                d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6zM1.5 4a.5.5 0 0 0-.5.5v1.05a2.5 2.5 0 0 1 0 4.9v1.05a.5.5 0 0 0 .5-.5h13a.5.5 0 0 0 .5-.5v-1.05a2.5 2.5 0 0 1 0-4.9V4.5a.5.5 0 0 0-.5-.5z" />
             </svg> Tür: Shounen, Demantia, Aksiyon
           </div>
           <div class="malandimdb">
@@ -1000,15 +1052,15 @@
               IMDb 9.9
             </div>
           </div>
-
-          <div class="des">
+          <p class="des" style="margin: 0;">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque molestias harum natus eius consequatur.
             Quia commodi magnam ut libero fugiat!
-          </div>
+          </p>
         </div>
       </a>
-      <a href="detail.html" class="anime">
-        <img src="webimg/sololevelingposter.jpg">
+      <a href="detail.html" class="anime" aria-label="Guild no Uketsukejou desu ga - Detaylar">
+        <img src="webimg/sololevelingposter.avif" alt="Guild no Uketsukejou desu ga Anime Posteri" width="200" height="300"
+          fetchpriority="high" decoding="async" style="object-fit: cover;">
         <div class="score">
           <div class="mal">
             MAL 9.9
@@ -1018,27 +1070,27 @@
           </div>
         </div>
         <div class="text">
-          <div class="title">
-            Solo Leveling
-          </div>
-          <div class="year">
+          <h3 class="title" style="font-size: inherit; font-weight: inherit; margin: 0;">
+            Guild no Uketsukejou desu ga, Zangyou wa Iya nanode Boss wo Solo Toubatsu Shiyou to Omoimasu
+          </h3>
+          <time class="year" datetime="2024">
             2024
-          </div>
+          </time>
         </div>
         <div class="detail text-break">
-          <div class="title">
-            Solo Leveling
-          </div>
+          <h3 class="title" style="font-weight: bold;">
+            Guild no Uketsukejou desu ga
+          </h3>
           <div class="morename">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-              class="bi bi-braces-asterisk" viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-braces-asterisk"
+              viewBox="0 0 16 16" aria-hidden="true">
               <path fill-rule="evenodd"
                 d="M1.114 8.063V7.9c1.005-.102 1.497-.615 1.497-1.6V4.503c0-1.094.39-1.538 1.354-1.538h.273V2h-.376C2.25 2 1.49 2.759 1.49 4.352v1.524c0 1.094-.376 1.456-1.49 1.456v1.299c1.114 0 1.49.362 1.49 1.456v1.524c0 1.593.759 2.352 2.372 2.352h.376v-.964h-.273c-.964 0-1.354-.444-1.354-1.538V9.663c0-.984-.492-1.497-1.497-1.6M14.886 7.9v.164c-1.005.103-1.497.616-1.497 1.6v1.798c0 1.094-.39 1.538-1.354 1.538h-.273v.964h.376c1.613 0 2.372-.759 2.372-2.352v-1.524c0-1.094.376-1.456 1.49-1.456v-1.3c-1.114 0-1.49-.362-1.49-1.456V4.352C14.51 2.759 13.75 2 12.138 2h-.376v.964h.273c.964 0 1.354.444 1.354 1.538V6.3c0 .984.492 1.497 1.497 1.6M7.5 11.5V9.207l-1.621 1.621-.707-.707L6.792 8.5H4.5v-1h2.293L5.172 5.879l.707-.707L7.5 6.792V4.5h1v2.293l1.621-1.621.707.707L9.208 7.5H11.5v1H9.207l1.621 1.621-.707.707L8.5 9.208V11.5z" />
             </svg> Diğer Ad: Ore dake Level Up na Ken
           </div>
           <div class="sezon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-              class="bi bi-collection-play" viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-collection-play"
+              viewBox="0 0 16 16" aria-hidden="true">
               <path
                 d="M2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3m2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1m2.765 5.576A.5.5 0 0 0 6 7v5a.5.5 0 0 0 .765.424l4-2.5a.5.5 0 0 0 0-.848z" />
               <path
@@ -1047,7 +1099,7 @@
           </div>
           <div class="bolum">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle"
-              viewBox="0 0 16 16">
+              viewBox="0 0 16 16" aria-hidden="true">
               <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
               <path
                 d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445" />
@@ -1055,16 +1107,16 @@
           </div>
           <div class="date">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar"
-              viewBox="0 0 16 16">
+              viewBox="0 0 16 16" aria-hidden="true">
               <path
                 d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
-            </svg> Yayın Yılı: 2024
+            </svg> Yayın Yılı: <time datetime="2024">2024</time>
           </div>
           <div class="kategori">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-ticket"
-              viewBox="0 0 16 16">
+              viewBox="0 0 16 16" aria-hidden="true">
               <path
-                d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6zM1.5 4a.5.5 0 0 0-.5.5v1.05a2.5 2.5 0 0 1 0 4.9v1.05a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-1.05a2.5 2.5 0 0 1 0-4.9V4.5a.5.5 0 0 0-.5-.5z" />
+                d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6zM1.5 4a.5.5 0 0 0-.5.5v1.05a2.5 2.5 0 0 1 0 4.9v1.05a.5.5 0 0 0 .5-.5h13a.5.5 0 0 0 .5-.5v-1.05a2.5 2.5 0 0 1 0-4.9V4.5a.5.5 0 0 0-.5-.5z" />
             </svg> Tür: Shounen, Demantia, Aksiyon
           </div>
           <div class="malandimdb">
@@ -1075,15 +1127,15 @@
               IMDb 9.9
             </div>
           </div>
-
-          <div class="des">
+          <p class="des" style="margin: 0;">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque molestias harum natus eius consequatur.
             Quia commodi magnam ut libero fugiat!
-          </div>
+          </p>
         </div>
       </a>
-      <a href="detail.html" class="anime">
-        <img src="webimg/sololevelingposter.jpg">
+      <a href="detail.html" class="anime" aria-label="Guild no Uketsukejou desu ga - Detaylar">
+        <img src="webimg/sololevelingposter.avif" alt="Guild no Uketsukejou desu ga Anime Posteri" width="200" height="300"
+          fetchpriority="high" decoding="async" style="object-fit: cover;">
         <div class="score">
           <div class="mal">
             MAL 9.9
@@ -1093,27 +1145,27 @@
           </div>
         </div>
         <div class="text">
-          <div class="title">
-            Solo Leveling
-          </div>
-          <div class="year">
+          <h3 class="title" style="font-size: inherit; font-weight: inherit; margin: 0;">
+            Guild no Uketsukejou desu ga, Zangyou wa Iya nanode Boss wo Solo Toubatsu Shiyou to Omoimasu
+          </h3>
+          <time class="year" datetime="2024">
             2024
-          </div>
+          </time>
         </div>
         <div class="detail text-break">
-          <div class="title">
-            Solo Leveling
-          </div>
+          <h3 class="title" style="font-weight: bold;">
+            Guild no Uketsukejou desu ga
+          </h3>
           <div class="morename">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-              class="bi bi-braces-asterisk" viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-braces-asterisk"
+              viewBox="0 0 16 16" aria-hidden="true">
               <path fill-rule="evenodd"
                 d="M1.114 8.063V7.9c1.005-.102 1.497-.615 1.497-1.6V4.503c0-1.094.39-1.538 1.354-1.538h.273V2h-.376C2.25 2 1.49 2.759 1.49 4.352v1.524c0 1.094-.376 1.456-1.49 1.456v1.299c1.114 0 1.49.362 1.49 1.456v1.524c0 1.593.759 2.352 2.372 2.352h.376v-.964h-.273c-.964 0-1.354-.444-1.354-1.538V9.663c0-.984-.492-1.497-1.497-1.6M14.886 7.9v.164c-1.005.103-1.497.616-1.497 1.6v1.798c0 1.094-.39 1.538-1.354 1.538h-.273v.964h.376c1.613 0 2.372-.759 2.372-2.352v-1.524c0-1.094.376-1.456 1.49-1.456v-1.3c-1.114 0-1.49-.362-1.49-1.456V4.352C14.51 2.759 13.75 2 12.138 2h-.376v.964h.273c.964 0 1.354.444 1.354 1.538V6.3c0 .984.492 1.497 1.497 1.6M7.5 11.5V9.207l-1.621 1.621-.707-.707L6.792 8.5H4.5v-1h2.293L5.172 5.879l.707-.707L7.5 6.792V4.5h1v2.293l1.621-1.621.707.707L9.208 7.5H11.5v1H9.207l1.621 1.621-.707.707L8.5 9.208V11.5z" />
             </svg> Diğer Ad: Ore dake Level Up na Ken
           </div>
           <div class="sezon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-              class="bi bi-collection-play" viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-collection-play"
+              viewBox="0 0 16 16" aria-hidden="true">
               <path
                 d="M2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3m2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1m2.765 5.576A.5.5 0 0 0 6 7v5a.5.5 0 0 0 .765.424l4-2.5a.5.5 0 0 0 0-.848z" />
               <path
@@ -1122,7 +1174,7 @@
           </div>
           <div class="bolum">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle"
-              viewBox="0 0 16 16">
+              viewBox="0 0 16 16" aria-hidden="true">
               <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
               <path
                 d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445" />
@@ -1130,16 +1182,16 @@
           </div>
           <div class="date">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar"
-              viewBox="0 0 16 16">
+              viewBox="0 0 16 16" aria-hidden="true">
               <path
                 d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
-            </svg> Yayın Yılı: 2024
+            </svg> Yayın Yılı: <time datetime="2024">2024</time>
           </div>
           <div class="kategori">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-ticket"
-              viewBox="0 0 16 16">
+              viewBox="0 0 16 16" aria-hidden="true">
               <path
-                d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6zM1.5 4a.5.5 0 0 0-.5.5v1.05a2.5 2.5 0 0 1 0 4.9v1.05a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-1.05a2.5 2.5 0 0 1 0-4.9V4.5a.5.5 0 0 0-.5-.5z" />
+                d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6zM1.5 4a.5.5 0 0 0-.5.5v1.05a2.5 2.5 0 0 1 0 4.9v1.05a.5.5 0 0 0 .5-.5h13a.5.5 0 0 0 .5-.5v-1.05a2.5 2.5 0 0 1 0-4.9V4.5a.5.5 0 0 0-.5-.5z" />
             </svg> Tür: Shounen, Demantia, Aksiyon
           </div>
           <div class="malandimdb">
@@ -1150,15 +1202,15 @@
               IMDb 9.9
             </div>
           </div>
-
-          <div class="des">
+          <p class="des" style="margin: 0;">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque molestias harum natus eius consequatur.
             Quia commodi magnam ut libero fugiat!
-          </div>
+          </p>
         </div>
       </a>
-      <a href="detail.html" class="anime">
-        <img src="webimg/sololevelingposter.jpg">
+      <a href="detail.html" class="anime" aria-label="Guild no Uketsukejou desu ga - Detaylar">
+        <img src="webimg/sololevelingposter.avif" alt="Guild no Uketsukejou desu ga Anime Posteri" width="200" height="300"
+          fetchpriority="high" decoding="async" style="object-fit: cover;">
         <div class="score">
           <div class="mal">
             MAL 9.9
@@ -1168,27 +1220,27 @@
           </div>
         </div>
         <div class="text">
-          <div class="title">
-            Solo Leveling
-          </div>
-          <div class="year">
+          <h3 class="title" style="font-size: inherit; font-weight: inherit; margin: 0;">
+            Guild no Uketsukejou desu ga, Zangyou wa Iya nanode Boss wo Solo Toubatsu Shiyou to Omoimasu
+          </h3>
+          <time class="year" datetime="2024">
             2024
-          </div>
+          </time>
         </div>
         <div class="detail text-break">
-          <div class="title">
-            Solo Leveling
-          </div>
+          <h3 class="title" style="font-weight: bold;">
+            Guild no Uketsukejou desu ga
+          </h3>
           <div class="morename">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-              class="bi bi-braces-asterisk" viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-braces-asterisk"
+              viewBox="0 0 16 16" aria-hidden="true">
               <path fill-rule="evenodd"
                 d="M1.114 8.063V7.9c1.005-.102 1.497-.615 1.497-1.6V4.503c0-1.094.39-1.538 1.354-1.538h.273V2h-.376C2.25 2 1.49 2.759 1.49 4.352v1.524c0 1.094-.376 1.456-1.49 1.456v1.299c1.114 0 1.49.362 1.49 1.456v1.524c0 1.593.759 2.352 2.372 2.352h.376v-.964h-.273c-.964 0-1.354-.444-1.354-1.538V9.663c0-.984-.492-1.497-1.497-1.6M14.886 7.9v.164c-1.005.103-1.497.616-1.497 1.6v1.798c0 1.094-.39 1.538-1.354 1.538h-.273v.964h.376c1.613 0 2.372-.759 2.372-2.352v-1.524c0-1.094.376-1.456 1.49-1.456v-1.3c-1.114 0-1.49-.362-1.49-1.456V4.352C14.51 2.759 13.75 2 12.138 2h-.376v.964h.273c.964 0 1.354.444 1.354 1.538V6.3c0 .984.492 1.497 1.497 1.6M7.5 11.5V9.207l-1.621 1.621-.707-.707L6.792 8.5H4.5v-1h2.293L5.172 5.879l.707-.707L7.5 6.792V4.5h1v2.293l1.621-1.621.707.707L9.208 7.5H11.5v1H9.207l1.621 1.621-.707.707L8.5 9.208V11.5z" />
             </svg> Diğer Ad: Ore dake Level Up na Ken
           </div>
           <div class="sezon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-              class="bi bi-collection-play" viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-collection-play"
+              viewBox="0 0 16 16" aria-hidden="true">
               <path
                 d="M2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3m2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1m2.765 5.576A.5.5 0 0 0 6 7v5a.5.5 0 0 0 .765.424l4-2.5a.5.5 0 0 0 0-.848z" />
               <path
@@ -1197,7 +1249,7 @@
           </div>
           <div class="bolum">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle"
-              viewBox="0 0 16 16">
+              viewBox="0 0 16 16" aria-hidden="true">
               <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
               <path
                 d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445" />
@@ -1205,16 +1257,16 @@
           </div>
           <div class="date">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar"
-              viewBox="0 0 16 16">
+              viewBox="0 0 16 16" aria-hidden="true">
               <path
                 d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
-            </svg> Yayın Yılı: 2024
+            </svg> Yayın Yılı: <time datetime="2024">2024</time>
           </div>
           <div class="kategori">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-ticket"
-              viewBox="0 0 16 16">
+              viewBox="0 0 16 16" aria-hidden="true">
               <path
-                d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6zM1.5 4a.5.5 0 0 0-.5.5v1.05a2.5 2.5 0 0 1 0 4.9v1.05a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-1.05a2.5 2.5 0 0 1 0-4.9V4.5a.5.5 0 0 0-.5-.5z" />
+                d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6zM1.5 4a.5.5 0 0 0-.5.5v1.05a2.5 2.5 0 0 1 0 4.9v1.05a.5.5 0 0 0 .5-.5h13a.5.5 0 0 0 .5-.5v-1.05a2.5 2.5 0 0 1 0-4.9V4.5a.5.5 0 0 0-.5-.5z" />
             </svg> Tür: Shounen, Demantia, Aksiyon
           </div>
           <div class="malandimdb">
@@ -1225,15 +1277,15 @@
               IMDb 9.9
             </div>
           </div>
-
-          <div class="des">
+          <p class="des" style="margin: 0;">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque molestias harum natus eius consequatur.
             Quia commodi magnam ut libero fugiat!
-          </div>
+          </p>
         </div>
       </a>
-      <a href="detail.html" class="anime">
-        <img src="webimg/sololevelingposter.jpg">
+     <a href="detail.html" class="anime" aria-label="Guild no Uketsukejou desu ga - Detaylar">
+        <img src="webimg/sololevelingposter.avif" alt="Guild no Uketsukejou desu ga Anime Posteri" width="200" height="300"
+          fetchpriority="high" decoding="async" style="object-fit: cover;">
         <div class="score">
           <div class="mal">
             MAL 9.9
@@ -1243,27 +1295,27 @@
           </div>
         </div>
         <div class="text">
-          <div class="title">
-            Solo Leveling
-          </div>
-          <div class="year">
+          <h3 class="title" style="font-size: inherit; font-weight: inherit; margin: 0;">
+            Guild no Uketsukejou desu ga, Zangyou wa Iya nanode Boss wo Solo Toubatsu Shiyou to Omoimasu
+          </h3>
+          <time class="year" datetime="2024">
             2024
-          </div>
+          </time>
         </div>
         <div class="detail text-break">
-          <div class="title">
-            Solo Leveling
-          </div>
+          <h3 class="title" style="font-weight: bold;">
+            Guild no Uketsukejou desu ga
+          </h3>
           <div class="morename">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-              class="bi bi-braces-asterisk" viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-braces-asterisk"
+              viewBox="0 0 16 16" aria-hidden="true">
               <path fill-rule="evenodd"
                 d="M1.114 8.063V7.9c1.005-.102 1.497-.615 1.497-1.6V4.503c0-1.094.39-1.538 1.354-1.538h.273V2h-.376C2.25 2 1.49 2.759 1.49 4.352v1.524c0 1.094-.376 1.456-1.49 1.456v1.299c1.114 0 1.49.362 1.49 1.456v1.524c0 1.593.759 2.352 2.372 2.352h.376v-.964h-.273c-.964 0-1.354-.444-1.354-1.538V9.663c0-.984-.492-1.497-1.497-1.6M14.886 7.9v.164c-1.005.103-1.497.616-1.497 1.6v1.798c0 1.094-.39 1.538-1.354 1.538h-.273v.964h.376c1.613 0 2.372-.759 2.372-2.352v-1.524c0-1.094.376-1.456 1.49-1.456v-1.3c-1.114 0-1.49-.362-1.49-1.456V4.352C14.51 2.759 13.75 2 12.138 2h-.376v.964h.273c.964 0 1.354.444 1.354 1.538V6.3c0 .984.492 1.497 1.497 1.6M7.5 11.5V9.207l-1.621 1.621-.707-.707L6.792 8.5H4.5v-1h2.293L5.172 5.879l.707-.707L7.5 6.792V4.5h1v2.293l1.621-1.621.707.707L9.208 7.5H11.5v1H9.207l1.621 1.621-.707.707L8.5 9.208V11.5z" />
             </svg> Diğer Ad: Ore dake Level Up na Ken
           </div>
           <div class="sezon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-              class="bi bi-collection-play" viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-collection-play"
+              viewBox="0 0 16 16" aria-hidden="true">
               <path
                 d="M2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3m2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1m2.765 5.576A.5.5 0 0 0 6 7v5a.5.5 0 0 0 .765.424l4-2.5a.5.5 0 0 0 0-.848z" />
               <path
@@ -1272,7 +1324,7 @@
           </div>
           <div class="bolum">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle"
-              viewBox="0 0 16 16">
+              viewBox="0 0 16 16" aria-hidden="true">
               <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
               <path
                 d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445" />
@@ -1280,16 +1332,16 @@
           </div>
           <div class="date">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar"
-              viewBox="0 0 16 16">
+              viewBox="0 0 16 16" aria-hidden="true">
               <path
                 d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
-            </svg> Yayın Yılı: 2024
+            </svg> Yayın Yılı: <time datetime="2024">2024</time>
           </div>
           <div class="kategori">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-ticket"
-              viewBox="0 0 16 16">
+              viewBox="0 0 16 16" aria-hidden="true">
               <path
-                d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6zM1.5 4a.5.5 0 0 0-.5.5v1.05a2.5 2.5 0 0 1 0 4.9v1.05a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-1.05a2.5 2.5 0 0 1 0-4.9V4.5a.5.5 0 0 0-.5-.5z" />
+                d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6zM1.5 4a.5.5 0 0 0-.5.5v1.05a2.5 2.5 0 0 1 0 4.9v1.05a.5.5 0 0 0 .5-.5h13a.5.5 0 0 0 .5-.5v-1.05a2.5 2.5 0 0 1 0-4.9V4.5a.5.5 0 0 0-.5-.5z" />
             </svg> Tür: Shounen, Demantia, Aksiyon
           </div>
           <div class="malandimdb">
@@ -1300,15 +1352,15 @@
               IMDb 9.9
             </div>
           </div>
-
-          <div class="des">
+          <p class="des" style="margin: 0;">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque molestias harum natus eius consequatur.
             Quia commodi magnam ut libero fugiat!
-          </div>
+          </p>
         </div>
       </a>
-      <a href="detail.html" class="anime">
-        <img src="webimg/sololevelingposter.jpg">
+      <a href="detail.html" class="anime" aria-label="Guild no Uketsukejou desu ga - Detaylar">
+        <img src="webimg/sololevelingposter.avif" alt="Guild no Uketsukejou desu ga Anime Posteri" width="200" height="300"
+          fetchpriority="high" decoding="async" style="object-fit: cover;">
         <div class="score">
           <div class="mal">
             MAL 9.9
@@ -1318,27 +1370,27 @@
           </div>
         </div>
         <div class="text">
-          <div class="title">
-            Solo Leveling
-          </div>
-          <div class="year">
+          <h3 class="title" style="font-size: inherit; font-weight: inherit; margin: 0;">
+            Guild no Uketsukejou desu ga, Zangyou wa Iya nanode Boss wo Solo Toubatsu Shiyou to Omoimasu
+          </h3>
+          <time class="year" datetime="2024">
             2024
-          </div>
+          </time>
         </div>
         <div class="detail text-break">
-          <div class="title">
-            Solo Leveling
-          </div>
+          <h3 class="title" style="font-weight: bold;">
+            Guild no Uketsukejou desu ga
+          </h3>
           <div class="morename">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-              class="bi bi-braces-asterisk" viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-braces-asterisk"
+              viewBox="0 0 16 16" aria-hidden="true">
               <path fill-rule="evenodd"
                 d="M1.114 8.063V7.9c1.005-.102 1.497-.615 1.497-1.6V4.503c0-1.094.39-1.538 1.354-1.538h.273V2h-.376C2.25 2 1.49 2.759 1.49 4.352v1.524c0 1.094-.376 1.456-1.49 1.456v1.299c1.114 0 1.49.362 1.49 1.456v1.524c0 1.593.759 2.352 2.372 2.352h.376v-.964h-.273c-.964 0-1.354-.444-1.354-1.538V9.663c0-.984-.492-1.497-1.497-1.6M14.886 7.9v.164c-1.005.103-1.497.616-1.497 1.6v1.798c0 1.094-.39 1.538-1.354 1.538h-.273v.964h.376c1.613 0 2.372-.759 2.372-2.352v-1.524c0-1.094.376-1.456 1.49-1.456v-1.3c-1.114 0-1.49-.362-1.49-1.456V4.352C14.51 2.759 13.75 2 12.138 2h-.376v.964h.273c.964 0 1.354.444 1.354 1.538V6.3c0 .984.492 1.497 1.497 1.6M7.5 11.5V9.207l-1.621 1.621-.707-.707L6.792 8.5H4.5v-1h2.293L5.172 5.879l.707-.707L7.5 6.792V4.5h1v2.293l1.621-1.621.707.707L9.208 7.5H11.5v1H9.207l1.621 1.621-.707.707L8.5 9.208V11.5z" />
             </svg> Diğer Ad: Ore dake Level Up na Ken
           </div>
           <div class="sezon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-              class="bi bi-collection-play" viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-collection-play"
+              viewBox="0 0 16 16" aria-hidden="true">
               <path
                 d="M2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3m2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1m2.765 5.576A.5.5 0 0 0 6 7v5a.5.5 0 0 0 .765.424l4-2.5a.5.5 0 0 0 0-.848z" />
               <path
@@ -1347,7 +1399,7 @@
           </div>
           <div class="bolum">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle"
-              viewBox="0 0 16 16">
+              viewBox="0 0 16 16" aria-hidden="true">
               <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
               <path
                 d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445" />
@@ -1355,16 +1407,16 @@
           </div>
           <div class="date">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar"
-              viewBox="0 0 16 16">
+              viewBox="0 0 16 16" aria-hidden="true">
               <path
                 d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
-            </svg> Yayın Yılı: 2024
+            </svg> Yayın Yılı: <time datetime="2024">2024</time>
           </div>
           <div class="kategori">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-ticket"
-              viewBox="0 0 16 16">
+              viewBox="0 0 16 16" aria-hidden="true">
               <path
-                d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6zM1.5 4a.5.5 0 0 0-.5.5v1.05a2.5 2.5 0 0 1 0 4.9v1.05a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-1.05a2.5 2.5 0 0 1 0-4.9V4.5a.5.5 0 0 0-.5-.5z" />
+                d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6zM1.5 4a.5.5 0 0 0-.5.5v1.05a2.5 2.5 0 0 1 0 4.9v1.05a.5.5 0 0 0 .5-.5h13a.5.5 0 0 0 .5-.5v-1.05a2.5 2.5 0 0 1 0-4.9V4.5a.5.5 0 0 0-.5-.5z" />
             </svg> Tür: Shounen, Demantia, Aksiyon
           </div>
           <div class="malandimdb">
@@ -1375,311 +1427,10 @@
               IMDb 9.9
             </div>
           </div>
-
-          <div class="des">
+          <p class="des" style="margin: 0;">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque molestias harum natus eius consequatur.
             Quia commodi magnam ut libero fugiat!
-          </div>
-        </div>
-      </a>
-      <a href="detail.html" class="anime">
-        <img src="webimg/sololevelingposter.jpg">
-        <div class="score">
-          <div class="mal">
-            MAL 9.9
-          </div>
-          <div class="imdb">
-            IMDb 9.9
-          </div>
-        </div>
-        <div class="text">
-          <div class="title">
-            Solo Leveling
-          </div>
-          <div class="year">
-            2024
-          </div>
-        </div>
-        <div class="detail text-break">
-          <div class="title">
-            Solo Leveling
-          </div>
-          <div class="morename">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-              class="bi bi-braces-asterisk" viewBox="0 0 16 16">
-              <path fill-rule="evenodd"
-                d="M1.114 8.063V7.9c1.005-.102 1.497-.615 1.497-1.6V4.503c0-1.094.39-1.538 1.354-1.538h.273V2h-.376C2.25 2 1.49 2.759 1.49 4.352v1.524c0 1.094-.376 1.456-1.49 1.456v1.299c1.114 0 1.49.362 1.49 1.456v1.524c0 1.593.759 2.352 2.372 2.352h.376v-.964h-.273c-.964 0-1.354-.444-1.354-1.538V9.663c0-.984-.492-1.497-1.497-1.6M14.886 7.9v.164c-1.005.103-1.497.616-1.497 1.6v1.798c0 1.094-.39 1.538-1.354 1.538h-.273v.964h.376c1.613 0 2.372-.759 2.372-2.352v-1.524c0-1.094.376-1.456 1.49-1.456v-1.3c-1.114 0-1.49-.362-1.49-1.456V4.352C14.51 2.759 13.75 2 12.138 2h-.376v.964h.273c.964 0 1.354.444 1.354 1.538V6.3c0 .984.492 1.497 1.497 1.6M7.5 11.5V9.207l-1.621 1.621-.707-.707L6.792 8.5H4.5v-1h2.293L5.172 5.879l.707-.707L7.5 6.792V4.5h1v2.293l1.621-1.621.707.707L9.208 7.5H11.5v1H9.207l1.621 1.621-.707.707L8.5 9.208V11.5z" />
-            </svg> Diğer Ad: Ore dake Level Up na Ken
-          </div>
-          <div class="sezon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-              class="bi bi-collection-play" viewBox="0 0 16 16">
-              <path
-                d="M2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3m2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1m2.765 5.576A.5.5 0 0 0 6 7v5a.5.5 0 0 0 .765.424l4-2.5a.5.5 0 0 0 0-.848z" />
-              <path
-                d="M1.5 14.5A1.5 1.5 0 0 1 0 13V6a1.5 1.5 0 0 1 1.5-1.5h13A1.5 1.5 0 0 1 16 6v7a1.5 1.5 0 0 1-1.5 1.5zm13-1a.5.5 0 0 0 .5-.5V6a.5.5 0 0 0-.5-.5h-13A.5.5 0 0 0 1 6v7a.5.5 0 0 0 .5.5z" />
-            </svg> Toplam Sezon Sayısı: 2
-          </div>
-          <div class="bolum">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle"
-              viewBox="0 0 16 16">
-              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
-              <path
-                d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445" />
-            </svg> Toplam Bölüm Sayısı: 25
-          </div>
-          <div class="date">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar"
-              viewBox="0 0 16 16">
-              <path
-                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
-            </svg> Yayın Yılı: 2024
-          </div>
-          <div class="kategori">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-ticket"
-              viewBox="0 0 16 16">
-              <path
-                d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6zM1.5 4a.5.5 0 0 0-.5.5v1.05a2.5 2.5 0 0 1 0 4.9v1.05a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-1.05a2.5 2.5 0 0 1 0-4.9V4.5a.5.5 0 0 0-.5-.5z" />
-            </svg> Tür: Shounen, Demantia, Aksiyon
-          </div>
-          <div class="malandimdb">
-            <div class="mal">
-              MAL 9.9
-            </div>
-            <div class="imdb">
-              IMDb 9.9
-            </div>
-          </div>
-
-          <div class="des">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque molestias harum natus eius consequatur.
-            Quia commodi magnam ut libero fugiat!
-          </div>
-        </div>
-      </a>
-      <a href="detail.html" class="anime">
-        <img src="webimg/sololevelingposter.jpg">
-        <div class="score">
-          <div class="mal">
-            MAL 9.9
-          </div>
-          <div class="imdb">
-            IMDb 9.9
-          </div>
-        </div>
-        <div class="text">
-          <div class="title">
-            Solo Leveling
-          </div>
-          <div class="year">
-            2024
-          </div>
-        </div>
-        <div class="detail text-break">
-          <div class="title">
-            Solo Leveling
-          </div>
-          <div class="morename">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-              class="bi bi-braces-asterisk" viewBox="0 0 16 16">
-              <path fill-rule="evenodd"
-                d="M1.114 8.063V7.9c1.005-.102 1.497-.615 1.497-1.6V4.503c0-1.094.39-1.538 1.354-1.538h.273V2h-.376C2.25 2 1.49 2.759 1.49 4.352v1.524c0 1.094-.376 1.456-1.49 1.456v1.299c1.114 0 1.49.362 1.49 1.456v1.524c0 1.593.759 2.352 2.372 2.352h.376v-.964h-.273c-.964 0-1.354-.444-1.354-1.538V9.663c0-.984-.492-1.497-1.497-1.6M14.886 7.9v.164c-1.005.103-1.497.616-1.497 1.6v1.798c0 1.094-.39 1.538-1.354 1.538h-.273v.964h.376c1.613 0 2.372-.759 2.372-2.352v-1.524c0-1.094.376-1.456 1.49-1.456v-1.3c-1.114 0-1.49-.362-1.49-1.456V4.352C14.51 2.759 13.75 2 12.138 2h-.376v.964h.273c.964 0 1.354.444 1.354 1.538V6.3c0 .984.492 1.497 1.497 1.6M7.5 11.5V9.207l-1.621 1.621-.707-.707L6.792 8.5H4.5v-1h2.293L5.172 5.879l.707-.707L7.5 6.792V4.5h1v2.293l1.621-1.621.707.707L9.208 7.5H11.5v1H9.207l1.621 1.621-.707.707L8.5 9.208V11.5z" />
-            </svg> Diğer Ad: Ore dake Level Up na Ken
-          </div>
-          <div class="sezon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-              class="bi bi-collection-play" viewBox="0 0 16 16">
-              <path
-                d="M2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3m2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1m2.765 5.576A.5.5 0 0 0 6 7v5a.5.5 0 0 0 .765.424l4-2.5a.5.5 0 0 0 0-.848z" />
-              <path
-                d="M1.5 14.5A1.5 1.5 0 0 1 0 13V6a1.5 1.5 0 0 1 1.5-1.5h13A1.5 1.5 0 0 1 16 6v7a1.5 1.5 0 0 1-1.5 1.5zm13-1a.5.5 0 0 0 .5-.5V6a.5.5 0 0 0-.5-.5h-13A.5.5 0 0 0 1 6v7a.5.5 0 0 0 .5.5z" />
-            </svg> Toplam Sezon Sayısı: 2
-          </div>
-          <div class="bolum">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle"
-              viewBox="0 0 16 16">
-              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
-              <path
-                d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445" />
-            </svg> Toplam Bölüm Sayısı: 25
-          </div>
-          <div class="date">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar"
-              viewBox="0 0 16 16">
-              <path
-                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
-            </svg> Yayın Yılı: 2024
-          </div>
-          <div class="kategori">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-ticket"
-              viewBox="0 0 16 16">
-              <path
-                d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6zM1.5 4a.5.5 0 0 0-.5.5v1.05a2.5 2.5 0 0 1 0 4.9v1.05a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-1.05a2.5 2.5 0 0 1 0-4.9V4.5a.5.5 0 0 0-.5-.5z" />
-            </svg> Tür: Shounen, Demantia, Aksiyon
-          </div>
-          <div class="malandimdb">
-            <div class="mal">
-              MAL 9.9
-            </div>
-            <div class="imdb">
-              IMDb 9.9
-            </div>
-          </div>
-
-          <div class="des">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque molestias harum natus eius consequatur.
-            Quia commodi magnam ut libero fugiat!
-          </div>
-        </div>
-      </a>
-      <a href="detail.html" class="anime">
-        <img src="webimg/sololevelingposter.jpg">
-        <div class="score">
-          <div class="mal">
-            MAL 9.9
-          </div>
-          <div class="imdb">
-            IMDb 9.9
-          </div>
-        </div>
-        <div class="text">
-          <div class="title">
-            Solo Leveling
-          </div>
-          <div class="year">
-            2024
-          </div>
-        </div>
-        <div class="detail text-break">
-          <div class="title">
-            Solo Leveling
-          </div>
-          <div class="morename">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-              class="bi bi-braces-asterisk" viewBox="0 0 16 16">
-              <path fill-rule="evenodd"
-                d="M1.114 8.063V7.9c1.005-.102 1.497-.615 1.497-1.6V4.503c0-1.094.39-1.538 1.354-1.538h.273V2h-.376C2.25 2 1.49 2.759 1.49 4.352v1.524c0 1.094-.376 1.456-1.49 1.456v1.299c1.114 0 1.49.362 1.49 1.456v1.524c0 1.593.759 2.352 2.372 2.352h.376v-.964h-.273c-.964 0-1.354-.444-1.354-1.538V9.663c0-.984-.492-1.497-1.497-1.6M14.886 7.9v.164c-1.005.103-1.497.616-1.497 1.6v1.798c0 1.094-.39 1.538-1.354 1.538h-.273v.964h.376c1.613 0 2.372-.759 2.372-2.352v-1.524c0-1.094.376-1.456 1.49-1.456v-1.3c-1.114 0-1.49-.362-1.49-1.456V4.352C14.51 2.759 13.75 2 12.138 2h-.376v.964h.273c.964 0 1.354.444 1.354 1.538V6.3c0 .984.492 1.497 1.497 1.6M7.5 11.5V9.207l-1.621 1.621-.707-.707L6.792 8.5H4.5v-1h2.293L5.172 5.879l.707-.707L7.5 6.792V4.5h1v2.293l1.621-1.621.707.707L9.208 7.5H11.5v1H9.207l1.621 1.621-.707.707L8.5 9.208V11.5z" />
-            </svg> Diğer Ad: Ore dake Level Up na Ken
-          </div>
-          <div class="sezon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-              class="bi bi-collection-play" viewBox="0 0 16 16">
-              <path
-                d="M2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3m2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1m2.765 5.576A.5.5 0 0 0 6 7v5a.5.5 0 0 0 .765.424l4-2.5a.5.5 0 0 0 0-.848z" />
-              <path
-                d="M1.5 14.5A1.5 1.5 0 0 1 0 13V6a1.5 1.5 0 0 1 1.5-1.5h13A1.5 1.5 0 0 1 16 6v7a1.5 1.5 0 0 1-1.5 1.5zm13-1a.5.5 0 0 0 .5-.5V6a.5.5 0 0 0-.5-.5h-13A.5.5 0 0 0 1 6v7a.5.5 0 0 0 .5.5z" />
-            </svg> Toplam Sezon Sayısı: 2
-          </div>
-          <div class="bolum">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle"
-              viewBox="0 0 16 16">
-              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
-              <path
-                d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445" />
-            </svg> Toplam Bölüm Sayısı: 25
-          </div>
-          <div class="date">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar"
-              viewBox="0 0 16 16">
-              <path
-                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
-            </svg> Yayın Yılı: 2024
-          </div>
-          <div class="kategori">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-ticket"
-              viewBox="0 0 16 16">
-              <path
-                d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6zM1.5 4a.5.5 0 0 0-.5.5v1.05a2.5 2.5 0 0 1 0 4.9v1.05a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-1.05a2.5 2.5 0 0 1 0-4.9V4.5a.5.5 0 0 0-.5-.5z" />
-            </svg> Tür: Shounen, Demantia, Aksiyon
-          </div>
-          <div class="malandimdb">
-            <div class="mal">
-              MAL 9.9
-            </div>
-            <div class="imdb">
-              IMDb 9.9
-            </div>
-          </div>
-
-          <div class="des">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque molestias harum natus eius consequatur.
-            Quia commodi magnam ut libero fugiat!
-          </div>
-        </div>
-      </a>
-      <a href="detail.html" class="anime">
-        <img src="webimg/sololevelingposter.jpg">
-        <div class="score">
-          <div class="mal">
-            MAL 9.9
-          </div>
-          <div class="imdb">
-            IMDb 9.9
-          </div>
-        </div>
-        <div class="text">
-          <div class="title">
-            Solo Leveling
-          </div>
-          <div class="year">
-            2024
-          </div>
-        </div>
-        <div class="detail text-break">
-          <div class="title">
-            Solo Leveling
-          </div>
-          <div class="morename">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-              class="bi bi-braces-asterisk" viewBox="0 0 16 16">
-              <path fill-rule="evenodd"
-                d="M1.114 8.063V7.9c1.005-.102 1.497-.615 1.497-1.6V4.503c0-1.094.39-1.538 1.354-1.538h.273V2h-.376C2.25 2 1.49 2.759 1.49 4.352v1.524c0 1.094-.376 1.456-1.49 1.456v1.299c1.114 0 1.49.362 1.49 1.456v1.524c0 1.593.759 2.352 2.372 2.352h.376v-.964h-.273c-.964 0-1.354-.444-1.354-1.538V9.663c0-.984-.492-1.497-1.497-1.6M14.886 7.9v.164c-1.005.103-1.497.616-1.497 1.6v1.798c0 1.094-.39 1.538-1.354 1.538h-.273v.964h.376c1.613 0 2.372-.759 2.372-2.352v-1.524c0-1.094.376-1.456 1.49-1.456v-1.3c-1.114 0-1.49-.362-1.49-1.456V4.352C14.51 2.759 13.75 2 12.138 2h-.376v.964h.273c.964 0 1.354.444 1.354 1.538V6.3c0 .984.492 1.497 1.497 1.6M7.5 11.5V9.207l-1.621 1.621-.707-.707L6.792 8.5H4.5v-1h2.293L5.172 5.879l.707-.707L7.5 6.792V4.5h1v2.293l1.621-1.621.707.707L9.208 7.5H11.5v1H9.207l1.621 1.621-.707.707L8.5 9.208V11.5z" />
-            </svg> Diğer Ad: Ore dake Level Up na Ken
-          </div>
-          <div class="sezon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-              class="bi bi-collection-play" viewBox="0 0 16 16">
-              <path
-                d="M2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3m2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1m2.765 5.576A.5.5 0 0 0 6 7v5a.5.5 0 0 0 .765.424l4-2.5a.5.5 0 0 0 0-.848z" />
-              <path
-                d="M1.5 14.5A1.5 1.5 0 0 1 0 13V6a1.5 1.5 0 0 1 1.5-1.5h13A1.5 1.5 0 0 1 16 6v7a1.5 1.5 0 0 1-1.5 1.5zm13-1a.5.5 0 0 0 .5-.5V6a.5.5 0 0 0-.5-.5h-13A.5.5 0 0 0 1 6v7a.5.5 0 0 0 .5.5z" />
-            </svg> Toplam Sezon Sayısı: 2
-          </div>
-          <div class="bolum">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle"
-              viewBox="0 0 16 16">
-              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
-              <path
-                d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445" />
-            </svg> Toplam Bölüm Sayısı: 25
-          </div>
-          <div class="date">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar"
-              viewBox="0 0 16 16">
-              <path
-                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
-            </svg> Yayın Yılı: 2024
-          </div>
-          <div class="kategori">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-ticket"
-              viewBox="0 0 16 16">
-              <path
-                d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6zM1.5 4a.5.5 0 0 0-.5.5v1.05a2.5 2.5 0 0 1 0 4.9v1.05a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-1.05a2.5 2.5 0 0 1 0-4.9V4.5a.5.5 0 0 0-.5-.5z" />
-            </svg> Tür: Shounen, Demantia, Aksiyon
-          </div>
-          <div class="malandimdb">
-            <div class="mal">
-              MAL 9.9
-            </div>
-            <div class="imdb">
-              IMDb 9.9
-            </div>
-          </div>
-
-          <div class="des">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque molestias harum natus eius consequatur.
-            Quia commodi magnam ut libero fugiat!
-          </div>
+          </p>
         </div>
       </a>
     </div>
@@ -1687,9 +1438,10 @@
   <footer>
     <div class="content">
       <div class="logo">
-        <img src="webimg/logo.png" />
+        <img src="webimg/logo.avif" alt="Anitsuki Logo" width="150" height="50" loading="lazy"
+          style="object-fit: contain;" type="image/avif" />
         <div class="text">
-          @2025 Anitsuki Labs.
+          &copy; 2025 Anitsuki Labs.
         </div>
         <div class="des">
           Tüm hakları saklıdır.
@@ -1704,24 +1456,24 @@
         </button>
       </div>
       <div id="mobile" class="link">
-        <div class="title">
+        <h5 class="title" style="font-size: inherit; font-weight: inherit; margin: 0;">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-award"
             viewBox="0 0 16 16">
             <path
               d="M9.669.864 8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68zm1.196 1.193.684 1.365 1.086 1.072L12.387 6l.248 1.506-1.086 1.072-.684 1.365-1.51.229L8 10.874l-1.355-.702-1.51-.229-.684-1.365-1.086-1.072L3.614 6l-.25-1.506 1.087-1.072.684-1.365 1.51-.229L8 1.126l1.356.702z" />
             <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1z" />
           </svg>Popüler Kategoriler
-        </div>
-        <div class="links">
+        </h5>
+        <nav class="links">
           <a href="#" class="long">Shounen</a>
           <a href="#" class="long">İsekai</a>
           <a href="#" class="long">Demantia</a>
           <a href="#" class="long">Shoujo</a>
           <a href="#" class="long">Slice of Life</a>
-        </div>
+        </nav>
       </div>
       <div id="mobile" class="link">
-        <div class="title">
+        <h5 class="title" style="font-size: inherit; font-weight: inherit; margin: 0;">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-shuffle"
             viewBox="0 0 16 16">
             <path fill-rule="evenodd"
@@ -1729,51 +1481,52 @@
             <path
               d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192m0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192" />
           </svg>Random Animeler
-        </div>
-        <div class="links">
+        </h5>
+        <nav class="links">
           <a href="#" class="long">Attack on Titan</a>
           <a href="#" class="long">Solo Leveling</a>
           <a href="#" class="long">One Piece</a>
           <a href="#" class="long">seishun buta yarou wa bunny girl senpai no yume wo minai</a>
           <a href="#" class="long">Guild no Uketsukejou desu ga, Zangyou wa Iya nanode Boss wo Solo Toubatsu Shiyou to
             Omoimasu</a>
-        </div>
+        </nav>
       </div>
       <div class="link">
-        <div class="title">
+        <h5 class="title" style="font-size: inherit; font-weight: inherit; margin: 0;">
           Sosyal Medya
-        </div>
-        <div class="links">
-          <a href="#" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-              class="bi bi-instagram" viewBox="0 0 16 16">
+        </h5>
+        <nav class="links">
+          <a href="#" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+              height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
               <path
                 d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
             </svg>Instagram</a>
-          <a href="#" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-              class="bi bi-youtube" viewBox="0 0 16 16">
+          <a href="#" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+              height="16" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
               <path
                 d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z" />
             </svg>YouTube</a>
-          <a href="#" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-              class="bi bi-discord" viewBox="0 0 16 16">
+          <a href="#" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+              height="16" fill="currentColor" class="bi bi-discord" viewBox="0 0 16 16">
               <path
                 d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612" />
             </svg>Discord</a>
-          <a href="#" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-              class="bi bi-github" viewBox="0 0 16 16">
+          <a href="#" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+              height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
               <path
                 d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
             </svg>GitHub</a>
-        </div>
       </div>
     </div>
-    <div class="modal" style="backdrop-filter: blur(3px);" id="exampleModal3" tabindex="-1"
-      aria-labelledby="exampleModalLabel" aria-hidden="true">
+    </div>
+    <div class="modal" style="-webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);" id="exampleModal3"
+      tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div style="margin-top: 80px" class="modal-dialog">
         <div style="background-color: #151515;" class="modal-content">
           <div style="width: 100%; height: 550px;" class="modal-body">
             <div style="height: 25px; width: 100%;" class="d-flex justify-content-between">
-              <img src="webimg/aylogo.png" width="50" height="50" style="object-fit: cover;margin-top: -12.5px;" />
+              <img src="webimg/aylogo.avif" width="50" height="50" style="object-fit: cover;margin-top: -12.5px;"
+                alt="Logo" type="image/avif" />
               <div class="buttons">
                 <div class="buttons">
                   <button class="tab-btn active" data-target="biz-kimiz">Biz Kimiz?</button>
@@ -1785,182 +1538,241 @@
                   aria-label="Close"></button>
               </div>
             </div>
+
             <div style="height: 475px; overflow: auto; width: 100%; margin-top: 15px;">
-              <!-- İçerikler -->
               <div class="content-text active" id="biz-kimiz">
-                Anitsuki olarak anime tutkumuzu ve bilgi birikimimizi sizlerle paylaşmak için yola çıktık. Biz yeni bir
-                siteyiz, anime dünyasına olan sevgimiz ve bu alandaki deneyimimiz oldukça yeni. Hedefimiz, anime
-                severler için sade, etkili ve kullanıcı dostu bir platform sunarak anime deneyiminizi en üst düzeye
-                çıkarmak.
+                <p>
+                  Anitsuki olarak anime tutkumuzu ve bilgi birikimimizi sizlerle paylaşmak için yola çıktık. Biz yeni
+                  bir
+                  siteyiz, anime dünyasına olan sevgimiz ve bu alandaki deneyimimiz oldukça yeni. Hedefimiz, anime
+                  severler için sade, etkili ve kullanıcı dostu bir platform sunarak anime deneyiminizi en üst düzeye
+                  çıkarmak.
+                </p>
                 <br />
+                <p>
+                  Anitsuki’nin en büyük avantajı, kullanıcı dostu tasarımı ve erişilebilirliği ile dikkat çekmesidir.
+                  Tasarımımızı oluştururken, site ziyaretçilerimizin rahatça gezinebileceği, içeriklere kolayca
+                  ulaşabileceği ve anime dünyasının keyfini çıkarabileceği bir deneyim sunmayı ön planda tuttuk.
+                  Sitemiz,
+                  karmaşıklıktan uzak, anlaşılır ve sade bir yapıya sahip olup, anime dünyasına adım atmak isteyen
+                  herkese
+                  hitap edecek şekilde tasarlandı.
+                </p>
                 <br />
-                Anitsuki’nin en büyük avantajı, kullanıcı dostu tasarımı ve erişilebilirliği ile dikkat çekmesidir.
-                Tasarımımızı oluştururken, site ziyaretçilerimizin rahatça gezinebileceği, içeriklere kolayca
-                ulaşabileceği ve anime dünyasının keyfini çıkarabileceği bir deneyim sunmayı ön planda tuttuk. Sitemiz,
-                karmaşıklıktan uzak, anlaşılır ve sade bir yapıya sahip olup, anime dünyasına adım atmak isteyen herkese
-                hitap edecek şekilde tasarlandı.
+                <p>
+                  Anime severlerin ihtiyaçlarını göz önünde bulundurarak, geniş bir anime yelpazesi sunuyoruz. Hem
+                  klasik
+                  hem de güncel anime içeriklerini kapsamlı bir şekilde sunarak, farklı türlerdeki anime arayışınıza
+                  cevap
+                  verebilecek bir platform sağlıyoruz. Ayrıca, en yeni bölümler ve haberler hakkında düzenli
+                  güncellemelerle, anime dünyasındaki gelişmeleri yakından takip edebilmeniz için sürekli çalışıyoruz.
+                </p>
                 <br />
+                <p>
+                  Anitsuki olarak, kullanıcılarımızın memnuniyetini en üst düzeyde tutmak için sürekli olarak geri
+                  bildirimlerinizi dinliyor ve site deneyiminizi daha da iyileştirmek için çalışmalarımıza yön
+                  veriyoruz.
+                  Bizimle bu yolculuğa katıldığınız için teşekkür ederiz ve anime dünyasında keyifli, sorunsuz ve
+                  eğlenceli bir deneyim yaşamanızı dileriz.
+                </p>
                 <br />
-                Anime severlerin ihtiyaçlarını göz önünde bulundurarak, geniş bir anime yelpazesi sunuyoruz. Hem klasik
-                hem de güncel anime içeriklerini kapsamlı bir şekilde sunarak, farklı türlerdeki anime arayışınıza cevap
-                verebilecek bir platform sağlıyoruz. Ayrıca, en yeni bölümler ve haberler hakkında düzenli
-                güncellemelerle, anime dünyasındaki gelişmeleri yakından takip edebilmeniz için sürekli çalışıyoruz.
-                <br />
-                <br />
-                Anitsuki olarak, kullanıcılarımızın memnuniyetini en üst düzeyde tutmak için sürekli olarak geri
-                bildirimlerinizi dinliyor ve site deneyiminizi daha da iyileştirmek için çalışmalarımıza yön veriyoruz.
-                Bizimle bu yolculuğa katıldığınız için teşekkür ederiz ve anime dünyasında keyifli, sorunsuz ve
-                eğlenceli bir deneyim yaşamanızı dileriz.
-                <br />
-                <br />
-                Animeye olan tutkumuzu sizinle paylaşmak ve en sevdiğiniz animeleri en kolay şekilde erişilebilir hale
-                getirmek için buradayız. İyi seyirler!
+                <p>
+                  Animeye olan tutkumuzu sizinle paylaşmak ve en sevdiğiniz animeleri en kolay şekilde erişilebilir hale
+                  getirmek için buradayız. İyi seyirler!
+                </p>
               </div>
+
               <div class="content-text" id="gizlilik-politikasi">
-                <div class="title">
+                <h6 class="title"
+                  style="font-size: inherit; font-weight: inherit; margin: 0; margin-bottom: 10px; font-weight: bold;">
                   Gizlilik Politikası’nın Amacı
-                </div>
-                Bu Gizlilik/Kişisel Verilerin Korunması Politikası ve İletişim İzni;
-                <br>
-                İçerik ve Yer Sağlayıcısı olduğumuz işbu internet sitesinin (“İnternet Sitesi”) ne tür kişisel veriler
-                topladığını,
-                <br>
-                Bu kişisel verilerin nasıl kullanıldığını,
-                <br>
-                İnternet Sitesi’nin kişisel verilerinizi kimlerle paylaşabileceğini,
-                <br>
-                İnternet Sitesi’nin işlediği kişisel verileriniz üzerindeki haklarınızın neler olduğunu ve bu hakları
-                nasıl kullanabileceğinizi,
-                <br>
-                Çerez’ler (Cookie) hakkında bilgilendirmeyi ve Ticari elektronik ileti alma konusundaki olumlu veya
-                olumsuz tercihlerinizi nasıl değiştirebileceğinizi açıklamaktadır.
+                </h6>
+                <p>
+                  Bu Gizlilik/Kişisel Verilerin Korunması Politikası ve İletişim İzni;
+                  <br>
+                  İçerik ve Yer Sağlayıcısı olduğumuz işbu internet sitesinin (“İnternet Sitesi”) ne tür kişisel veriler
+                  topladığını,
+                  <br>
+                  Bu kişisel verilerin nasıl kullanıldığını,
+                  <br>
+                  İnternet Sitesi’nin kişisel verilerinizi kimlerle paylaşabileceğini,
+                  <br>
+                  İnternet Sitesi’nin işlediği kişisel verileriniz üzerindeki haklarınızın neler olduğunu ve bu hakları
+                  nasıl kullanabileceğinizi,
+                  <br>
+                  Çerez’ler (Cookie) hakkında bilgilendirmeyi ve Ticari elektronik ileti alma konusundaki olumlu veya
+                  olumsuz tercihlerinizi nasıl değiştirebileceğinizi açıklamaktadır.
+                </p>
                 <br />
-                <br />
-                <div class="title">
+
+                <h6 class="title"
+                  style="font-size: inherit; font-weight: inherit; margin: 0; margin-bottom: 10px; font-weight: bold;">
                   Bilgileri Saklama Amacı ve Dayanağı
-                </div>
-                Tarafımızca, İnternet Sitesi kullanıcılarına/üyelerine daha iyi hizmet verebilmek amacıyla ve “5651
-                sayılı İnternet Ortamında Yapılan Yayınların Düzenlenmesi ve Bu Yayınlar Yoluyla İşlenen Suçlarla
-                Mücadele Edilmesi Hakkında Kanun” ve ilgili ikincil mevzuat, “6563 sayılı Elektronik Ticaretin
-                Düzenlenmesi Hakkında Kanun” ve ilgili ikincil mevzuat, “5237 Sayılı Türk Ceza Kanunu” ve “6698 Sayılı
-                Kişisel Verilerin Korunması Kanunu” başta olmak üzere, ilgili mevzuattan kaynaklanan yasal yükümlülükler
-                ve hizmet standartları çerçevesinde, size daha iyi hizmet verilebilmesini ve istatistiki çalışmalar
-                yapılabilmesini sağlayacak kişisel verileriniz (ad, soyad, doğum tarihi, cep telefonu numarası, sabit
-                telefon numarası, e-posta, cinsiyet, adres, sosyal medya hesaplarıyla bağlanılması durumunda
-                kullanıcının/üyenin o kanallar aracılığıyla paylaşılmasına onay verdiği bilgiler de dahil ve fakat
-                bunlarla sınırlı olmamak kaydıyla kullanıcıyı doğrudan veya dolaylı olarak tanımlamaya yönelik her türlü
-                kişisel bilgi) sizlerden talep edilebilmektedir.
+                </h6>
+                <p>
+                  Tarafımızca, İnternet Sitesi kullanıcılarına/üyelerine daha iyi hizmet verebilmek amacıyla ve “5651
+                  sayılı İnternet Ortamında Yapılan Yayınların Düzenlenmesi ve Bu Yayınlar Yoluyla İşlenen Suçlarla
+                  Mücadele Edilmesi Hakkında Kanun” ve ilgili ikincil mevzuat, “6563 sayılı Elektronik Ticaretin
+                  Düzenlenmesi Hakkında Kanun” ve ilgili ikincil mevzuat, “5237 Sayılı Türk Ceza Kanunu” ve “6698 Sayılı
+                  Kişisel Verilerin Korunması Kanunu” başta olmak üzere, ilgili mevzuattan kaynaklanan yasal
+                  yükümlülükler
+                  ve hizmet standartları çerçevesinde, size daha iyi hizmet verilebilmesini ve istatistiki çalışmalar
+                  yapılabilmesini sağlayacak kişisel verileriniz (ad, soyad, doğum tarihi, cep telefonu numarası, sabit
+                  telefon numarası, e-posta, cinsiyet, adres, sosyal medya hesaplarıyla bağlanılması durumunda
+                  kullanıcının/üyenin o kanallar aracılığıyla paylaşılmasına onay verdiği bilgiler de dahil ve fakat
+                  bunlarla sınırlı olmamak kaydıyla kullanıcıyı doğrudan veya dolaylı olarak tanımlamaya yönelik her
+                  türlü
+                  kişisel bilgi) sizlerden talep edilebilmektedir.
+                </p>
                 <br />
+                <p>
+                  Bu kişisel veriler, İnternet Sitesi hizmetlerinden yararlanabilmeniz adına, açık rızanıza istinaden,
+                  işbu Gizlilik/Kişisel Verilerin Korunması Politikası ve İletişim İzni ile belirlenen amaçlar ve kapsam
+                  dışında kullanılmamak kaydı ile bilgi güvenliği tedbirleri de alınarak işlenecek ve saklanacaktır.
+                </p>
                 <br />
-                Bu kişisel veriler, İnternet Sitesi hizmetlerinden yararlanabilmeniz adına, açık rızanıza istinaden,
-                işbu Gizlilik/Kişisel Verilerin Korunması Politikası ve İletişim İzni ile belirlenen amaçlar ve kapsam
-                dışında kullanılmamak kaydı ile bilgi güvenliği tedbirleri de alınarak işlenecek ve saklanacaktır.
-                <br />
-                <br />
-                <div class="title">
+
+                <h6 class="title"
+                  style="font-size: inherit; font-weight: inherit; margin: 0; margin-bottom: 10px; font-weight: bold;">
                   Gizlilik
-                </div>
-                anitsuki.com servisleri, sisteme bağlanan kullanıcılarının IP Adreslerini web sitesi kayıtlarında
-                bağlantı tarihi, saati ve sistemden istenen adres ve/veya sayfalar bazına kaydetmektedir. Bu bilgiler
-                gerek sistem güvenliği, gerekse olası kullanıcı problemlerinin çözümünde anahtar bilgiler olup,
-                kullanıcı kişisel bilgileriyle ilişkili değildir. Bu bilgiler 5651 sayılı Kanun’un Yer Sağlayıcılara
-                getirdiği yükümlülükler kapsamında saklanmaktadır.
+                </h6>
+                <p>
+                  anitsuki.com servisleri, sisteme bağlanan kullanıcılarının IP Adreslerini web sitesi kayıtlarında
+                  bağlantı tarihi, saati ve sistemden istenen adres ve/veya sayfalar bazına kaydetmektedir. Bu bilgiler
+                  gerek sistem güvenliği, gerekse olası kullanıcı problemlerinin çözümünde anahtar bilgiler olup,
+                  kullanıcı kişisel bilgileriyle ilişkili değildir. Bu bilgiler 5651 sayılı Kanun’un Yer Sağlayıcılara
+                  getirdiği yükümlülükler kapsamında saklanmaktadır.
+                </p>
                 <br />
+                <p>
+                  Kullanıcının iletişim bilgileri gerektiği zaman kullanıcıya ulaşmamızı sağlar. anitsuki.com,
+                  Kullanıcılarına gerekli olduğu zaman e-mail ile mesaj gönderebilir.
+                </p>
                 <br />
-                Kullanıcının iletişim bilgileri gerektiği zaman kullanıcıya ulaşmamızı sağlar. anitsuki.com,
-                Kullanıcılarına gerekli olduğu zaman e-mail ile mesaj gönderebilir.
+                <p>
+                  Genel bir ilke olarak, Kullanıcıların kişisel bilgileri tarafımızca üçüncü şahıslara veya kuruluşlara
+                  verilmemektedir. Örneğin, isim, soy isim, e-posta/e-mail adresleriniz gibi bilgiler başka firmalarla
+                  paylaşılmaz. Kullanım Şartnamemizde, bu bilgilerin nerelerde ve ne amaçlar ile kullanılacağı açıkça
+                  belirtilmiştir.
+                </p>
                 <br />
+                <p>
+                  Videolarınızda, yorumlarınızda, profil sayfanızda verdiğiniz kişisel bilgiler, üçüncü şahıs ve
+                  kuruluşlar tarafından kullanılabilmektedir. Bu gibi durumlarda, kişisel bilgilerinizi vermek tamamıyla
+                  gönüllü olarak yaptığınız bir davranış olur ve anitsuki.com hiçbir şekilde sorumlu tutulamaz.
+                </p>
                 <br />
-                Genel bir ilke olarak, Kullanıcıların kişisel bilgileri tarafımızca üçüncü şahıslara veya kuruluşlara
-                verilmemektedir. Örneğin, isim, soy isim, e-posta/e-mail adresleriniz gibi bilgiler başka firmalarla
-                paylaşılmaz. Kullanım Şartnamemizde, bu bilgilerin nerelerde ve ne amaçlar ile kullanılacağı açıkça
-                belirtilmiştir.
+                <p>
+                  Kullanıcılarımızın kişisel hakları, bizim için de kendileri için oldukları kadar önemlidir. Ancak, var
+                  olan yasalar çerçevesinde, devlet organları yasadışı içerik tespit edip, bizden kullanıcı bilgilerini
+                  istediği takdirde, gerekli kişisel bilgiler, tarafımızca devlet organlarına teslim edilebilir.
+                </p>
                 <br />
+                <p>
+                  Kişisel bilgilerinize her zaman ulaşabilir ve onları güncelleyebilirsiniz. Bunların içerisinde,
+                  e-posta/e-mail adresiniz ve şifreniz mevcuttur. Bunların yanı sıra, yayınladığınız videoları silme
+                  yetkisine sahip olduğunuzu hatırlatırız.
+                </p>
                 <br />
-                Videolarınızda, yorumlarınızda, profil sayfanızda verdiğiniz kişisel bilgiler, üçüncü şahıs ve
-                kuruluşlar tarafından kullanılabilmektedir. Bu gibi durumlarda, kişisel bilgilerinizi vermek tamamıyla
-                gönüllü olarak yaptığınız bir davranış olur ve anitsuki.com hiçbir şekilde sorumlu tutulamaz.
-                <br />
-                <br />
-                Kullanıcılarımızın kişisel hakları, bizim için de kendileri için oldukları kadar önemlidir. Ancak, var
-                olan yasalar çerçevesinde, devlet organları yasadışı içerik tespit edip, bizden kullanıcı bilgilerini
-                istediği takdirde, gerekli kişisel bilgiler, tarafımızca devlet organlarına teslim edilebilir.
-                <br />
-                <br />
-                Kişisel bilgilerinize her zaman ulaşabilir ve onları güncelleyebilirsiniz. Bunların içerisinde,
-                e-posta/e-mail adresiniz ve şifreniz mevcuttur. Bunların yanı sıra, yayınladığınız videoları silme
-                yetkisine sahip olduğunuzu hatırlatırız.
-                <br />
-                <br />
-                <div class="title">
+
+                <h6 class="title"
+                  style="font-size: inherit; font-weight: inherit; margin: 0; margin-bottom: 10px; font-weight: bold;">
                   Haklarınız
-                </div>
-                İşlenen kişisel verilerinizin neler olduğunu, işleme amacı doğrultusunda kullanılıp kullanılmadığını,
-                yurt içi veya yurt dışında kişisel verilerin aktarıldığı üçüncü kişileri öğrenmeyi, eksik veya yanlış
-                işlenen kişisel verileriniz söz konusu ise veya işlenen kişisel verilerinizde herhangi bir değişiklik
-                olması durumunda bu verilerinizi değiştirmeyi, güncellemeyi ve/veya silmeyi, bu durumun kişisel
-                verilerinizin aktarıldığı üçüncü kişilere bildirilmesini talep edebilirsiniz.
+                </h6>
+                <p>
+                  İşlenen kişisel verilerinizin neler olduğunu, işleme amacı doğrultusunda kullanılıp kullanılmadığını,
+                  yurt içi veya yurt dışında kişisel verilerin aktarıldığı üçüncü kişileri öğrenmeyi, eksik veya yanlış
+                  işlenen kişisel verileriniz söz konusu ise veya işlenen kişisel verilerinizde herhangi bir değişiklik
+                  olması durumunda bu verilerinizi değiştirmeyi, güncellemeyi ve/veya silmeyi, bu durumun kişisel
+                  verilerinizin aktarıldığı üçüncü kişilere bildirilmesini talep edebilirsiniz.
+                </p>
                 <br />
+                <p>
+                  Bu kapsamdaki haklarınızı info@anitsuki.com adresine mail atarak kullanabilirsiniz. Üyelik hesabınızın
+                  bulunmadığı durumlar bakımından ise kişisel verileriniz “6698 Sayılı Kişisel Verilerin Korunması
+                  Kanunu”
+                  madde 28/f.1,b ve f.2,b ve “5651 sayılı İnternet Ortamında Yapılan Yayınların Düzenlenmesi ve Bu
+                  Yayınlar Yoluyla İşlenen Suçlarla Mücadele Edilmesi Hakkında Kanun” uyarınca yasal olarak
+                  tutulmaktadır.
+                </p>
                 <br />
-                Bu kapsamdaki haklarınızı info@anitsuki.com adresine mail atarak kullanabilirsiniz. Üyelik hesabınızın
-                bulunmadığı durumlar bakımından ise kişisel verileriniz “6698 Sayılı Kişisel Verilerin Korunması Kanunu”
-                madde 28/f.1,b ve f.2,b ve “5651 sayılı İnternet Ortamında Yapılan Yayınların Düzenlenmesi ve Bu
-                Yayınlar Yoluyla İşlenen Suçlarla Mücadele Edilmesi Hakkında Kanun” uyarınca yasal olarak tutulmaktadır.
-                <br />
-                <br />
-                <div class="title">
+
+                <h6 class="title"
+                  style="font-size: inherit; font-weight: inherit; margin: 0; margin-bottom: 10px; font-weight: bold;">
                   Güvenlik
-                </div>
-                anitsuki.com sistemleri güvenlik için gerekli tedbirleri almaya özen göstermiştir. Bütün kullanıcı
-                hesapları korunmaktadır. Kullanıcılarımızın, şifrelerini unutması durumunda e-posta/e-mail adreslerine
-                yeni şifreleri gönderilecektir. Güvenlik nedeniyle, şifreler kullanıcının kayıtlı olduğu e-posta/e-mail
-                adresi dışında başka bir adrese bildirilmez.
+                </h6>
+                <p>
+                  anitsuki.com sistemleri güvenlik için gerekli tedbirleri almaya özen göstermiştir. Bütün kullanıcı
+                  hesapları korunmaktadır. Kullanıcılarımızın, şifrelerini unutması durumunda e-posta/e-mail adreslerine
+                  yeni şifreleri gönderilecektir. Güvenlik nedeniyle, şifreler kullanıcının kayıtlı olduğu
+                  e-posta/e-mail
+                  adresi dışında başka bir adrese bildirilmez.
+                </p>
                 <br />
+                <p>
+                  anitsuki.com olarak, hem sitemizin hem de üyelerimizin güvenliğine büyük önem vermekteyiz. Bu nedenle,
+                  sistemimizde düzenli olarak güvenlik testleri yapmakta ve herhangi bir güvenlik açığına izin
+                  vermemekteyiz. Buna rağmen, zaman zaman üyelerimizden, üyeliklerine korsan olarak girildiğine ilişkin
+                  şikayetler almaktayız. Üyelikler, bizim bütün güvenlik önlemlerimize rağmen, bazen kötü niyetli
+                  kişiler
+                  tarafından ele geçirilebilmektedir. Üyeliklerinizi, hatta bilgisayarınızdaki tüm bilgileri korumanızı
+                  sağlayacak aşağıdaki güvenlik önlemlerini uyguladığınızda, güvenlik konusunda herhangi bir sorunla
+                  karşılaşmazsınız.
+                </p>
                 <br />
-                anitsuki.com olarak, hem sitemizin hem de üyelerimizin güvenliğine büyük önem vermekteyiz. Bu nedenle,
-                sistemimizde düzenli olarak güvenlik testleri yapmakta ve herhangi bir güvenlik açığına izin
-                vermemekteyiz. Buna rağmen, zaman zaman üyelerimizden, üyeliklerine korsan olarak girildiğine ilişkin
-                şikayetler almaktayız. Üyelikler, bizim bütün güvenlik önlemlerimize rağmen, bazen kötü niyetli kişiler
-                tarafından ele geçirilebilmektedir. Üyeliklerinizi, hatta bilgisayarınızdaki tüm bilgileri korumanızı
-                sağlayacak aşağıdaki güvenlik önlemlerini uyguladığınızda, güvenlik konusunda herhangi bir sorunla
-                karşılaşmazsınız.
-                <br />
-                <br />
-                <div class="title">
+
+                <h6 class="title"
+                  style="font-size: inherit; font-weight: inherit; margin: 0; margin-bottom: 10px; font-weight: bold;">
                   Kişisel Veri Saklama Süresi
-                </div>
-                “6563 Sayılı Elektronik Ticaretin Düzenlenmesi Hakkında Kanun” uyarınca; onayın geri alındığına ilişkin
-                kayıtlar bu tarihten itibaren 1 yıl süreyle, ticari elektronik iletinin içeriği ve gönderiye ilişkin
-                diğer her türlü kayıt ise gerektiğinde Bakanlığa sunulmak üzere 3 yıl süreyle saklanacaktır. Belirtilen
-                sürelerin sonunda, kişisel verileriniz Tarafımızca veya talebiniz üzerine silinecek, yok edilecek veya
-                anonim hale getirilecektir. Ayrıca “5651 Sayılı İnternet Ortamında Yapılan Yayınların Düzenlenmesi ve Bu
-                Yayınlar Yoluyla İşlenen Suçlarla Mücadele Edilmesi Hakkında Kanun” uyarınca işlediğimiz trafik verileri
-                2 yıl süreyle saklanacak ve bu süre bittikten sonra anonim hale getirilecektir.
+                </h6>
+                <p>
+                  “6563 Sayılı Elektronik Ticaretin Düzenlenmesi Hakkında Kanun” uyarınca; onayın geri alındığına
+                  ilişkin
+                  kayıtlar bu tarihten itibaren 1 yıl süreyle, ticari elektronik iletinin içeriği ve gönderiye ilişkin
+                  diğer her türlü kayıt ise gerektiğinde Bakanlığa sunulmak üzere 3 yıl süreyle saklanacaktır.
+                  Belirtilen
+                  sürelerin sonunda, kişisel verileriniz Tarafımızca veya talebiniz üzerine silinecek, yok edilecek veya
+                  anonim hale getirilecektir. Ayrıca “5651 Sayılı İnternet Ortamında Yapılan Yayınların Düzenlenmesi ve
+                  Bu
+                  Yayınlar Yoluyla İşlenen Suçlarla Mücadele Edilmesi Hakkında Kanun” uyarınca işlediğimiz trafik
+                  verileri
+                  2 yıl süreyle saklanacak ve bu süre bittikten sonra anonim hale getirilecektir.
+                </p>
                 <br />
-                <br />
-                <div class="title">
+
+                <h6 class="title"
+                  style="font-size: inherit; font-weight: inherit; margin: 0; margin-bottom: 10px; font-weight: bold;">
                   Çerez (Cookie) Kullanımı
-                </div>
-                İnternet Sitesi, ziyaretçilerine daha iyi hizmet verebilmek amacıyla ve yasal yükümlülüğü çerçevesinde,
-                işbu Gizlilik/Kişisel Verilerin Korunması Politikası ve İletişim İzni ile belirlenen amaçlar ve kapsam
-                dışında kullanılmamak kaydı ile gezinme bilgilerinizi toplayacak, işleyecek, üçüncü kişilerle paylaşacak
-                ve güvenli olarak saklayacaktır. Gezinme bilgilerinizi toplama amacıyla kullandığımız çerezler (cookie)
-                hakkında bilgi, İnternet Sitesi’ni ziyaret ettiğinizde “açılır pencere (pop-up ekran)” ile verilecektir.
-                Çerezler, web sitesini ziyaret ettiğinizde veya mobil uygulamasını cep telefonunuza yüklediğinizde veya
-                mobilweb üzerinden bağlandığınızda, internet tarayıcınız tarafından yüklenen ve bilgisayarınız, cep
-                telefonunuz veya tabletinizde saklanan küçük bilgi parçacıklarını içeren metin dosyalarıdır.
+                </h6>
+                <p>
+                  İnternet Sitesi, ziyaretçilerine daha iyi hizmet verebilmek amacıyla ve yasal yükümlülüğü
+                  çerçevesinde,
+                  işbu Gizlilik/Kişisel Verilerin Korunması Politikası ve İletişim İzni ile belirlenen amaçlar ve kapsam
+                  dışında kullanılmamak kaydı ile gezinme bilgilerinizi toplayacak, işleyecek, üçüncü kişilerle
+                  paylaşacak
+                  ve güvenli olarak saklayacaktır. Gezinme bilgilerinizi toplama amacıyla kullandığımız çerezler
+                  (cookie)
+                  hakkında bilgi, İnternet Sitesi’ni ziyaret ettiğinizde “açılır pencere (pop-up ekran)” ile
+                  verilecektir.
+                  Çerezler, web sitesini ziyaret ettiğinizde veya mobil uygulamasını cep telefonunuza yüklediğinizde
+                  veya
+                  mobilweb üzerinden bağlandığınızda, internet tarayıcınız tarafından yüklenen ve bilgisayarınız, cep
+                  telefonunuz veya tabletinizde saklanan küçük bilgi parçacıklarını içeren metin dosyalarıdır.
+                </p>
                 <br />
-                <br />
-                İnternet Sitesi çerezleri; günlük dosyaları, boş gif dosyaları ve/veya üçüncü taraf kaynakları yoluyla
-                topladığı bilgileri, tercihlerinizle ilgili bir özet oluşturmak amacıyla depolamaktadır. İnternet
-                Sitesi, size özel tanıtım yapmak, promosyonlar ve pazarlama teklifleri sunmak, web sitesinin veya mobil
-                uygulamanın içeriğini size göre iyileştirmek ve/veya tercihlerinizi belirlemek amacıyla; site üzerinde
-                gezinme bilgilerinizi ve/veya site üzerindeki kullanım geçmişinizi izleyebilmektedir. İnternet Sitesi,
-                çevrimiçi ve çevrimdışı olarak toplanan bilgiler gibi farklı yöntemlerle veya farklı zamanlarda site
-                üzerinde sizden toplanan bilgileri eşleştirebilir ve bu bilgileri üçüncü taraflar gibi başka
-                kaynaklardan alınan bilgilerle birlikte kullanabilir. Söz konusu eşleştirme ve kullanma, yalnızca işbu
-                Gizlilik/Kişisel Verilerin Korunması Politikası ve İletişim İzni ile belirlenen amaçlar ve kapsam
-                dahilinde kalacaktır.
+                <p>
+                  İnternet Sitesi çerezleri; günlük dosyaları, boş gif dosyaları ve/veya üçüncü taraf kaynakları yoluyla
+                  topladığı bilgileri, tercihlerinizle ilgili bir özet oluşturmak amacıyla depolamaktadır. İnternet
+                  Sitesi, size özel tanıtım yapmak, promosyonlar ve pazarlama teklifleri sunmak, web sitesinin veya
+                  mobil
+                  uygulamanın içeriğini size göre iyileştirmek ve/veya tercihlerinizi belirlemek amacıyla; site üzerinde
+                  gezinme bilgilerinizi ve/veya site üzerindeki kullanım geçmişinizi izleyebilmektedir. İnternet Sitesi,
+                  çevrimiçi ve çevrimdışı olarak toplanan bilgiler gibi farklı yöntemlerle veya farklı zamanlarda site
+                  üzerinde sizden toplanan bilgileri eşleştirebilir ve bu bilgileri üçüncü taraflar gibi başka
+                  kaynaklardan alınan bilgilerle birlikte kullanabilir. Söz konusu eşleştirme ve kullanma, yalnızca işbu
+                  Gizlilik/Kişisel Verilerin Korunması Politikası ve İletişim İzni ile belirlenen amaçlar ve kapsam
+                  dahilinde kalacaktır.
+                </p>
               </div>
             </div>
           </div>
@@ -1969,9 +1781,9 @@
     </div>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-    crossorigin="anonymous"></script>
-  <script src="js/app.js"></script>
+    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"
+    defer></script>
+  <script src="js/app.js" defer></script>
 </body>
 
 </html>

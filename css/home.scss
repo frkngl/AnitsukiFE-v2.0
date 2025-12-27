@@ -1,590 +1,595 @@
-    .progress-container {
+// Değişkenler (Tutarlılık ve bakım kolaylığı için)
+$primary-color: #ff7f00;
+$white: #fff;
+$black: #000;
+$dark-grey: #151515;
+$light-grey: #bbb;
+$text-muted: #ccc;
+
+.progress-container {
+    position: absolute;
+    bottom: 28%;
+    right: 10px;
+    width: 60px;
+    height: 60px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress-circle svg {
+    transform: rotate(-90deg);
+}
+
+.progress-circle circle {
+    fill: none;
+    stroke-width: 5;
+    stroke: transparent;
+    cx: 30;
+    cy: 30;
+    r: 15;
+}
+
+.progress-circle .progress-bar {
+    stroke: $white;
+    stroke-linecap: round;
+    /* PERFORMANS: Sadece stroke-dashoffset değişiyor, GPU'ya bildiriyoruz */
+    will-change: stroke-dashoffset;
+    transition: stroke-dashoffset 0.1s linear;
+}
+
+.timer {
+    position: absolute;
+    font-size: 1rem;
+    font-weight: 500;
+    color: $white;
+    text-align: center;
+}
+
+.carousel-fade .carousel-item {
+    opacity: 0;
+    /* PERFORMANS: Opaklık değişimi için GPU hızlandırma */
+    will-change: opacity;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.carousel-fade .carousel-item.active {
+    opacity: 1;
+}
+
+.carousel-fade .carousel-item-next,
+.carousel-fade .carousel-item-prev {
+    opacity: 0;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 29%;
+    left: 100px;
+    margin: 0 !important;
+    display: flex;
+    justify-content: start;
+}
+
+.carousel-indicators button {
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 50%;
+    background-color: $light-grey;
+    border: none;
+    margin: 0 5px;
+    padding: 0;
+    /* PERFORMANS: Sadece arka plan rengi */
+    transition: background-color 0.3s ease;
+}
+
+.carousel-indicators .active {
+    background-color: $primary-color;
+    opacity: 1;
+}
+
+.carousel-fade {
+    .desktop {
+        width: 100%;
+        height: 100%;
+        max-width: 4196px;
+        max-height: 2160px;
+        object-fit: cover;
+        filter: brightness(0.7);
+    }
+}
+
+.carousel-item {
+    position: relative;
+
+    &::after {
         position: absolute;
-        bottom: 28%;
-        right: 10px;
-        width: 60px;
-        height: 60px;
-        z-index: 10;
+        content: "";
+        display: block;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 1%, #000000 100%);
+    }
+
+    .carousel-caption {
+        z-index: 9;
+        position: absolute;
+        left: 100px;
+        bottom: 29%;
+        width: 750px;
+        line-height: 1;
         display: flex;
-        align-items: center;
-        justify-content: center;
+        flex-direction: column;
+        align-items: start;
+        text-align: start;
+
+        .title {
+            font-size: 1.5rem;
+            color: $primary-color;
+        }
+
+        .des {
+            font-size: 1rem;
+            color: $text-muted;
+            margin-bottom: 50px;
+        }
+    }
+}
+
+.carousel-fade {
+    .carousel-control-prev {
+        width: 100px;
+        z-index: 9;
+        max-height: calc(100vh - 60px);
+        height: auto;
     }
 
-    .progress-circle svg {
-        transform: rotate(-90deg);
+    .carousel-control-next {
+        width: 100px;
+        z-index: 9;
+        max-height: calc(100vh - 60px);
+        height: auto;
+    }
+}
+
+.button-container {
+    position: absolute;
+    bottom: 30px;
+    right: 20px;
+    display: flex;
+    gap: 5px;
+}
+
+.btn-detail,
+.btn-watch {
+    background-color: $primary-color;
+    color: $black;
+    border: none;
+    padding: 6px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    /* PERFORMANS: Renk ve arka plan geçişi */
+    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none;
+}
+
+.btn-detail:hover,
+.btn-watch:hover {
+    background-color: $dark-grey;
+    color: $primary-color;
+}
+
+.bi-info-circle,
+.bi-play-circle {
+    margin-bottom: 2px;
+    margin-right: 2px;
+}
+
+.watchtitle {
+    font-size: 1.3rem;
+    font-weight: 500;
+    font-style: normal;
+    color: $white;
+    padding: 0px 16px;
+    display: flex;
+    align-items: center;
+    margin-top: -15%;
+    position: relative;
+    z-index: 99;
+    margin-bottom: 5px;
+
+    svg {
+        margin-right: 5px;
+    }
+}
+
+.splide {
+    position: relative;
+    z-index: 99;
+
+    .splide__list {
+        /* PERFORMANS: Sadece transform özelliği */
+        transition: transform 0.3s ease-out;
+
+        .splide__slide {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+
+            .anime {
+                text-decoration: none;
+                position: relative;
+                width: 95%;
+                height: auto;
+                border-radius: 10px;
+
+                &:hover img {
+                    filter: brightness(1);
+                }
+
+                img {
+                    object-fit: cover;
+                    width: 100%;
+                    height: auto;
+                    filter: brightness(0.7);
+                    border-radius: 10px;
+                    /* PERFORMANS: Filter değişimi için GPU */
+                    will-change: filter;
+                    transition: filter 0.3s ease-out;
+                }
+
+                .text {
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    color: $white;
+                    padding: 0px 5px 5px 5px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+
+                    .title {
+                        font-size: 1rem;
+                        font-weight: 500;
+                        font-style: normal;
+                        width: 70%;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+
+                    .seasonandepisode {
+                        font-size: 1rem;
+                        font-weight: 500;
+                        font-style: normal;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.watchtitle1 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    font-style: normal;
+    color: $white;
+    padding: 0px 16px;
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    position: relative;
+    z-index: 99;
+    margin-bottom: 5px;
+
+    svg {
+        margin-right: 5px;
+    }
+}
+
+.splide1 {
+    position: relative;
+    z-index: 99;
+
+    .splide__list {
+        transition: transform 0.3s ease-out;
+
+        .splide__slide {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+
+            .anime {
+                text-decoration: none;
+                position: relative;
+                width: 95%;
+                height: auto;
+                border-radius: 10px;
+
+                &:hover img {
+                    filter: brightness(1);
+                }
+
+                img {
+                    object-fit: cover;
+                    width: 100%;
+                    height: auto;
+                    filter: brightness(0.7);
+                    border-radius: 10px;
+                    /* PERFORMANS: Filter değişimi için GPU */
+                    will-change: filter;
+                    transition: filter 0.3s ease-out;
+                }
+
+                .text {
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    color: $white;
+                    padding: 0px 5px 5px 5px;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+
+                    .title {
+                        font-size: 1rem;
+                        font-weight: 500;
+                        font-style: normal;
+                        width: 100%;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+
+                    .seasonandepisode {
+                        font-size: 1rem;
+                        font-weight: 500;
+                        font-style: normal;
+                        width: 100%;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width:1500px) {
+    .progress-container {
+        bottom: 20%;
     }
 
-    .progress-circle circle {
-        fill: none;
-        stroke-width: 5;
-        stroke: transparent;
-        cx: 30;
-        cy: 30;
-        r: 15;
+    .carousel-indicators {
+        bottom: 20%;
     }
 
-    .progress-circle .progress-bar {
-        stroke: #fff;
-        stroke-linecap: round;
-        transition: stroke-dashoffset 0.1s linear;
+    .carousel-item {
+        .carousel-caption {
+            bottom: 20%;
+        }
     }
 
-    .timer {
-        position: absolute;
-        font-size: 1rem;
-        font-weight: 500;
-        color: white;
-        text-align: center;
+    .watchtitle {
+        margin-top: -10%;
+    }
+}
+
+@media only screen and (max-width:1100px) {
+    .progress-container {
+        bottom: 1%;
     }
 
-    .carousel-fade .carousel-item {
-        opacity: 0;
-        transition: opacity 0.6s ease-in-out;
+    .carousel-indicators {
+        bottom: 3%;
     }
 
-    .carousel-fade .carousel-item.active {
-        opacity: 1;
+    .carousel-item {
+        .carousel-caption {
+            bottom: 3%;
+        }
     }
 
-    .carousel-fade .carousel-item-next,
-    .carousel-fade .carousel-item-prev {
-        opacity: 0;
+    .watchtitle {
+        margin-top: 0%;
+    }
+}
+
+@media only screen and (max-width:1000px) {
+    .carousel-item {
+        .carousel-caption {
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 5%;
+            width: 350px;
+            max-height: 500px;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            .title {
+                font-size: 1.2rem;
+                font-weight: 500;
+                color: $white;
+                margin-bottom: 50px;
+            }
+
+            .des {
+                display: none;
+            }
+
+            .button-container {
+                position: absolute;
+                bottom: 30px;
+                right: 50px;
+                display: flex;
+                gap: 5px;
+            }
+
+            .btn-detail,
+            .btn-watch {
+                background-color: $primary-color;
+                color: $black;
+                border: none;
+                padding: 6px;
+                border-radius: 5px;
+                font-size: 0.9rem;
+                transition: background-color 0.3s;
+                text-decoration: none;
+            }
+        }
     }
 
     .carousel-indicators {
         position: absolute;
-        bottom: 29%;
-        left: 100px;
+        bottom: 3%;
+        left: 0px;
         margin: 0 !important;
         display: flex;
-        justify-content: start;
+        justify-content: center;
     }
 
-    .carousel-indicators button {
-        width: 10px !important;
-        height: 10px !important;
-        border-radius: 50%;
-        background-color: #bbb;
-        border: none;
-        margin: 0 5px;
-        padding: 0;
-        transition: background-color 0.3s ease;
+    .watchtitle {
+        font-size: 1.1rem;
     }
 
-    .carousel-indicators .active {
-        background-color: #ff7f00;
-        opacity: 1;
-    }
+    .watchtitle1 {
+        font-size: 1.1rem;
 
+        svg {
+            margin-right: 5px;
+        }
+    }
+}
+
+@media only screen and (max-width:930px) {
+    .splide {
+        .splide__list {
+            .splide__slide {
+                .anime {
+                    width: 95%;
+                    height: auto;
+
+                    .splidedesktop {
+                        width: 100%;
+                        height: auto;
+                    }
+
+                    .text {
+                        display: flex;
+                        flex-direction: column;
+
+                        .title {
+                            font-size: 0.9rem;
+                            width: 100%;
+                        }
+
+                        .seasonandepisode {
+                            font-size: 0.9rem;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:800px) {
     .carousel-fade {
+        .carousel-item {
+            .carousel-caption {
+                bottom: 10%;
+            }
+        }
+
+        .carousel-indicators {
+            bottom: 8%;
+        }
+
+        .progress-container {
+            bottom: 7%;
+        }
+
         .desktop {
             width: 100%;
             height: 100%;
-            max-width: 4196px;
-            max-height: 2160px;
+            max-height: calc(100vh - 60px);
             object-fit: cover;
             filter: brightness(0.7);
         }
     }
 
-    .carousel-item {
-        position: relative;
-
-        &::after {
-            position: absolute;
-            content: "";
-            display: block;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 1%, #000000 100%);
-        }
-
-        .carousel-caption {
-            z-index: 9;
-            position: absolute;
-            left: 100px;
-            bottom: 29%;
-            width: 750px;
-            line-height: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: start;
-            text-align: start;
-
-            .title {
-                font-size: 1.5rem;
-                color: #ff7f00;
-            }
-
-            .des {
-                font-size: 1rem;
-                color: #ccc;
-                margin-bottom: 50px;
-            }
-        }
+    .watchtitle {
+        margin-top: -8%;
     }
+}
 
+@media only screen and (max-width:700px) {
     .carousel-fade {
-
         .carousel-control-prev {
-            width: 100px;
+            width: 60px;
             z-index: 9;
-            max-height: calc(100vh - 60px);
-            height: auto;
         }
 
         .carousel-control-next {
-            width: 100px;
+            width: 60px;
             z-index: 9;
-            max-height: calc(100vh - 60px);
-            height: auto;
         }
     }
+}
 
-    .button-container {
-        position: absolute;
-        bottom: 30px;
-        right: 20px;
-        display: flex;
-        gap: 5px;
-    }
-
-    .btn-detail,
-    .btn-watch {
-        background-color: #ff7f00;
-        color: #000000;
-        border: none;
-        padding: 6px;
-        border-radius: 5px;
-        font-size: 1rem;
-        font-weight: 500;
-        transition: background-color 0.3s;
-        text-decoration: none;
-    }
-
-    .btn-detail:hover,
-    .btn-watch:hover {
-        background-color: #151515;
-        color: #ff7f00;
-    }
-
-    .bi-info-circle,
-    .bi-play-circle {
-        margin-bottom: 2px;
-        margin-right: 2px;
-    }
-
-    .watchtitle {
-        font-size: 1.3rem;
-        font-weight: 500;
-        font-style: normal;
-        color: #fff;
-        padding: 0px 16px;
-        display: flex;
-        align-items: center;
-        margin-top: -15%;
-        position: relative;
-        z-index: 99;
-        margin-bottom: 5px;
-
-        svg {
-            margin-right: 5px;
-        }
-    }
-
+@media only screen and (max-width:500px) {
     .splide {
-        position: relative;
-        z-index: 99;
-
         .splide__list {
-            transition: all 0.3s ease-out;
-
             .splide__slide {
-                display: flex;
-                justify-content: center;
-                width: 100%;
-
                 .anime {
-                    text-decoration: none;
-                    position: relative;
                     width: 95%;
                     height: auto;
-                    border-radius: 10px;
 
-                    &:hover img{
-                        filter: brightness(1);
-                    }
-
-                    img {
-                        object-fit: cover;
+                    .splidedesktop {
                         width: 100%;
                         height: auto;
-                        filter: brightness(0.7);
-                        border-radius: 10px;
-                        transition: all 0.3s ease-out;
                     }
 
                     .text {
-                        position: absolute;
-                        left: 0;
-                        bottom: 0;
-                        color: #fff;
-                        padding: 0px 5px 5px 5px;
-                        width: 100%;
-                        display: flex;
-                        justify-content: space-between;
-
-                        .title {
-                            font-size: 1rem;
-                            font-weight: 500;
-                            font-style: normal;
-                            width: 70%;
-                            white-space: nowrap;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                        }
-
-                        .seasonandepisode {
-                            font-size: 1rem;
-                            font-weight: 500;
-                            font-style: normal;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    .watchtitle1 {
-        font-size: 1.3rem;
-        font-weight: 500;
-        font-style: normal;
-        color: #fff;
-        padding: 0px 16px;
-        display: flex;
-        align-items: center;
-        margin-top: 50px;
-        position: relative;
-        z-index: 99;
-        margin-bottom: 5px;
-
-        svg {
-            margin-right: 5px;
-        }
-    }
-
-
-    .splide1 {
-        position: relative;
-        z-index: 99;
-
-        .splide__list {
-            transition: all 0.3s ease-out;
-
-            .splide__slide {
-                display: flex;
-                justify-content: center;
-                width: 100%;
-
-                .anime {
-                    text-decoration: none;
-                    position: relative;
-                    width: 95%;
-                    height: auto;
-                    border-radius: 10px;
-
-                    &:hover img{
-                        filter: brightness(1);
-                    }
-
-                    img {
-                        object-fit: cover;
-                        width: 100%;
-                        height: auto;
-                        filter: brightness(0.7);
-                        border-radius: 10px;
-                        transition: all 0.3s ease-out;
-                    }
-
-                    .text {
-                        position: absolute;
-                        left: 0;
-                        bottom: 0;
-                        color: #fff;
-                        padding: 0px 5px 5px 5px;
-                        width: 100%;
                         display: flex;
                         flex-direction: column;
 
                         .title {
-                            font-size: 1rem;
-                            font-weight: 500;
-                            font-style: normal;
+                            font-size: 0.9rem;
                             width: 100%;
-                            white-space: nowrap;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
                         }
 
                         .seasonandepisode {
-                            font-size: 1rem;
-                            font-weight: 500;
-                            font-style: normal;
+                            font-size: 0.9rem;
                             width: 100%;
-                            white-space: nowrap;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
                         }
                     }
                 }
             }
         }
     }
+}
 
-    
+@media only screen and (max-width:350px) {
+    .carousel-item {
+        .carousel-caption {
+            width: 300px;
 
-    @media only screen and (max-width:1500px) {
-        .progress-container {
-            bottom: 20%;
-        }
-
-        .carousel-indicators {
-            bottom: 20%;
-        }
-
-        .carousel-item {
-
-            .carousel-caption {
-                bottom: 20%;
-            }
-        }
-
-        .watchtitle {
-            margin-top: -10%;
-        }
-    }
-
-    @media only screen and (max-width:1100px) {
-        .progress-container {
-            bottom: 1%;
-        }
-
-        .carousel-indicators {
-            bottom: 3%;
-        }
-
-        .carousel-item {
-
-            .carousel-caption {
-                bottom: 3%;
-            }
-        }
-
-        .watchtitle {
-            margin-top: 0%;
-        }
-    }
-
-    @media only screen and (max-width:1000px) {
-        .carousel-item {
-
-            .carousel-caption {
-                left: 50%;
-                transform: translateX(-50%);
-                bottom: 5%;
-                width: 350px;
-                max-height: 500px;
-                line-height: 1;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
-
-                .title {
-                    font-size: 1.2rem;
-                    font-weight: 500;
-                    color: #fff;
-                    margin-bottom: 50px;
-                }
-
-                .des {
-                    display: none;
-                }
-
-                .button-container {
-                    position: absolute;
-                    bottom: 30px;
-                    right: 50px;
-                    display: flex;
-                    gap: 5px;
-                }
-
-                .btn-detail,
-                .btn-watch {
-                    background-color: #ff7f00;
-                    color: #000000;
-                    border: none;
-                    padding: 6px;
-                    border-radius: 5px;
-                    font-size: 0.9rem;
-                    transition: background-color 0.3s;
-                    text-decoration: none;
-                }
-            }
-        }
-
-        .carousel-indicators {
-            position: absolute;
-            bottom: 3%;
-            left: 0px;
-            margin: 0 !important;
-            display: flex;
-            justify-content: center;
-        }
-
-        .watchtitle {
-            font-size: 1.1rem;
-        }
-
-        .watchtitle1 {
-            font-size: 1.1rem;
-    
-            svg {
-                margin-right: 5px;
+            .button-container {
+                right: 25px;
             }
         }
     }
-
-    @media only screen and (max-width:930px) {
-        .splide {
-    
-            .splide__list {
-    
-                .splide__slide {
-    
-                    .anime {
-                        width: 95%;
-                        height: auto;
-    
-                        .splidedesktop {
-                            width: 100%;
-                            height: auto;
-                        }
-    
-                        .text {
-                            display: flex;
-                            flex-direction: column;
-    
-                            .title {
-                                font-size: 0.9rem;
-                                width: 100%;
-                            }
-    
-                            .seasonandepisode {
-                                font-size: 0.9rem;
-                                width: 100%;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    @media only screen and (max-width:800px) {
-        .carousel-fade {
-
-            .carousel-item {
-
-                .carousel-caption {
-                    bottom: 10%;
-                }
-            }
-    
-            .carousel-indicators {
-                bottom: 8%;
-            }
-
-            .progress-container {
-                bottom: 7%;
-            }
-
-            .desktop {
-                width: 100%;
-                height: 100%;
-                max-height: calc(100vh - 60px);
-                object-fit: cover;
-                filter: brightness(0.7);
-            }
-        }
-
-        .watchtitle {
-            margin-top: -8%;
-        }
-    }
-
-    @media only screen and (max-width:700px) {
-        .carousel-fade {
-
-            .carousel-control-prev {
-                width: 60px;
-                z-index: 9;
-            }
-
-            .carousel-control-next {
-                width: 60px;
-                z-index: 9;
-            }
-        }
-    }
-
-    @media only screen and (max-width:500px) {
-        .splide {
-    
-            .splide__list {
-    
-                .splide__slide {
-    
-                    .anime {
-                        width: 95%;
-                        height: auto;
-    
-                        .splidedesktop {
-                            width: 100%;
-                            height: auto;
-                        }
-    
-                        .text {
-                            display: flex;
-                            flex-direction: column;
-    
-                            .title {
-                                font-size: 0.9rem;
-                                width: 100%;
-                            }
-    
-                            .seasonandepisode {
-                                font-size: 0.9rem;
-                                width: 100%;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    @media only screen and (max-width:350px) {
-        .carousel-item {
-            .carousel-caption {
-                width: 300px;
-
-                .button-container {
-                    right: 25px;
-                }
-            }
-        }
-    }
+}

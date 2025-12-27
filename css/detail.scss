@@ -1,27 +1,29 @@
 .detail {
-
     .banner {
         width: 100%;
         height: calc(80vh - 60px);
         position: relative;
 
-        &::before {
+        // Banner üzerindeki gölgelendirmeler (Gradient)
+        &::before,
+        &::after {
             content: "";
             position: absolute;
-            right: 0;
-            top: 0;
             width: 100%;
             height: calc(80vh - 60px);
+            // Render optimizasyonu: Tarayıcıya bu katmanın etkileşimsiz olduğunu söyler
+            pointer-events: none;
+        }
+
+        &::before {
+            right: 0;
+            top: 0;
             background: linear-gradient(to top, rgba(255, 255, 255, 0) 1%, #000000 100%);
         }
 
         &::after {
-            content: "";
-            position: absolute;
             left: 0;
             bottom: 0;
-            width: 100%;
-            height: calc(80vh - 60px);
             background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 1%, #000000 100%);
         }
 
@@ -29,6 +31,7 @@
             width: 100%;
             height: calc(80vh - 60px);
             object-fit: cover;
+            display: block; // Alt boşlukları temizler
         }
 
         .box {
@@ -43,8 +46,32 @@
             .videoimg {
                 position: relative;
 
+                // --- VİDEO OYNATMA DURUMU ---
+                &.is-playing {
+                    .box2 {
+                        opacity: 0;
+                        visibility: hidden;
+                        pointer-events: none; // Tıklamayı videoya geçirir
+                    }
+
+                    .videocontainer .video {
+                        cursor: pointer;
+                    }
+                }
+
+                // --- POSTER KATMANI ---
                 .box2 {
                     position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    // Controls (20) katmanının üstünde olması için:
+                    z-index: 30;
+                    transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+                    opacity: 1;
+                    visibility: visible;
+                    pointer-events: auto;
 
                     .posterbtn {
                         position: relative;
@@ -59,6 +86,8 @@
                             object-fit: cover;
                             filter: brightness(1);
                             border-radius: 10px;
+                            // Beyaz kenarlık taşmasını önleyen fix:
+                            transform: scale(1.01);
                         }
 
                         .playbutton {
@@ -74,17 +103,19 @@
                             border-radius: 50%;
                             outline: none;
                             border: none;
-                            background-color: #ff7f00;
+                            background-color: #ff7f00; // $primary-color
                             transition: all 0.3s ease-out;
+                            color: white;
                         }
 
                         &:hover .playbutton {
-                            color: #ff7f00;
+                            color: #ff7f00; // $primary-color
                             background-color: #000000;
                         }
                     }
                 }
 
+                // --- VİDEO KONTEYNERİ ---
                 .videocontainer {
                     position: relative;
                     width: 340px;
@@ -95,6 +126,7 @@
                         height: 510px;
                         object-fit: cover;
                         border-radius: 10px;
+                        display: block;
                     }
 
                     .controls {
@@ -103,25 +135,32 @@
                         left: 0;
                         width: 100%;
                         padding: 4px;
+                        // Posterin (30) altında, videonun (default) üstünde:
+                        z-index: 20;
 
-                        .play-pause {
+                        // ORTAK BUTON STİLLERİ (Kod tekrarı önlendi)
+                        .play-pause,
+                        .mute {
                             border: none;
                             color: white;
                             background-color: rgba(0, 0, 0, 0.9);
                             padding: 5px;
                             border-radius: 50%;
-                            z-index: 9;
+                            cursor: pointer;
+                            display: inline-flex;
+                            align-items: center;
+                            justify-content: center;
+                            // GPU optimizasyonu için
+                            will-change: transform;
+                            transition: transform 0.1s ease;
+
+                            &:active {
+                                transform: scale(0.95);
+                            }
                         }
 
                         .mute {
-                            background-color: transparent;
-                            border: none;
-                            color: white;
                             margin-left: 10px;
-                            background-color: rgba(0, 0, 0, 0.9);
-                            padding: 5px;
-                            border-radius: 50%;
-                            z-index: 9;
                         }
                     }
                 }
@@ -138,8 +177,9 @@
             font-size: 2rem;
             font-weight: 500;
             font-style: normal;
-            color: #ff7f00;
+            color: #ff7f00; // $primary-color
             width: 80%;
+            // Tarayıcı uyumluluğu için her iki wrap kodunu koruyoruz
             word-wrap: break-word;
             overflow-wrap: break-word;
             line-height: 1;
@@ -148,83 +188,75 @@
         .favoriteandwatch {
             width: 20%;
             display: flex;
-            justify-content: end;
+            justify-content: flex-end; // 'end' yerine 'flex-end' daha güvenlidir
             align-items: center;
 
-            .bi-clock {
-                color: #ffffff;
-                cursor: pointer;
-                margin-left: 10px;
-            }
-
+            // İkonların ortak özellikleri (Kod tekrarı önlendi)
+            .bi-clock,
             .bi-heart {
                 color: #ffffff;
                 cursor: pointer;
+                transition: transform 0.2s ease, color 0.2s ease; // Ufak bir etkileşim hissi (Opsiyonel ama performanslı)
+
+                &:hover {
+                    transform: scale(1.1); // Kullanıcı hissiyatı için performanslı dokunuş
+                }
+            }
+
+            .bi-clock {
+                margin-left: 10px;
             }
         }
 
-        .season {
+        // --- ORTAK METİN STİLLERİ ---
+        // Bu sınıfların hepsi aynı temel özelliklere sahip.
+        // Tek tek yazmak yerine gruplayarak dosya boyutunu düşürdük.
+        .season,
+        .episode,
+        .year,
+        .tur,
+        .des {
             color: #ffffff;
             font-size: 1rem;
             font-weight: 500;
             font-style: normal;
         }
 
-        .episode {
-            color: #ffffff;
-            font-size: 1rem;
-            font-weight: 500;
-            font-style: normal;
-        }
-
-        .year {
-            color: #ffffff;
-            font-size: 1rem;
-            font-weight: 500;
-            font-style: normal;
-        }
-
+        // Ortak özelliklerin üzerine binen özel farklar:
         .tur {
-            color: #ffffff;
-            font-size: 1rem;
-            font-weight: 500;
-            font-style: normal;
             margin-bottom: 5px;
+        }
+
+        .des {
+            margin-bottom: 10px !important;
         }
 
         svg {
             margin-bottom: 2px;
         }
 
-        .des {
-            color: #ffffff;
-            font-size: 1rem;
-            font-weight: 500;
-            font-style: normal;
-            margin-bottom: 10px !important;
-        }
-
-
-
+        // --- BADGE (MAL & IMDB) ALANI ---
         .malandimdb {
             display: flex;
 
-            .mal {
-                color: #ffffff;
-                background-color: #2e51a2;
+            // Ortak Badge Stili
+            .mal,
+            .imdb {
                 padding: 5px;
                 font-size: 1rem;
                 font-weight: 600;
                 border-radius: 5px;
+                display: inline-block; // Kutu yapısını korumak için
+            }
+
+            .mal {
+                color: #ffffff;
+                background-color: #2e51a2;
             }
 
             .imdb {
                 color: #000000;
                 background-color: #F5C518;
-                padding: 5px;
-                font-size: 1rem;
-                font-weight: 600;
-                border-radius: 5px;
                 margin-left: 8px;
             }
         }
@@ -253,17 +285,20 @@
                     border-radius: 20px;
                     max-height: 150px;
                     overflow-y: auto;
+                    // Mobilde liste kaydırmasını pürüzsüz yapar
+                    -webkit-overflow-scrolling: touch;
 
-                    li {
+                    li a {
+                        color: #ffffff;
+                        // PERFORMANS: 'all' yerine sadece değişen özellikler
+                        transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+                        display: block; // Tıklama alanını genişletir
+                        padding: 5px 10px; // Ufak bir dokunuş (Tıklamayı kolaylaştırır)
+                        text-decoration: none;
 
-                        a {
-                            color: #ffffff;
-                            transition: all 0.3s ease-in-out;
-
-                            &:hover {
-                                color: #000000;
-                                background-color: #ffffff;
-                            }
+                        &:hover {
+                            color: #000000;
+                            background-color: #ffffff;
                         }
                     }
                 }
@@ -280,6 +315,8 @@
             gap: 20px;
             max-height: 600px;
             overflow-y: auto;
+            // Mobilde liste kaydırmasını pürüzsüz yapar
+            -webkit-overflow-scrolling: touch;
 
             a {
                 display: block;
@@ -289,10 +326,8 @@
                 color: #ffffff;
                 border-radius: 10px;
                 overflow: hidden;
-
-                &:hover img {
-                    transform: scale(1.05);
-                }
+                // GPU Render hatasını önlemek için (bazı tarayıcılarda taşmayı düzeltir)
+                transform: translateZ(0);
 
                 .box {
                     width: 100%;
@@ -303,9 +338,14 @@
                         width: 100%;
                         height: 180px;
                         object-fit: cover;
-                        transition: all 0.3s ease;
+                        // PERFORMANS: 'all' yerine sadece scale işlemi
+                        transition: transform 0.3s ease;
                         filter: brightness(0.6);
                         display: block;
+
+                        // Animasyon sırasında titremeyi önler
+                        will-change: transform;
+                        backface-visibility: hidden;
                     }
 
                     .episodename {
@@ -320,7 +360,14 @@
                         border-bottom-left-radius: 20px;
                         border-bottom-right-radius: 20px;
                         word-break: break-word;
+                        // Yazının resim üzerinde daha net okunması için hafif bir gradient eklenebilir (Tasarımı bozmamak için yorum satırı yaptım)
+                        // background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
                     }
+                }
+
+                // Hover Efekti: Sadece resmi büyüt
+                &:hover img {
+                    transform: scale(1.05);
                 }
             }
         }
@@ -348,10 +395,11 @@
                 height: 200px;
                 border-radius: 15px;
                 padding: 8px;
-                border: 2px solid #ff7f00;
+                border: 2px solid #ff7f00; // $primary-color
                 outline: none;
                 background-color: transparent;
                 color: #ffffff;
+                resize: none; // Kullanıcının tasarımı bozmasını engeller
             }
 
             .other {
@@ -369,12 +417,9 @@
                         margin-right: 5px;
                     }
 
-                    /* From Uiverse.io by Muaz-Aldalil */
+                    // --- TOGGLE SWITCH OPTIMIZASYONU ---
                     .toggle-checkbox {
-                        -webkit-appearance: none;
-                        -moz-appearance: none;
-                        appearance: none;
-                        display: none;
+                        display: none; // appearance: none yerine direkt display: none yeterli
                     }
 
                     .toggle-switch {
@@ -383,36 +428,39 @@
                         height: 25px;
                         border-radius: 16px;
                         position: relative;
-                        transition: 0.3s;
+                        transition: background-color 0.3s; // Sadece renk değişimi
                         cursor: pointer;
-                    }
 
-                    .toggle-switch::before {
-                        content: "";
-                        font-weight: 900;
-                        background-color: white;
-                        width: 16px;
-                        height: 16px;
-                        position: absolute;
-                        border-radius: 50%;
-                        top: 4px;
-                        left: 4px;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        color: #ddd;
-                        transition: 0.3s;
+                        &::before {
+                            content: "";
+                            font-weight: 900;
+                            background-color: white;
+                            width: 16px;
+                            height: 16px;
+                            position: absolute;
+                            border-radius: 50%;
+                            top: 4px;
+                            left: 4px; // Başlangıç pozisyonu sabit
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            color: #ddd;
+                            // PERFORMANS: 'left' yerine 'transform' ve 'color'
+                            transition: transform 0.3s, color 0.3s;
+                        }
                     }
 
                     .toggle-checkbox:checked+.toggle-switch {
-                        background-color: #ff7f00;
+                        background-color: #ff7f00; // $primary-color
+
+                        &::before {
+                            // PERFORMANS: Piksel hesabı yerine GPU kaydırma (30px - 4px = 26px)
+                            transform: translateX(26px);
+                            color: #ff7f00;
+                        }
                     }
 
-                    .toggle-checkbox:checked+.toggle-switch::before {
-                        content: "";
-                        left: 30px;
-                        color: #ff7f00;
-                    }
+                    // -----------------------------------
                 }
 
                 button {
@@ -426,7 +474,8 @@
                     background-color: transparent;
                     border: 2px solid #ff7f00;
                     color: #ffffff;
-                    transition: all 0.3s ease-in-out;
+                    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+                    cursor: pointer;
 
                     &:hover {
                         background-color: #ff7f00;
@@ -465,6 +514,7 @@
                 margin: 10px 0px;
                 font-family: Arial, sans-serif;
 
+                // KOD BİRLEŞTİRME (DRY)
                 .comment-box,
                 .reply-box {
                     display: flex;
@@ -529,7 +579,7 @@
                                 border-radius: 5px;
                                 font-size: 0.9rem;
                                 cursor: pointer;
-                                transition: all 0.3s ease;
+                                transition: background-color 0.3s ease, color 0.3s ease;
 
                                 &:hover {
                                     background-color: #ff7f00;
@@ -546,7 +596,8 @@
                                     align-items: center;
                                     color: #ffffff;
                                     text-decoration: none;
-                                    transition: all 0.3s ease-in-out;
+                                    transition: color 0.3s ease-in-out;
+                                    cursor: pointer; // Tıklanabilir olduğunu belirtelim
 
                                     &:hover {
                                         color: #ff7f00;
@@ -558,40 +609,39 @@
                                 }
                             }
                         }
-
                     }
                 }
 
+                // Reply Box'ın Comment Box'tan tek farkı:
                 .reply-box {
                     margin-left: 30px;
                     background-color: #2a2a2a;
                 }
             }
-
         }
 
         .modal {
-
             .replycontent {
                 display: flex;
                 flex-direction: column;
                 margin: 10px 0px;
 
-                .username {
+                // Ortak Input ve Textarea Stilleri
+                .username input,
+                .message textarea {
+                    width: 100%;
+                    background-color: transparent;
+                    border: 2px solid #ff7f00;
+                    border-radius: 10px;
+                    padding: 5px;
+                    color: #ffffff;
+                    outline: none;
+                }
 
+                .username {
                     .title {
                         color: #ffffff;
                         font-style: normal;
-                    }
-
-                    input {
-                        background-color: transparent;
-                        border: 2px solid #ff7f00;
-                        border-radius: 10px;
-                        padding: 5px;
-                        width: 100%;
-                        color: #ffffff;
-                        outline: none;
                     }
                 }
 
@@ -604,14 +654,8 @@
                     }
 
                     textarea {
-                        width: 100%;
                         height: 150px;
-                        background-color: transparent;
-                        border: 2px solid #ff7f00;
-                        outline: none;
-                        border-radius: 10px;
-                        color: #ffffff;
-                        padding: 5px;
+                        resize: none;
                     }
                 }
 
@@ -628,7 +672,8 @@
                         background-color: transparent;
                         border-radius: 10px;
                         color: #ffffff;
-                        transition: all 0.3s ease-in-out;
+                        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+                        cursor: pointer;
 
                         &:hover {
                             background-color: #ff7f00;
@@ -641,22 +686,16 @@
     }
 }
 
-@media only screen and (max-width:1665px) {
-    .detail {
-        .seasonandedipsode {
-
-            .episode {
-
-                a {
-                    flex: 1 1 230px;
-                    max-width: 300px;
-                }
-            }
-        }
+// --- BÜYÜK EKRANLAR (1665px Altı) ---
+@media only screen and (max-width: 1665px) {
+    .detail .seasonandedipsode .episode a {
+        flex: 1 1 230px;
+        max-width: 300px;
     }
 }
 
-@media only screen and (max-width:1500px) {
+// --- LAPTOP / KÜÇÜK DESKTOP (1500px Altı) ---
+@media only screen and (max-width: 1500px) {
     .detail {
         .animetext {
             padding: 0px 16px;
@@ -670,29 +709,31 @@
                 font-style: normal;
                 margin-bottom: 10px !important;
                 height: 150px;
-                padding: 0px 7px 0px 0px;
+                padding-right: 7px; // padding: 0 7px 0 0 yerine daha kısa
                 overflow-y: auto;
+                // Mobilde kaydırma performansı için
+                -webkit-overflow-scrolling: touch; 
             }
 
             .malandimdb {
                 display: flex;
-
-                .mal {
-                    color: #ffffff;
-                    background-color: #2e51a2;
+                
+                // ORTAK BADGE STİLİ (DRY)
+                .mal, .imdb {
                     padding: 5px;
                     font-size: 1rem;
                     font-weight: 500;
                     border-radius: 5px;
                 }
 
+                .mal {
+                    color: #ffffff;
+                    background-color: #2e51a2;
+                }
+
                 .imdb {
                     color: #000000;
                     background-color: #F5C518;
-                    padding: 5px;
-                    font-size: 1rem;
-                    font-weight: 500;
-                    border-radius: 5px;
                     margin-left: 8px;
                 }
             }
@@ -703,7 +744,7 @@
 
             .episode {
                 gap: 10px;
-
+                
                 a {
                     flex: 1 1 240px;
                     max-width: 300px;
@@ -717,191 +758,130 @@
     }
 }
 
-@media only screen and (max-width:1038px) {
-    .detail {
-        .seasonandedipsode {
+// --- TABLET (1038px Altı) ---
+@media only screen and (max-width: 1038px) {
+    .detail .seasonandedipsode .episode a {
+        flex: 1 1 230px;
+        max-width: 350px;
 
-            .episode {
+        .box img {
+            height: 150px;
+        }
+    }
+}
 
-                a {
-                    flex: 1 1 230px;
-                    max-width: 350px;
+// --- TABLET / MOBİL GEÇİŞ (800px Altı) ---
+@media only screen and (max-width: 800px) {
+    .detail .animetext {
+        padding: 0px 16px;
+        position: relative;
+        line-height: 1.2;
 
-                    .box {
+        .title {
+            font-size: 1.5rem;
+            font-weight: 500;
+            font-style: normal;
+            color: #ff7f00;
+            width: 80%;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            line-height: 1.1;
+        }
 
-                        img {
-                            height: 150px;
-                        }
-                    }
-                }
+        .favoriteandwatch {
+            width: 20%;
+            display: flex;
+            justify-content: flex-end; // 'end' -> 'flex-end'
+            align-items: center;
+
+            .bi-clock,
+            .bi-heart {
+                color: #ffffff;
+                cursor: pointer;
+            }
+
+            .bi-clock {
+                margin-left: 10px;
             }
         }
     }
 }
 
-@media only screen and (max-width:800px) {
-    .detail {
-        .animetext {
-            padding: 0px 16px;
-            position: relative;
-            line-height: 1.2;
+// --- MOBİL (760px Altı) - Video Boyutlandırma ---
+@media only screen and (max-width: 760px) {
+    .detail .banner .box {
+        width: 250px;
+        height: 375px;
 
-            .title {
-                font-size: 1.5rem;
-                font-weight: 500;
-                font-style: normal;
-                color: #ff7f00;
-                width: 80%;
-                word-wrap: break-word;
-                overflow-wrap: break-word;
-                line-height: 1.1;
-            }
-
-            .favoriteandwatch {
-                width: 20%;
-                display: flex;
-                justify-content: end;
-                align-items: center;
-
-                .bi-clock {
-                    color: #ffffff;
-                    cursor: pointer;
-                    margin-left: 10px;
-                }
-
-                .bi-heart {
-                    color: #ffffff;
-                    cursor: pointer;
-                }
-            }
+        // Poster, Video Container ve Video'nun hepsi aynı boyutta
+        // Tek tek yazmak yerine seçicileri birleştirdik (DRY)
+        .videoimg .box2 .posterbtn,
+        .videoimg .videocontainer,
+        .videoimg .videocontainer .video {
+            width: 250px;
+            height: 375px;
         }
     }
 }
 
-@media only screen and (max-width:760px) {
-    .detail {
+// --- MOBİL (720px Altı) - Bölüm Listesi ---
+@media only screen and (max-width: 720px) {
+    .detail .seasonandedipsode .episode a {
+        flex: 1 1 220px;
+        max-width: 350px;
+    }
+}
 
-        .banner {
+// --- YATAY MOBİL (Yükseklik 720px Altı) ---
+@media only screen and (max-height: 720px) {
+    .detail .banner .box {
+        width: 230px;
+        height: 355px;
 
-            .box {
-                width: 250px;
-                height: 375px;
-
-                .videoimg {
-
-                    .box2 {
-
-                        .posterbtn {
-                            width: 250px;
-                            height: 375px;
-                        }
-                    }
-
-                    .videocontainer {
-                        width: 250px;
-                        height: 375px;
-
-                        .video {
-                            width: 250px;
-                            height: 375px;
-                        }
-                    }
-                }
-            }
+        // Yine boyutları grupluyoruz
+        .videoimg .box2 .posterbtn,
+        .videoimg .videocontainer,
+        .videoimg .videocontainer .video {
+            width: 230px;
+            height: 355px;
         }
     }
 }
 
-@media only screen and (max-width:720px) {
-    .detail {
-        .seasonandedipsode {
-
-            .episode {
-
-                a {
-                    flex: 1 1 220px;
-                    max-width: 350px;
-                }
-            }
-        }
+// --- KÜÇÜK YATAY MOBİL (Yükseklik 570px Altı) ---
+@media only screen and (max-height: 570px) {
+    // Ekran çok basıksa posteri tamamen gizle
+    .detail .banner .box {
+        display: none;
     }
 }
 
-@media only screen and (max-height:720px) {
+// --- KÜÇÜK MOBİL (500px Altı) ---
+@media only screen and (max-width: 500px) {
     .detail {
+        .seasonandedipsode .episode {
+            gap: 5px;
 
-        .banner {
+            a {
+                flex: 1 1 150px;
+                max-width: 250px;
 
-            .box {
-                width: 230px;
-                height: 355px;
-
-                .videoimg {
-
-                    .box2 {
-
-                        .posterbtn {
-                            width: 230px;
-                            height: 355px;
-                        }
+                .box {
+                    img {
+                        height: 125px;
+                        filter: brightness(0.5);
                     }
 
-                    .videocontainer {
-                        width: 230px;
-                        height: 355px;
-
-                        .video {
-                            width: 230px;
-                            height: 355px;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (max-height:570px) {
-    .detail {
-        .banner {
-            .box {
-                display: none;
-            }
-        }
-    }
-}
-
-@media only screen and (max-width:500px) {
-    .detail {
-        .seasonandedipsode {
-
-            .episode {
-                gap: 5px;
-
-                a {
-                    flex: 1 1 150px;
-                    max-width: 250px;
-
-                    .box {
-
-                        img {
-                            height: 125px;
-                            filter: brightness(0.5);
-                        }
-
-                        .episodename {
-                            font-size: 14px;
-                            font-weight: 500;
-                        }
+                    .episodename {
+                        font-size: 14px;
+                        font-weight: 500;
                     }
                 }
             }
         }
 
         .commentcontent {
-
             .messagebox {
-
                 .title {
                     font-size: 1rem;
                 }
@@ -916,7 +896,6 @@
 
                     .toggle {
                         margin-right: 5px;
-
                         .title {
                             font-size: 1rem;
                         }
@@ -924,40 +903,28 @@
                 }
             }
 
-            .comments {
-
-                .title {
-                    font-size: 1rem;
-                }
+            .comments .title {
+                font-size: 1rem;
             }
         }
-
     }
 }
 
-@media only screen and (max-width:360px) {
-    .detail {
-        .seasonandedipsode {
+// --- MİNİ MOBİL (360px Altı) ---
+@media only screen and (max-width: 360px) {
+    .detail .seasonandedipsode .episode a {
+        flex: 1 1 150px;
+        max-width: 300px;
 
-            .episode {
+        .box {
+            img {
+                height: 125px;
+                filter: brightness(0.5);
+            }
 
-                a {
-                    flex: 1 1 150px;
-                    max-width: 300px;
-
-                    .box {
-
-                        img {
-                            height: 125px;
-                            filter: brightness(0.5);
-                        }
-
-                        .episodename {
-                            font-size: 14px;
-                            font-weight: 500;
-                        }
-                    }
-                }
+            .episodename {
+                font-size: 14px;
+                font-weight: 500;
             }
         }
     }

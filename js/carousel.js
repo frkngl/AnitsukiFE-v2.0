@@ -1,259 +1,223 @@
+'use strict'; // JavaScript motorunun kodu daha hızlı ve güvenli işlemesini sağlar
+
 document.addEventListener('DOMContentLoaded', function () {
-  const carouselEl = document.querySelector('#carouselExampleCaptions');
-  const progressBar = document.querySelector('.progress-circle .progress-bar');
-  const timer = document.querySelector('.timer');
-  const intervalTime = 10000;
-  let startTime = null;
-  let animationFrameId = null;
-  let currentSlideIndex = 0;
-  const slides = carouselEl.querySelectorAll('.carousel-item');
-  const totalSlides = slides.length;
 
-  // Eleman kontrolü
-  if (!carouselEl || !progressBar || !timer || totalSlides === 0) {
-    console.error('Gerekli DOM elemanları bulunamadı!');
-    return;
-  }
+  // ==========================================
+  // 1. BOOTSTRAP CAROUSEL & PROGRESS BAR (ANA SLIDER)
+  // ==========================================
+  
+  const carouselEl = document.getElementById('carouselExampleCaptions');
 
-  // Bootstrap Carousel başlatma
-  let carousel;
-  try {
-    carousel = new bootstrap.Carousel(carouselEl, {
-      interval: false,
-      pause: false,
-      ride: false
-    });
-  } catch (e) {
-    console.error('Carousel başlatılamadı:', e);
-    return;
-  }
+  // Sayfada ana slider varsa çalıştır, yoksa atla (Hata önleyici)
+  if (carouselEl) {
+    const progressBar = document.querySelector('.progress-circle .progress-bar');
+    const timer = document.querySelector('.timer');
+    const intervalTime = 10000; // 10 Saniye
 
-  // Slayt değiştirme fonksiyonu
-  function goToSlide(index) {
-    carousel.to(index);
-    currentSlideIndex = index;
-    startProgress();
-  }
+    let startTime = null;
+    let animationFrameId = null;
+    let currentSlideIndex = 0;
+    
+    const slides = carouselEl.querySelectorAll('.carousel-item');
+    const totalSlides = slides.length;
 
-  // Progress bar ve timer animasyonu
-  function startProgress() {
-    const circumference = 2 * Math.PI * 15;
-    progressBar.setAttribute('stroke-dasharray', circumference);
-    progressBar.setAttribute('stroke-dashoffset', circumference);
+    // Alt elemanlar eksikse durdur
+    if (progressBar && timer && totalSlides > 0) {
+      
+      // Bootstrap Carousel Başlatma
+      let carousel;
+      try {
+        carousel = new bootstrap.Carousel(carouselEl, {
+          interval: false, // Otomatik geçişi JS ile biz yöneteceğiz
+          pause: false,
+          ride: false
+        });
+      } catch (e) {
+        console.warn('Bootstrap Carousel yüklenemedi:', e);
+      }
 
-    if (animationFrameId) {
-      cancelAnimationFrame(animationFrameId);
-    }
+      // Slayt Değiştirme Fonksiyonu
+      const goToSlide = (index) => {
+        if (!carousel) return;
+        carousel.to(index);
+        currentSlideIndex = index;
+        startProgress();
+      };
 
-    startTime = performance.now();
+      // Progress Bar Animasyonu (GPU Dostu)
+      const startProgress = () => {
+        const r = 15; // SVG circle yarıçapı
+        const circumference = 2 * Math.PI * r;
+        
+        // CSS stillerini sıfırla
+        progressBar.style.strokeDasharray = `${circumference}`;
+        progressBar.style.strokeDashoffset = `${circumference}`;
 
-    function updateProgress(currentTime) {
-      const elapsed = currentTime - startTime;
-      const remainingTime = Math.max(intervalTime - elapsed, 0);
-      const progressFraction = Math.min(elapsed / intervalTime, 1);
+        if (animationFrameId) cancelAnimationFrame(animationFrameId);
 
-      const progressOffset = circumference * (1 - progressFraction);
-      progressBar.setAttribute('stroke-dashoffset', progressOffset);
+        startTime = performance.now();
 
-      const secondsLeft = Math.ceil(remainingTime / 1000);
-      timer.textContent = secondsLeft;
+        const updateProgress = (currentTime) => {
+          if (!startTime) startTime = currentTime;
+          const elapsed = currentTime - startTime;
+          const remainingTime = Math.max(intervalTime - elapsed, 0);
+          
+          const progressFraction = Math.min(elapsed / intervalTime, 1);
+          const progressOffset = circumference * (1 - progressFraction);
+          
+          // Görsel Güncelleme
+          progressBar.style.strokeDashoffset = progressOffset;
+          timer.textContent = Math.ceil(remainingTime / 1000);
 
-      if (progressFraction >= 1) {
-        const nextSlideIndex = (currentSlideIndex + 1) % totalSlides;
-        goToSlide(nextSlideIndex);
-      } else {
+          if (progressFraction >= 1) {
+            const nextSlideIndex = (currentSlideIndex + 1) % totalSlides;
+            goToSlide(nextSlideIndex);
+          } else {
+            animationFrameId = requestAnimationFrame(updateProgress);
+          }
+        };
+
         animationFrameId = requestAnimationFrame(updateProgress);
-      }
-    }
+      };
 
-    animationFrameId = requestAnimationFrame(updateProgress);
+      // --- SWIPE (KAYDIRMA) DESTEĞİ ---
+      let startX = null;
+      let isDragging = false;
+      const swipeThreshold = 50;
+
+      const handleStart = (e) => {
+        const clientX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+        startX = clientX;
+        isDragging = true;
+      };
+
+      const handleMove = (e) => {
+        if (!isDragging || startX === null) return;
+      };
+
+      const handleEnd = (e) => {
+        if (!isDragging || startX === null) return;
+
+        const clientX = e.type.includes('mouse') ? e.clientX : (e.changedTouches ? e.changedTouches[0].clientX : startX);
+        const deltaX = clientX - startX;
+
+        if (Math.abs(deltaX) > swipeThreshold) {
+          if (deltaX > 0) {
+            // Sağdan sola (Önceki)
+            const prevSlideIndex = (currentSlideIndex - 1 + totalSlides) % totalSlides;
+            goToSlide(prevSlideIndex);
+          } else {
+            // Soldan sağa (Sonraki)
+            const nextSlideIndex = (currentSlideIndex + 1) % totalSlides;
+            goToSlide(nextSlideIndex);
+          }
+        }
+
+        isDragging = false;
+        startX = null;
+      };
+
+      // Event Listener'lar (Passive: true -> Kaydırma performansını artırır)
+      carouselEl.addEventListener('mousedown', handleStart);
+      carouselEl.addEventListener('mouseup', handleEnd);
+      carouselEl.addEventListener('mouseleave', handleEnd);
+      
+      carouselEl.addEventListener('touchstart', handleStart, { passive: true });
+      carouselEl.addEventListener('touchmove', handleMove, { passive: true });
+      carouselEl.addEventListener('touchend', handleEnd);
+
+      // Bootstrap Slide Olayını Dinle (Manuel tıklamalarda barı sıfırla)
+      carouselEl.addEventListener('slid.bs.carousel', (e) => {
+        currentSlideIndex = e.to;
+        startProgress();
+      });
+
+      // Sekme Görünürlük Kontrolü (Pil Tasarrufu)
+      document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'visible') {
+          const currentTime = performance.now();
+          const elapsedSinceStart = currentTime - startTime;
+
+          if (elapsedSinceStart >= intervalTime) {
+            const nextSlideIndex = (currentSlideIndex + 1) % totalSlides;
+            goToSlide(nextSlideIndex);
+          } else {
+            animationFrameId = requestAnimationFrame(() => startProgress());
+          }
+        } else {
+          if (animationFrameId) cancelAnimationFrame(animationFrameId);
+        }
+      });
+
+      // İlk Başlatma
+      startProgress();
+    }
   }
 
-  // Swipe (kaydırma) desteği ekleme
-  let startX = null;
-  let isDragging = false;
-  const swipeThreshold = 50; // Minimum kaydırma mesafesi (px)
 
-  // Mouse ve touch başlangıç olayları
-  function handleStart(event) {
-    const clientX = event.type.includes('mouse') ? event.clientX : event.touches[0].clientX;
-    startX = clientX;
-    isDragging = true;
+  // ==========================================
+  // 2. SPLIDE SLIDER YAPILANDIRMASI
+  // ==========================================
+
+  // Eğer Splide kütüphanesi yüklenmediyse dur (Hata önleyici)
+  if (typeof Splide === 'undefined') return;
+
+  // Ortak Ayarlar (Kod tekrarını azaltmak için)
+  const commonSplideOptions = {
+    type: 'slide',
+    perMove: 1,
+    pagination: false,
+    // HTML'de loading="lazy" kullandığımız için Splide'ınkini kapatıyoruz (Çakışmayı önler)
+    lazyLoad: false, 
+  };
+
+  // --- SPLIDE 1 (Son İzlenenler) ---
+  const splide1El = document.getElementById('splide1');
+  if (splide1El) {
+    new Splide(splide1El, {
+      ...commonSplideOptions,
+      perPage: 7,
+      padding: { left: '8px', right: '8px' },
+      breakpoints: {
+        2200: { perPage: 6 },
+        1700: { perPage: 5 },
+        1400: { perPage: 5 },
+        1200: { perPage: 4 },
+        700:  { perPage: 3, padding: { left: '10px', right: '10px' } },
+        450:  { perPage: 2 },
+      },
+    }).mount();
   }
 
-  // Mouse ve touch hareket olayları
-  function handleMove(event) {
-    if (!isDragging || startX === null) return;
-    const clientX = event.type.includes('mouse') ? event.clientX : (event.touches ? event.touches[0].clientX : null);
-    if (!clientX) return;
+  // --- SPLIDE 2 & 3 (Ortak Büyük Slider Ayarları) ---
+  const largeSliderBreakpoints = {
+    2300: { perPage: 8 },
+    1700: { perPage: 7 },
+    1400: { perPage: 6 },
+    1200: { perPage: 5 },
+    1000: { perPage: 4 },
+    700:  { perPage: 3 },
+    450:  { perPage: 2 },
+  };
 
-    const deltaX = clientX - startX;
-
-    // Hareketi takip etmek için ek görsel geri bildirim (opsiyonel)
-    // carouselEl.style.transform = `translateX(${deltaX}px)`;
-  }
-
-  // Mouse ve touch bitiş olayları
-  function handleEnd(event) {
-    if (!isDragging || startX === null) return;
-
-    const clientX = event.type.includes('mouse') ? event.clientX : (event.changedTouches ? event.changedTouches[0].clientX : startX);
-    const deltaX = clientX - startX;
-
-    if (Math.abs(deltaX) > swipeThreshold) {
-      if (deltaX > 0) {
-        // Sağdan sola kaydırma (önceki slayt)
-        const prevSlideIndex = (currentSlideIndex - 1 + totalSlides) % totalSlides;
-        goToSlide(prevSlideIndex);
-      } else {
-        // Soldan sağa kaydırma (sonraki slayt)
-        const nextSlideIndex = (currentSlideIndex + 1) % totalSlides;
-        goToSlide(nextSlideIndex);
-      }
-    }
-
-    // Sıfırlama
-    isDragging = false;
-    startX = null;
-    // carouselEl.style.transform = ''; // Görsel geri bildirimi sıfırla (opsiyonel)
-  }
-
-  // Olay dinleyicilerini ekle
-  carouselEl.addEventListener('mousedown', handleStart);
-  carouselEl.addEventListener('mousemove', handleMove);
-  carouselEl.addEventListener('mouseup', handleEnd);
-  carouselEl.addEventListener('mouseleave', handleEnd); // Mouse carousel dışına çıkarsa
-
-  carouselEl.addEventListener('touchstart', handleStart, { passive: true });
-  carouselEl.addEventListener('touchmove', handleMove, { passive: true });
-  carouselEl.addEventListener('touchend', handleEnd);
-
-  // Slayt değişim olayı
-  carouselEl.addEventListener('slid.bs.carousel', (e) => {
-    currentSlideIndex = e.to;
-    startProgress();
-  });
-
-  // Sekme görünürlüğü takibi
-  document.addEventListener('visibilitychange', () => {
-    if (document.visibilityState === 'visible') {
-      const currentTime = performance.now();
-      const elapsedSinceStart = currentTime - startTime;
-
-      if (elapsedSinceStart >= intervalTime) {
-        const cyclesMissed = Math.floor(elapsedSinceStart / intervalTime);
-        const nextSlideIndex = (currentSlideIndex + cyclesMissed) % totalSlides;
-        goToSlide(nextSlideIndex);
-      } else if (!animationFrameId) {
-        animationFrameId = requestAnimationFrame(updateProgress);
-      }
-    }
-  });
-
-  // İlk slayt için başlangıç
-  goToSlide(0);
-
-  // Sayfa kapandığında temizlik
-  window.addEventListener('pagehide', () => {
-    if (animationFrameId) {
-      cancelAnimationFrame(animationFrameId);
-    }
-  });
-});
-
-
-new Splide('#splide1', {
-  type: 'slide',
-  perPage: 7,
-  perMove: 1,
-  pagination: false,
-  padding: { left: '8px', right: '8px' },
-
-  breakpoints: {
-    2200: {
-      perPage: 6,
-    },
-    1700: {
-      perPage: 5,
-    },
-    1400: {
-      perPage: 5,
-    },
-    1200: {
-      perPage: 4,
-    },
-    700: {
-      perPage: 3,
+  const splide2El = document.getElementById('splide2');
+  if (splide2El) {
+    new Splide(splide2El, {
+      ...commonSplideOptions,
+      perPage: 9,
       padding: { left: '10px', right: '10px' },
-    },
-    450: {
-      perPage: 2,
-    },
-  },
-}).mount();
+      breakpoints: largeSliderBreakpoints
+    }).mount();
+  }
 
-new Splide('#splide2', {
-  type: 'slide',
-  perPage: 9,
-  perMove: 1,
-  pagination: false,
-  padding: { left: '10px', right: '10px' },
+  const splide3El = document.getElementById('splide3');
+  if (splide3El) {
+    new Splide(splide3El, {
+      ...commonSplideOptions,
+      perPage: 9,
+      padding: { left: '10px', right: '10px' },
+      breakpoints: largeSliderBreakpoints
+    }).mount();
+  }
 
-  breakpoints: {
-    2300: {
-      perPage: 8,
-    },
-    1700: {
-      perPage: 7,
-    },
-    1400: {
-      perPage: 6,
-    },
-    1200: {
-      perPage: 5,
-    },
-    1000: {
-      perPage: 4,
-    },
-    700: {
-      perPage: 3,
-    },
-    450: {
-      perPage: 2,
-    },
-
-  },
-}).mount();
-
-new Splide('#splide3', {
-  type: 'slide',
-  perPage: 9,
-  perMove: 1,
-  pagination: false,
-  padding: { left: '10px', right: '10px' },
-
-  breakpoints: {
-    2300: {
-      perPage: 8,
-    },
-    1700: {
-      perPage: 7,
-    },
-    1400: {
-      perPage: 6,
-    },
-    1200: {
-      perPage: 5,
-    },
-    1000: {
-      perPage: 4,
-    },
-    700: {
-      perPage: 3,
-    },
-    450: {
-      perPage: 2,
-    },
-
-  },
-}).mount();
+});
