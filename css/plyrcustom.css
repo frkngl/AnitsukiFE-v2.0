@@ -1,18 +1,38 @@
 :root {
     --plyr-color-main: #ff7f00;
+    color-scheme: dark;
 }
 
-* {
+html {
+    box-sizing: border-box;
+    height: 100%;
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-    scrollbar-color: #ff7f00 #000000;
+    scrollbar-color: var(--plyr-color-main) #000000;
     scrollbar-width: thin;
 }
 
+body {
+    min-height: 100%;
+    background-color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+    touch-action: manipulation;
+    overscroll-behavior-y: none;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
 ::-webkit-scrollbar {
-    width: 5px !important;
+    width: 6px; 
+    height: 6px; 
 }
 
 ::-webkit-scrollbar-track {
@@ -20,22 +40,18 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #ff7f00;
+    background: var(--plyr-color-main); 
     border-radius: 5px;
 }
 
-::selection {
-    background-color: #ff7f00;
-    color: #000000;
+::-webkit-scrollbar-thumb:hover {
+    background: #ff9500; 
 }
 
-html,
-body {
-    height: 100%;
-    background-color: #000000 !important;
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+::selection {
+    background-color: var(--plyr-color-main);
+    color: #000000;
+    text-shadow: none;
 }
 
 .player-wrapper {
@@ -383,6 +399,7 @@ body {
 .episodes-list a .box img {
     width: 100%;
     height: 100%;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
     display: block;
     transition: transform 0.3s ease-in-out;

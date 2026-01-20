@@ -4,11 +4,20 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>VideoPlayer</title>
+    <title>Anitsuki | VideoPlayer</title>
+
+    <meta name="description" content="Solo Leveling ve en sevdiğiniz animeleri yüksek kalitede izleyin.">
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+    <link rel="icon" href="webimg/aylogo.ico" type="image/x-icon">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
     <link rel="stylesheet" href="css/plyr.css" type="text/css" />
     <link rel="stylesheet" href="css/plyrcustom.css" type="text/css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
 </head>
 
 <body>
@@ -16,17 +25,20 @@
         <div id="video-container">
             <div class="player-header">
                 <div class="animedes">
-                    <a href="#" id="back-button" aria-label="Geri dön">
+                    <a href="javascript:history.back()" id="back-button" aria-label="Geri dön">
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                             class="bi bi-arrow-left" viewBox="0 0 16 16">
                             <path fill-rule="evenodd"
                                 d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
                         </svg>
                     </a>
-                    <img src="webimg/sololevelingposter.jpg" alt="Anime Posteri" />
+
+                    <img src="webimg/sololevelingposter.avif" alt="Shingeki no Kyojin Posteri" width="50" height="75"
+                        loading="eager" fetchpriority="high" style="object-fit: cover; border-radius: 4px;" />
+
                     <div class="video-info">
-                        <div class="anime-title"> Shingeki no Kyojin
-                        </div>
+                        <h1 class="anime-title">Shingeki no Kyojin</h1>
+
                         <div class="subs">
                             <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 Fansub: Kirigana Fairies
@@ -47,7 +59,8 @@
                                     <div
                                         style="line-height: 0; color: #ffffff; font-weight: 500; font-size: 1.1rem; font-style: normal;">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
-                                            fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                                            style="margin-top: -2px;" fill="currentColor" class="bi bi-info-circle"
+                                            viewBox="0 0 16 16">
                                             <path
                                                 d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
                                             <path
@@ -123,115 +136,217 @@
                             </svg>
                         </div>
                     </div>
+
                     <div class="episodes-list">
                         <a href="#">
                             <div class="box">
-                                <img src="webimg/aotbanner.jpg">
+                                <img src="webimg/aotbanner.avif" alt="Attack on Titan 1. Sezon 1. Bölüm" width="160"
+                                    height="90" loading="lazy" decoding="async" style="object-fit: cover;">
                                 <div class="text">1.Sezon 1.Bölüm</div>
                             </div>
                         </a>
                         <a href="#">
                             <div class="box">
-                                <img src="webimg/onepiecebanner.jpg">
+                                <img src="webimg/onepiecebanner.avif" alt="One Piece 1. Sezon 1. Bölüm" width="160"
+                                    height="90" loading="lazy" decoding="async" style="object-fit: cover;">
                                 <div class="text">1.Sezon 1.Bölüm</div>
                             </div>
                         </a>
                         <a href="#">
                             <div class="box">
-                                <img src="webimg/sololevelingbanner.png">
+                                <img src="webimg/sololevelingbanner.avif" alt="Solo Leveling 1. Sezon 1. Bölüm"
+                                    width="160" height="90" loading="lazy" decoding="async" style="object-fit: cover;">
                                 <div class="text">1.Sezon 1.Bölüm</div>
                             </div>
                         </a>
                         <a href="#">
                             <div class="box">
-                                <img src="webimg/aotbanner.jpg">
+                                <img src="webimg/aotbanner.avif" alt="Attack on Titan 1. Sezon 1. Bölüm" width="160"
+                                    height="90" loading="lazy" decoding="async" style="object-fit: cover;">
                                 <div class="text">1.Sezon 1.Bölüm</div>
                             </div>
                         </a>
                         <a href="#">
                             <div class="box">
-                                <img src="webimg/aotbanner.jpg">
+                                <img src="webimg/onepiecebanner.avif" alt="One Piece 1. Sezon 1. Bölüm" width="160"
+                                    height="90" loading="lazy" decoding="async" style="object-fit: cover;">
                                 <div class="text">1.Sezon 1.Bölüm</div>
                             </div>
                         </a>
                         <a href="#">
                             <div class="box">
-                                <img src="webimg/aotbanner.jpg">
+                                <img src="webimg/sololevelingbanner.avif" alt="Solo Leveling 1. Sezon 1. Bölüm"
+                                    width="160" height="90" loading="lazy" decoding="async" style="object-fit: cover;">
+                                <div class="text">1.Sezon 1.Bölüm</div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="box">
+                                <img src="webimg/aotbanner.avif" alt="Attack on Titan 1. Sezon 1. Bölüm" width="160"
+                                    height="90" loading="lazy" decoding="async" style="object-fit: cover;">
                                 <div class="text">1.Sezon 1.Bölüm</div>
                             </div>
                         </a>
                         <a class="active" href="#">
                             <div class="box">
-                                <img src="webimg/onepiecebanner.jpg">
+                                <img src="webimg/onepiecebanner.avif" alt="One Piece 1. Sezon 1. Bölüm" width="160"
+                                    height="90" loading="lazy" decoding="async" style="object-fit: cover;">
                                 <div class="text">1.Sezon 1.Bölüm</div>
                             </div>
                         </a>
                         <a href="#">
                             <div class="box">
-                                <img src="webimg/sololevelingbanner.png">
+                                <img src="webimg/sololevelingbanner.avif" alt="Solo Leveling 1. Sezon 1. Bölüm"
+                                    width="160" height="90" loading="lazy" decoding="async" style="object-fit: cover;">
                                 <div class="text">1.Sezon 1.Bölüm</div>
                             </div>
                         </a>
                         <a href="#">
                             <div class="box">
-                                <img src="webimg/aotbanner.jpg">
+                                <img src="webimg/aotbanner.avif" alt="Attack on Titan 1. Sezon 1. Bölüm" width="160"
+                                    height="90" loading="lazy" decoding="async" style="object-fit: cover;">
                                 <div class="text">1.Sezon 1.Bölüm</div>
                             </div>
                         </a>
                         <a href="#">
                             <div class="box">
-                                <img src="webimg/aotbanner.jpg">
+                                <img src="webimg/onepiecebanner.avif" alt="One Piece 1. Sezon 1. Bölüm" width="160"
+                                    height="90" loading="lazy" decoding="async" style="object-fit: cover;">
                                 <div class="text">1.Sezon 1.Bölüm</div>
                             </div>
                         </a>
                         <a href="#">
                             <div class="box">
-                                <img src="webimg/aotbanner.jpg">
+                                <img src="webimg/sololevelingbanner.avif" alt="Solo Leveling 1. Sezon 1. Bölüm"
+                                    width="160" height="90" loading="lazy" decoding="async" style="object-fit: cover;">
                                 <div class="text">1.Sezon 1.Bölüm</div>
                             </div>
                         </a>
                         <a href="#">
                             <div class="box">
-                                <img src="webimg/onepiecebanner.jpg">
+                                <img src="webimg/aotbanner.avif" alt="Attack on Titan 1. Sezon 1. Bölüm" width="160"
+                                    height="90" loading="lazy" decoding="async" style="object-fit: cover;">
                                 <div class="text">1.Sezon 1.Bölüm</div>
                             </div>
                         </a>
                         <a href="#">
                             <div class="box">
-                                <img src="webimg/sololevelingbanner.png">
+                                <img src="webimg/onepiecebanner.avif" alt="One Piece 1. Sezon 1. Bölüm" width="160"
+                                    height="90" loading="lazy" decoding="async" style="object-fit: cover;">
                                 <div class="text">1.Sezon 1.Bölüm</div>
                             </div>
                         </a>
                         <a href="#">
                             <div class="box">
-                                <img src="webimg/aotbanner.jpg">
+                                <img src="webimg/sololevelingbanner.avif" alt="Solo Leveling 1. Sezon 1. Bölüm"
+                                    width="160" height="90" loading="lazy" decoding="async" style="object-fit: cover;">
                                 <div class="text">1.Sezon 1.Bölüm</div>
                             </div>
                         </a>
                         <a href="#">
                             <div class="box">
-                                <img src="webimg/aotbanner.jpg">
+                                <img src="webimg/aotbanner.avif" alt="Attack on Titan 1. Sezon 1. Bölüm" width="160"
+                                    height="90" loading="lazy" decoding="async" style="object-fit: cover;">
+                                <div class="text">1.Sezon 1.Bölüm</div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="box">
+                                <img src="webimg/onepiecebanner.avif" alt="One Piece 1. Sezon 1. Bölüm" width="160"
+                                    height="90" loading="lazy" decoding="async" style="object-fit: cover;">
+                                <div class="text">1.Sezon 1.Bölüm</div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="box">
+                                <img src="webimg/sololevelingbanner.avif" alt="Solo Leveling 1. Sezon 1. Bölüm"
+                                    width="160" height="90" loading="lazy" decoding="async" style="object-fit: cover;">
+                                <div class="text">1.Sezon 1.Bölüm</div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="box">
+                                <img src="webimg/aotbanner.avif" alt="Attack on Titan 1. Sezon 1. Bölüm" width="160"
+                                    height="90" loading="lazy" decoding="async" style="object-fit: cover;">
+                                <div class="text">1.Sezon 1.Bölüm</div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="box">
+                                <img src="webimg/onepiecebanner.avif" alt="One Piece 1. Sezon 1. Bölüm" width="160"
+                                    height="90" loading="lazy" decoding="async" style="object-fit: cover;">
+                                <div class="text">1.Sezon 1.Bölüm</div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="box">
+                                <img src="webimg/sololevelingbanner.avif" alt="Solo Leveling 1. Sezon 1. Bölüm"
+                                    width="160" height="90" loading="lazy" decoding="async" style="object-fit: cover;">
+                                <div class="text">1.Sezon 1.Bölüm</div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="box">
+                                <img src="webimg/aotbanner.avif" alt="Attack on Titan 1. Sezon 1. Bölüm" width="160"
+                                    height="90" loading="lazy" decoding="async" style="object-fit: cover;">
+                                <div class="text">1.Sezon 1.Bölüm</div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="box">
+                                <img src="webimg/onepiecebanner.avif" alt="One Piece 1. Sezon 1. Bölüm" width="160"
+                                    height="90" loading="lazy" decoding="async" style="object-fit: cover;">
+                                <div class="text">1.Sezon 1.Bölüm</div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="box">
+                                <img src="webimg/sololevelingbanner.avif" alt="Solo Leveling 1. Sezon 1. Bölüm"
+                                    width="160" height="90" loading="lazy" decoding="async" style="object-fit: cover;">
+                                <div class="text">1.Sezon 1.Bölüm</div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="box">
+                                <img src="webimg/aotbanner.avif" alt="Attack on Titan 1. Sezon 1. Bölüm" width="160"
+                                    height="90" loading="lazy" decoding="async" style="object-fit: cover;">
+                                <div class="text">1.Sezon 1.Bölüm</div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="box">
+                                <img src="webimg/onepiecebanner.avif" alt="One Piece 1. Sezon 1. Bölüm" width="160"
+                                    height="90" loading="lazy" decoding="async" style="object-fit: cover;">
+                                <div class="text">1.Sezon 1.Bölüm</div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="box">
+                                <img src="webimg/sololevelingbanner.avif" alt="Solo Leveling 1. Sezon 1. Bölüm"
+                                    width="160" height="90" loading="lazy" decoding="async" style="object-fit: cover;">
                                 <div class="text">1.Sezon 1.Bölüm</div>
                             </div>
                         </a>
                     </div>
                 </div>
             </div>
-            <video id="player" preload="metadata" playsinline autoplay controls crossorigin
-                poster="webimg/sololevelingbanner.png">
+            <video id="player" playsinline controls crossorigin preload="none" poster="webimg/sololevelingbanner.avif"
+                data-poster="webimg/sololevelingbanner.avif">
                 <source src="video/episode720.mp4" size="720" type="video/mp4" />
                 <source src="video/episode360.mp4" size="360" type="video/mp4" />
             </video>
         </div>
     </div>
-
-    <script src="js/plyr.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-        crossorigin="anonymous"></script>
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"
+        defer></script>
+    <script src="js/plyr.js" defer></script>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Sabitler (unchanged)
+            // -------------------------------------------------------------------------
+            // 1. SABİTLER VE AYARLAR
+            // -------------------------------------------------------------------------
             const ICONS = {
                 rewind: `<svg xmlns="http://www.w3.org/2000/svg" height="30" width="30" viewBox="0 0 512 512"><path fill="#ffffff" d="M125.7 160l50.3 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L48 224c-17.7 0-32-14.3-32-32L16 64c0-17.7 14.3-32 32-32s32 14.3 32 32l0 51.2L97.6 97.6c87.5-87.5 229.3-87.5 316.8 0s87.5 229.3 0 316.8s-229.3 87.5-316.8 0c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0c62.5 62.5 163.8 62.5 226.3 0s62.5-163.8 0-226.3s-163.8-62.5-226.3 0L125.7 160z"/></svg>`,
                 forward: `<svg xmlns="http://www.w3.org/2000/svg" height="30" width="30" viewBox="0 0 512 512"><path fill="#ffffff" d="M386.3 160L336 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l128 0c17.7 0 32-14.3 32-32l0-128c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 51.2L414.4 97.6c-87.5-87.5-229.3-87.5-316.8 0s-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3s163.8-62.5 226.3 0L386.3 160z"/></svg>`,
@@ -246,43 +361,75 @@
             ];
 
             const I18N = {
-                restart: 'Başa sar',
-                rewind: 'Geri sar',
-                play: 'Oynat',
-                pause: 'Duraklat',
-                fastForward: 'İleri sar',
-                seek: 'Ara',
-                seekLabel: '{currentTime} konumuna git',
-                played: 'Oynatıldı',
-                buffered: 'Önbelleğe alındı',
-                currentTime: 'Geçerli süre',
-                duration: 'Toplam süre',
-                volume: 'Ses düzeyi',
-                mute: 'Sesi kapat',
-                unmute: 'Sesi aç',
-                enableCaptions: 'Altyazıyı etkinleştir',
-                disableCaptions: 'Altyazıyı devre dışı bırak',
-                download: 'İndir',
-                enterFullscreen: 'Tam ekrana geç',
-                exitFullscreen: 'Tam ekrandan çık',
-                frameTitle: 'Video için çerçeve',
-                captions: 'Altyazılar',
-                settings: 'Ayarlar',
-                speed: 'Hız',
-                normal: 'Normal',
-                quality: 'Kalite',
-                loop: 'Tekrarla',
-                start: 'Başla',
-                end: 'Bitir',
-                all: 'Tümü',
-                reset: 'Sıfırla',
-                disabled: 'Devre dışı',
-                enabled: 'Etkin',
-                advertisement: 'Reklam',
+                restart: 'Başa sar', rewind: 'Geri sar', play: 'Oynat', pause: 'Duraklat',
+                fastForward: 'İleri sar', seek: 'Ara', seekLabel: '{currentTime} konumuna git',
+                played: 'Oynatıldı', buffered: 'Önbelleğe alındı', currentTime: 'Geçerli süre',
+                duration: 'Toplam süre', volume: 'Ses düzeyi', mute: 'Sesi kapat', unmute: 'Sesi aç',
+                enableCaptions: 'Altyazıyı etkinleştir', disableCaptions: 'Altyazıyı devre dışı bırak',
+                download: 'İndir', enterFullscreen: 'Tam ekrana geç', exitFullscreen: 'Tam ekrandan çık',
+                frameTitle: 'Video için çerçeve', captions: 'Altyazılar', settings: 'Ayarlar',
+                speed: 'Hız', normal: 'Normal', quality: 'Kalite', loop: 'Tekrarla',
+                start: 'Başla', end: 'Bitir', all: 'Tümü', reset: 'Sıfırla',
+                disabled: 'Devre dışı', enabled: 'Etkin', advertisement: 'Reklam',
                 qualityBadge: { 2160: '4K', 1440: 'HD', 1080: 'HD', 720: 'HD', 576: 'SD', 480: 'SD' }
             };
 
-            // DOM öğeleri
+            // -------------------------------------------------------------------------
+            // 2. YARDIMCI FONKSİYONLAR (PERFORMANS ODAKLI)
+            // -------------------------------------------------------------------------
+
+            // Modern mobil algılama (UserAgent yerine özellik kontrolü)
+            const isMobileDevice = () => {
+                return window.matchMedia("(pointer: coarse)").matches;
+            };
+
+            const isAndroid = () => /Android/i.test(navigator.userAgent);
+
+            // THROTTLE: Mouse hareketleri gibi sık tetiklenen olayları yavaşlatır
+            const throttle = (func, limit) => {
+                let inThrottle;
+                return function () {
+                    const args = arguments;
+                    const context = this;
+                    if (!inThrottle) {
+                        func.apply(context, args);
+                        inThrottle = true;
+                        setTimeout(() => inThrottle = false, limit);
+                    }
+                }
+            };
+
+            // Android için gelişmiş Tam Ekran ve Yön Kilitleme Mantığı
+            const enterFullscreenWithOrientation = async () => {
+                try {
+                    if (!player.fullscreen.active) {
+                        await player.fullscreen.enter();
+                    }
+
+                    if (isAndroid() && screen.orientation) {
+                        // Kilitleme desteklenmiyorsa butonu gizlemek için kontrol
+                        const fullscreenBtn = document.querySelector('.plyr__control[data-plyr="fullscreen"]');
+                        if (!screen.orientation.lock && fullscreenBtn) {
+                            fullscreenBtn.style.display = 'none';
+                            return;
+                        }
+
+                        // Yatay moda kilitlemeyi dene
+                        try {
+                            await screen.orientation.lock('landscape');
+                            console.log('Ekran yatay moda kilitlendi.');
+                        } catch (err) {
+                            console.warn('Yön kilitleme başarısız (bu cihaz desteklemiyor olabilir):', err);
+                        }
+                    }
+                } catch (err) {
+                    console.error('Tam ekran hatası:', err);
+                }
+            };
+
+            // -------------------------------------------------------------------------
+            // 3. DOM ELEMENTLERİ
+            // -------------------------------------------------------------------------
             const videoEl = document.getElementById('player');
             const playerHeader = document.querySelector('.player-header');
             const episodesPanel = document.getElementById('episodes-panel');
@@ -291,77 +438,23 @@
             const startBtn = document.getElementById('start-video');
             const background = document.querySelector('.background');
 
-            // Yardımcı fonksiyonlar
-            const isMobileDevice = () => {
-                const ua = navigator.userAgent || '';
-
-                const isStandardMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(ua);
-
-                const isModernIpad = navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1;
-                return isStandardMobile || isModernIpad;
-            };
-            const isAndroid = () => /Android/i.test(navigator.userAgent);
-
-            const enterFullscreenWithOrientation = async () => {
-                try {
-                    // Önce tam ekran moduna geç
-                    await player.fullscreen.enter();
-
-                    // Eğer Android cihaz ise ve yön kilitleme desteklenmiyorsa, fullscreen butonunu gizle
-                    if (isAndroid() && !(screen.orientation?.lock)) {
-                        const fullscreenBtn = document.querySelector('.plyr__control[data-plyr="fullscreen"]');
-                        if (fullscreenBtn) fullscreenBtn.style.display = 'none';
-                    }
-
-                    // Android'de yön kilidi varsa ve destekliyorsa, yatay moda kilitlemeye çalış
-                    if (isAndroid() && screen.orientation?.lock) {
-                        let attempts = 0;
-                        const maxAttempts = 3;
-                        const retryDelay = 500;
-
-                        const tryLockOrientation = async () => {
-                            try {
-                                await screen.orientation.lock('landscape');
-                                console.log('Yön landscape olarak kilitlendi');
-                            } catch (err) {
-                                attempts++;
-                                if (attempts < maxAttempts) {
-                                    console.warn(`Yön kilidi başarısız (deneme ${attempts}/${maxAttempts}):`, err);
-                                    setTimeout(tryLockOrientation, retryDelay);
-                                } else {
-                                    console.error('Yön kilidi başarısız, maksimum deneme sayısına ulaşıldı:', err);
-                                }
-                            }
-                        };
-
-                        await tryLockOrientation();
-                    }
-                } catch (err) {
-                    console.error('Tam ekran veya yön kilidi hatası:', err);
+            // Mobilde episodes butonunu gizle (iPad hariç)
+            if (isMobileDevice() && toggleButton) {
+                // iPad kontrolünü basitçe genişlik/yükseklik ile de destekleyebiliriz ama
+                // şimdilik senin orijinal mantığını koruyarak mobile check yapıyoruz.
+                if (window.innerWidth < 768) {
+                    toggleButton.style.display = 'none';
                 }
-            };
-
-            let lastTouch = 0;
-            let controlsTimeout;
-
-            // Çift dokunma engelle
-            videoEl?.addEventListener('touchend', (e) => {
-                const now = Date.now();
-                if (now - lastTouch <= 20) e.preventDefault();
-                lastTouch = now;
-            });
-
-            // Mobil cihazda episodes butonunu gizle
-            if (isMobileDevice() && toggleButton && !(/iPad/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1))) {
-                toggleButton.style.display = 'none';
             }
 
-            // Plyr oynatıcı başlatma
+            // -------------------------------------------------------------------------
+            // 4. PLYR OYNATICI KURULUMU
+            // -------------------------------------------------------------------------
             const player = new Plyr('#player', {
                 controls: CONTROLS,
                 settings: ['captions', 'quality', 'speed', 'loop'],
                 captions: { active: true, language: 'auto', update: true },
-                autoplay: false,
+                autoplay: false, // Performans için kapalı
                 fullscreen: {
                     enabled: true,
                     fallback: true,
@@ -371,132 +464,143 @@
                 i18n: I18N
             });
 
-            // Plyr hazır olduğunda kontrol başlat
+            // -------------------------------------------------------------------------
+            // 5. OYNATICI HAZIR OLDUĞUNDA (DOM MANİPÜLASYONU)
+            // -------------------------------------------------------------------------
             player.on('ready', () => {
-                if (!isAndroid()) return;
+                const controls = document.querySelector('.plyr__controls');
+                const progress = controls?.querySelector('.plyr__progress');
 
-                const btn = document.querySelector('.plyr__control[data-plyr="fullscreen"]');
-                if (!btn) return;
+                if (controls && progress) {
+                    // PERFORMANS: DocumentFragment ile tek seferde DOM güncelleme
+                    const fragment = document.createDocumentFragment();
+                    const topBar = document.createElement('div');
+                    const bottomBar = document.createElement('div');
 
-                // Butonu her zaman görünür yap
-                btn.style.setProperty('display', '', 'important');
+                    topBar.classList.add('custom-top-controls');
+                    bottomBar.classList.add('custom-bottom-controls');
 
-                // Android'de özel tam ekran işlevi ata
-                btn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    enterFullscreenWithOrientation();
-                });
-
-                // Tam ekran çıkışında yön kilidini kaldır
-                player.on('exitfullscreen', async () => {
-                    try {
-                        if (screen.orientation?.unlock) {
-                            await screen.orientation.unlock();
-                            console.log('Yön kilidi kaldırıldı');
+                    // Elemanları taşıma
+                    topBar.appendChild(progress);
+                    [...controls.children].forEach(child => {
+                        if (child !== progress && child !== topBar && child !== bottomBar) {
+                            bottomBar.appendChild(child);
                         }
-                    } catch (err) {
-                        console.warn('Yön kilidi kaldırma başarısız:', err);
-                    }
-                });
-            });
+                    });
 
-            // Başlat butonu
-            startBtn?.addEventListener('click', async () => {
-                try {
-                    await player.play();
-                    startBtn.style.display = 'none';
-                    if (background) background.style.display = 'none';
-                    if (isAndroid()) {
-                        await enterFullscreenWithOrientation();
+                    fragment.appendChild(topBar);
+                    fragment.appendChild(bottomBar);
+
+                    // Eski içeriği temizle ve yenisini ekle
+                    controls.innerHTML = '';
+                    controls.appendChild(fragment);
+                }
+
+                // İkon Değişimleri
+                const rewindButton = document.querySelector('.plyr__control[data-plyr="rewind"]');
+                const forwardButton = document.querySelector('.plyr__control[data-plyr="fast-forward"]');
+
+                if (rewindButton) rewindButton.innerHTML = ICONS.rewind;
+                if (forwardButton) forwardButton.innerHTML = ICONS.forward;
+
+                // Özel Buton Oluşturucu (Kod tekrarını önlemek için)
+                const createCustomBtn = (className, iconHtml, title, onClick) => {
+                    const btn = document.createElement('button');
+                    btn.className = `plyr__control ${className}`;
+                    btn.innerHTML = iconHtml;
+                    btn.title = title;
+                    btn.onclick = onClick;
+                    return btn;
+                };
+
+                // Önceki ve Sonraki Butonlarını Ekleme
+                const prevButton = createCustomBtn('custom-prev', ICONS.prev, 'Önceki Bölüm', () => console.log('Önceki bölüme geç'));
+                const nextButton = createCustomBtn('custom-next', ICONS.next, 'Sonraki Bölüm', () => console.log('Sonraki bölüme geç'));
+
+                if (rewindButton?.parentNode) rewindButton.parentNode.insertBefore(prevButton, rewindButton);
+                if (forwardButton?.parentNode) forwardButton.parentNode.insertBefore(nextButton, forwardButton.nextSibling);
+
+                // Aktif Bölüme Kaydırma
+                const activeItem = document.querySelector('.episodes-list .active');
+                if (activeItem) {
+                    setTimeout(() => {
+                        activeItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 100); // DOM render'ı için minik bir gecikme
+                }
+
+                // Başlangıç Ayarları
+                showHeader();
+                updateCaptionFontSize();
+
+                // Android Fullscreen Düzeltmesi
+                if (isAndroid()) {
+                    const fsBtn = document.querySelector('.plyr__control[data-plyr="fullscreen"]');
+                    if (fsBtn) {
+                        fsBtn.style.setProperty('display', '', 'important');
+                        fsBtn.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            enterFullscreenWithOrientation();
+                        });
                     }
-                } catch (err) {
-                    console.error('Video oynatma veya tam ekran hatası:', err);
                 }
             });
 
-            // Başlık gösterme/gizleme (unchanged)
+            // -------------------------------------------------------------------------
+            // 6. UI KONTROLLERİ VE EVENT LISTENERS
+            // -------------------------------------------------------------------------
+
+            // Başlık Gösterme/Gizleme Fonksiyonu
+            let controlsTimeout;
             const showHeader = ({ immediate = false } = {}) => {
                 if (!playerHeader) return;
-                playerHeader.classList.remove('hidden');
+
+                if (playerHeader.classList.contains('hidden')) {
+                    playerHeader.classList.remove('hidden');
+                }
+
                 clearTimeout(controlsTimeout);
-                const delay = immediate ? 100 : isMobileDevice() ? 3000 : 2000;
+
+                const delay = immediate ? 100 : (isMobileDevice() ? 3000 : 2000);
+
                 controlsTimeout = setTimeout(() => {
                     if (player.playing) playerHeader.classList.add('hidden');
                 }, delay);
             };
 
-            // Altyazı font boyutu güncelleme (unchanged)
+            // PERFORMANS: Throttle uygulanmış event listener
+            const throttledShowHeader = throttle(() => showHeader(), 100);
+
+            // 'passive: true' ile kaydırma performansını artır
+            document.addEventListener('mousemove', throttledShowHeader, { passive: true });
+            document.addEventListener('touchstart', throttledShowHeader, { passive: true });
+
+            player.on('play', () => showHeader({ immediate: true }));
+            player.on('pause', () => showHeader({ immediate: true }));
+
+            // Altyazı Font Boyutu
             const updateCaptionFontSize = () => {
                 const captions = document.querySelector('.plyr__captions');
                 if (captions) captions.style.fontSize = isMobileDevice() ? '1.3rem' : '2rem';
             };
 
-            // Plyr hazır olduğunda (unchanged)
-            player.on('ready', () => {
-                const controls = document.querySelector('.plyr__controls');
-                const progress = controls?.querySelector('.plyr__progress');
-                if (controls && progress) {
-                    const topBar = document.createElement('div');
-                    const bottomBar = document.createElement('div');
-                    topBar.classList.add('custom-top-controls');
-                    bottomBar.classList.add('custom-bottom-controls');
-                    topBar.appendChild(progress);
-                    [...controls.children].forEach(child => {
-                        if (!child.classList.contains('plyr__progress')) bottomBar.appendChild(child);
-                    });
-                    controls.innerHTML = '';
-                    controls.appendChild(topBar);
-                    controls.appendChild(bottomBar);
-                }
-
-                const rewindButton = document.querySelector('.plyr__control[data-plyr="rewind"]');
-                const forwardButton = document.querySelector('.plyr__control[data-plyr="fast-forward"]');
-                if (rewindButton) rewindButton.innerHTML = ICONS.rewind;
-                if (forwardButton) forwardButton.innerHTML = ICONS.forward;
-
-                const prevButton = document.createElement('button');
-                prevButton.className = 'plyr__control custom-prev';
-                prevButton.innerHTML = ICONS.prev;
-                prevButton.title = 'Önceki bölüm';
-                prevButton.onclick = () => console.log('Önceki bölüme geç');
-
-                const nextButton = document.createElement('button');
-                nextButton.className = 'plyr__control custom-next';
-                nextButton.innerHTML = ICONS.next;
-                nextButton.title = 'Sonraki bölüm';
-                nextButton.onclick = () => console.log('Sonraki bölüme geç');
-
-                if (rewindButton?.parentNode) rewindButton.parentNode.insertBefore(prevButton, rewindButton);
-                if (forwardButton?.parentNode) forwardButton.parentNode.insertBefore(nextButton, forwardButton.nextSibling);
-
-                const list = document.querySelector('.episodes-list');
-                const activeItem = list?.querySelector('.active');
-                if (activeItem) {
-                    activeItem.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });
-                }
-
-                showHeader();
-                updateCaptionFontSize();
+            window.addEventListener('resize', () => {
+                requestAnimationFrame(updateCaptionFontSize);
             });
 
-            // Olay dinleyicileri (unchanged)
-            ['mousemove', 'touchstart'].forEach(evt => document.addEventListener(evt, showHeader));
-            player.on('play', () => showHeader({ immediate: true }));
-            player.on('pause', () => {
-                if (playerHeader) {
-                    playerHeader.classList.remove('hidden');
-                    clearTimeout(controlsTimeout);
-                }
-            });
-            document.querySelector('.plyr')?.addEventListener('click', showHeader);
-            window.addEventListener('resize', updateCaptionFontSize);
-
+            // Video üzerine tıklayınca durdur/başlat
             videoEl?.addEventListener('click', () => {
-                if (typeof player.playing !== 'undefined') player.playing ? player.pause() : player.play();
+                if (typeof player.playing !== 'undefined') {
+                    player.playing ? player.pause() : player.play();
+                }
             });
 
+            // Klavye Kısayolları
             document.addEventListener('keydown', (event) => {
                 if (!player) return;
+
+                // Input alanlarındaysak kısayolları devre dışı bırak
+                if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') return;
+
                 switch (event.key.toLowerCase()) {
                     case ' ':
                         event.preventDefault();
@@ -517,9 +621,11 @@
                         break;
                     case 'arrowup':
                         player.volume = Math.min(player.volume + 0.05, 1);
+                        event.preventDefault();
                         break;
                     case 'arrowdown':
                         player.volume = Math.max(player.volume - 0.05, 0);
+                        event.preventDefault();
                         break;
                     case 'c':
                         player.toggleCaptions();
@@ -527,21 +633,57 @@
                 }
             });
 
+            // Geri Butonu
             document.getElementById('back-button')?.addEventListener('click', () => window.history.back());
 
+            // Bölümler Paneli (Toggle Logic)
             const toggleEpisodesPanel = (open = !episodesPanel?.classList.contains('open')) => {
-                if (!episodesPanel || !toggleButton) return;
+                if (!episodesPanel) return;
+
                 episodesPanel.classList.toggle('open', open);
-                toggleButton.setAttribute('aria-expanded', String(open));
+                if (toggleButton) toggleButton.setAttribute('aria-expanded', String(open));
                 episodesPanel.setAttribute('aria-hidden', String(!open));
             };
 
-            toggleButton?.addEventListener('click', () => toggleEpisodesPanel());
+            toggleButton?.addEventListener('click', (e) => {
+                e.stopPropagation();
+                toggleEpisodesPanel();
+            });
+
             closeButton?.addEventListener('click', () => toggleEpisodesPanel(false));
+
+            // Panel dışına tıklayınca kapatma
             document.addEventListener('click', (event) => {
                 if (!episodesPanel?.classList.contains('open')) return;
                 if (!episodesPanel.contains(event.target) && !toggleButton?.contains(event.target)) {
                     toggleEpisodesPanel(false);
+                }
+            });
+
+            // Büyük Başlat Butonu (Kapak üzerindeki)
+            startBtn?.addEventListener('click', async () => {
+                try {
+                    await player.play();
+                    startBtn.style.display = 'none';
+                    if (background) background.style.display = 'none';
+
+                    // Android'de otomatik yatay moda geç
+                    if (isAndroid()) {
+                        await enterFullscreenWithOrientation();
+                    }
+                } catch (err) {
+                    console.error('Video başlatma hatası:', err);
+                }
+            });
+
+            // Tam ekrandan çıkışta kilitleri kaldır
+            player.on('exitfullscreen', async () => {
+                if (screen.orientation && screen.orientation.unlock) {
+                    try {
+                        await screen.orientation.unlock();
+                    } catch (e) {
+                        // Hata önemsiz
+                    }
                 }
             });
         });
