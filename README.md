@@ -1,4 +1,4 @@
-<img src="webimg/aylogo.png" width="100" alt="1"><h1>Anitsuki V2 - Anime İzleme Platformu</h1>
+<img src="webimg/aylogo.avif" width="100" alt="1"><h1>Anitsuki V2 - Anime İzleme Platformu</h1>
 <h1>Giriş</h1>
 <h4>Anitsuki, anime severler için tasarlanmış açık kaynaklı bir platformdur. Kullanıcılar, animeleri kolayca izleyebilir, önizleme videoları ile karar verebilir ve kişisel listelerle deneyimlerini kişiselleştirebilir. 
   Versiyon 2 sürümü ile yeni özellikler eklenmiş olup, topluluk katkısına açıktır.</h4>
